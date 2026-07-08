@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "probe": "hooks-ordering-and-payload-shape",
+  "safety": {
+    "temporaryHome": true,
+    "temporaryGitProject": true,
+    "loopbackProvider": true,
+    "dummyCredential": true,
+    "telemetryDisabled": true,
+    "hookExecutable": "repository-owned fixture recorder",
+    "hookWritesConfinedToProbeRoot": true,
+    "rawHookPayloadsRetained": false,
+    "rawPromptsRetained": false
+  },
+  "artifact": {
+    "version": "2.1.177",
+    "sha256": "eb0730351be2f02b482b1855870f5877489085aac86b0c4c1db4e458d9e40ed9",
+    "size": 225124512,
+    "platform": "darwin-arm64"
+  },
+  "run": {
+    "exitCode": 0,
+    "signal": null,
+    "stdoutPresent": true,
+    "stderrPresent": false,
+    "outputTruncated": false
+  },
+  "messagesRequestCount": 2,
+  "configuredPreToolHookOrder": [
+    "pre-slow",
+    "pre-fast"
+  ],
+  "hookInvocationOrder": [
+    "prompt:start",
+    "prompt:end",
+    "pre-slow:start",
+    "pre-fast:start",
+    "pre-fast:end",
+    "pre-slow:end",
+    "post:start",
+    "post:end",
+    "stop:start",
+    "stop:end"
+  ],
+  "preToolRecorderIntervalsOverlap": true,
+  "preToolStreamPhases": [
+    "hook_started",
+    "hook_started",
+    "hook_response",
+    "hook_response"
+  ],
+  "preToolConcurrentDispatch": true,
+  "payloads": [
+    {
+      "label": "prompt",
+      "payloadBytes": 551,
+      "safeNames": {
+        "hookEventName": "UserPromptSubmit",
+        "toolName": null
+      },
+      "payloadShape": {
+        "type": "object",
+        "keys": [
+          "cwd",
+          "hook_event_name",
+          "permission_mode",
+          "prompt",
+          "session_id",
+          "transcript_path"
+        ],
+        "values": {
+          "cwd": "string",
+          "hook_event_name": "string",
+          "permission_mode": "string",
+          "prompt": "string",
+          "session_id": "string",
+          "transcript_path": "string"
+        }
+      }
+    },
+    {
+      "label": "pre-fast",
+      "payloadBytes": 723,
+      "safeNames": {
+        "hookEventName": "PreToolUse",
+        "toolName": "Read"
+      },
+      "payloadShape": {
+        "type": "object",
+        "keys": [
+          "cwd",
+          "effort",
+          "hook_event_name",
+          "permission_mode",
+          "session_id",
+          "tool_input",
+          "tool_name",
+          "tool_use_id",
+          "transcript_path"
+        ],
+        "values": {
+          "cwd": "string",
+          "effort": {
+            "type": "object",
+            "keys": [
+              "level"
+            ],
+            "values": {
+              "level": "string"
+            }
+          },
+          "hook_event_name": "string",
+          "permission_mode": "string",
+          "session_id": "string",
+          "tool_input": {
+            "type": "object",
+            "keys": [
+              "file_path"
+            ],
+            "values": {
+              "file_path": "string"
+            }
+          },
+          "tool_name": "string",
+          "tool_use_id": "string",
+          "transcript_path": "string"
+        }
+      }
+    },
+    {
+      "label": "pre-slow",
+      "payloadBytes": 723,
+      "safeNames": {
+        "hookEventName": "PreToolUse",
+        "toolName": "Read"
+      },
+      "payloadShape": {
+        "type": "object",
+        "keys": [
+          "cwd",
+          "effort",
+          "hook_event_name",
+          "permission_mode",
+          "session_id",
+          "tool_input",
+          "tool_name",
+          "tool_use_id",
+          "transcript_path"
+        ],
+        "values": {
+          "cwd": "string",
+          "effort": {
+            "type": "object",
+            "keys": [
+              "level"
+            ],
+            "values": {
+              "level": "string"
+            }
+          },
+          "hook_event_name": "string",
+          "permission_mode": "string",
+          "session_id": "string",
+          "tool_input": {
+            "type": "object",
+            "keys": [
+              "file_path"
+            ],
+            "values": {
+              "file_path": "string"
+            }
+          },
+          "tool_name": "string",
+          "tool_use_id": "string",
+          "transcript_path": "string"
+        }
+      }
+    },
+    {
+      "label": "post",
+      "payloadBytes": 993,
+      "safeNames": {
+        "hookEventName": "PostToolUse",
+        "toolName": "Read"
+      },
+      "payloadShape": {
+        "type": "object",
+        "keys": [
+          "cwd",
+          "duration_ms",
+          "effort",
+          "hook_event_name",
+          "permission_mode",
+          "session_id",
+          "tool_input",
+          "tool_name",
+          "tool_response",
+          "tool_use_id",
+          "transcript_path"
+        ],
+        "values": {
+          "cwd": "string",
+          "duration_ms": "number",
+          "effort": {
+            "type": "object",
+            "keys": [
+              "level"
+            ],
+            "values": {
+              "level": "string"
+            }
+          },
+          "hook_event_name": "string",
+          "permission_mode": "string",
+          "session_id": "string",
+          "tool_input": {
+            "type": "object",
+            "keys": [
+              "file_path"
+            ],
+            "values": {
+              "file_path": "string"
+            }
+          },
+          "tool_name": "string",
+          "tool_response": {
+            "type": "object",
+            "keys": [
+              "file",
+              "type"
+            ],
+            "values": {
+              "file": {
+                "type": "object",
+                "keys": [
+                  "content",
+                  "filePath",
+                  "numLines",
+                  "startLine",
+                  "totalLines"
+                ],
+                "values": {
+                  "content": "string",
+                  "filePath": "string",
+                  "numLines": "number",
+                  "startLine": "number",
+                  "totalLines": "number"
+                }
+              },
+              "type": "string"
+            }
+          },
+          "tool_use_id": "string",
+          "transcript_path": "string"
+        }
+      }
+    },
+    {
+      "label": "stop",
+      "payloadBytes": 639,
+      "safeNames": {
+        "hookEventName": "Stop",
+        "toolName": null
+      },
+      "payloadShape": {
+        "type": "object",
+        "keys": [
+          "background_tasks",
+          "cwd",
+          "effort",
+          "hook_event_name",
+          "last_assistant_message",
+          "permission_mode",
+          "session_crons",
+          "session_id",
+          "stop_hook_active",
+          "transcript_path"
+        ],
+        "values": {
+          "background_tasks": {
+            "type": "array",
+            "length": 0,
+            "itemTypes": []
+          },
+          "cwd": "string",
+          "effort": {
+            "type": "object",
+            "keys": [
+              "level"
+            ],
+            "values": {
+              "level": "string"
+            }
+          },
+          "hook_event_name": "string",
+          "last_assistant_message": "string",
+          "permission_mode": "string",
+          "session_crons": {
+            "type": "array",
+            "length": 0,
+            "itemTypes": []
+          },
+          "session_id": "string",
+          "stop_hook_active": "boolean",
+          "transcript_path": "string"
+        }
+      }
+    }
+  ],
+  "streamEvents": [
+    {
+      "type": "system",
+      "subtype": "hook_started",
+      "hookEvent": "UserPromptSubmit",
+      "topLevelKeys": [
+        "hook_event",
+        "hook_id",
+        "hook_name",
+        "session_id",
+        "subtype",
+        "type",
+        "uuid"
+      ]
+    },
+    {
+      "type": "system",
+      "subtype": "hook_response",
+      "hookEvent": "UserPromptSubmit",
+      "topLevelKeys": [
+        "exit_code",
+        "hook_event",
+        "hook_id",
+        "hook_name",
+        "outcome",
+        "output",
+        "session_id",
+        "stderr",
+        "stdout",
+        "subtype",
+        "type",
+        "uuid"
+      ]
+    },
+    {
+      "type": "system",
+      "subtype": "init",
+      "hookEvent": null,
+      "topLevelKeys": [
+        "agents",
+        "analytics_disabled",
+        "apiKeySource",
+        "claude_code_version",
+        "cwd",
+        "fast_mode_state",
+        "mcp_servers",
+        "memory_paths",
+        "model",
+        "output_style",
+        "permissionMode",
+        "plugins",
+        "product_feedback_disabled",
+        "session_id",
+        "skills",
+        "slash_commands",
+        "subtype",
+        "tools",
+        "type",
+        "uuid"
+      ]
+    },
+    {
+      "type": "assistant",
+      "subtype": null,
+      "hookEvent": null,
+      "topLevelKeys": [
+        "message",
+        "parent_tool_use_id",
+        "request_id",
+        "session_id",
+        "type",
+        "uuid"
+      ]
+    },
+    {
+      "type": "system",
+      "subtype": "hook_started",
+      "hookEvent": "PreToolUse",
+      "topLevelKeys": [
+        "hook_event",
+        "hook_id",
+        "hook_name",
+        "session_id",
+        "subtype",
+        "type",
+        "uuid"
+      ]
+    },
+    {
+      "type": "system",
+      "subtype": "hook_started",
+      "hookEvent": "PreToolUse",
+      "topLevelKeys": [
+        "hook_event",
+        "hook_id",
+        "hook_name",
+        "session_id",
+        "subtype",
+        "type",
+        "uuid"
+      ]
+    },
+    {
+      "type": "system",
+      "subtype": "hook_response",
+      "hookEvent": "PreToolUse",
+      "topLevelKeys": [
+        "exit_code",
+        "hook_event",
+        "hook_id",
+        "hook_name",
+        "outcome",
+        "output",
+        "session_id",
+        "stderr",
+        "stdout",
+        "subtype",
+        "type",
+        "uuid"
+      ]
+    },
+    {
+      "type": "system",
+      "subtype": "hook_response",
+      "hookEvent": "PreToolUse",
+      "topLevelKeys": [
+        "exit_code",
+        "hook_event",
+        "hook_id",
+        "hook_name",
+        "outcome",
+        "output",
+        "session_id",
+        "stderr",
+        "stdout",
+        "subtype",
+        "type",
+        "uuid"
+      ]
+    },
+    {
+      "type": "system",
+      "subtype": "hook_started",
+      "hookEvent": "PostToolUse",
+      "topLevelKeys": [
+        "hook_event",
+        "hook_id",
+        "hook_name",
+        "session_id",
+        "subtype",
+        "type",
+        "uuid"
+      ]
+    },
+    {
+      "type": "system",
+      "subtype": "hook_response",
+      "hookEvent": "PostToolUse",
+      "topLevelKeys": [
+        "exit_code",
+        "hook_event",
+        "hook_id",
+        "hook_name",
+        "outcome",
+        "output",
+        "session_id",
+        "stderr",
+        "stdout",
+        "subtype",
+        "type",
+        "uuid"
+      ]
+    },
+    {
+      "type": "user",
+      "subtype": null,
+      "hookEvent": null,
+      "topLevelKeys": [
+        "message",
+        "parent_tool_use_id",
+        "session_id",
+        "timestamp",
+        "tool_use_result",
+        "type",
+        "uuid"
+      ]
+    },
+    {
+      "type": "assistant",
+      "subtype": null,
+      "hookEvent": null,
+      "topLevelKeys": [
+        "message",
+        "parent_tool_use_id",
+        "request_id",
+        "session_id",
+        "type",
+        "uuid"
+      ]
+    },
+    {
+      "type": "system",
+      "subtype": "hook_started",
+      "hookEvent": "Stop",
+      "topLevelKeys": [
+        "hook_event",
+        "hook_id",
+        "hook_name",
+        "session_id",
+        "subtype",
+        "type",
+        "uuid"
+      ]
+    },
+    {
+      "type": "system",
+      "subtype": "hook_response",
+      "hookEvent": "Stop",
+      "topLevelKeys": [
+        "exit_code",
+        "hook_event",
+        "hook_id",
+        "hook_name",
+        "outcome",
+        "output",
+        "session_id",
+        "stderr",
+        "stdout",
+        "subtype",
+        "type",
+        "uuid"
+      ]
+    },
+    {
+      "type": "result",
+      "subtype": "success",
+      "hookEvent": null,
+      "topLevelKeys": [
+        "api_error_status",
+        "duration_api_ms",
+        "duration_ms",
+        "fast_mode_state",
+        "is_error",
+        "modelUsage",
+        "num_turns",
+        "permission_denials",
+        "result",
+        "session_id",
+        "stop_reason",
+        "subtype",
+        "terminal_reason",
+        "time_to_request_ms",
+        "total_cost_usd",
+        "ttft_ms",
+        "ttft_stream_ms",
+        "type",
+        "usage",
+        "uuid"
+      ]
+    }
+  ],
+  "limits": [
+    "The concurrency result describes two command hooks in one matching PreToolUse entry on this artifact only.",
+    "Operating-system process start order can vary; concurrent dispatch is classified from the stream's started/response phase sequence.",
+    "Payload schemas retain field names and primitive types, but no field values except known lifecycle and tool names.",
+    "Absolute paths, prompt bodies, tool inputs, tool results, and raw stream events are not retained."
+  ]
+}

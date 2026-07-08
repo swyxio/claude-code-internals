@@ -1,5 +1,7 @@
 # Providers and Transport
 
+Visual companion: [providers and network map](../maps/provider-network.md).
+
 The client separates local orchestration from the inference provider. Version `2.1.177` contains routes for Anthropic’s API and three cloud-hosted alternatives, plus model selection, fallback, streaming, proxy, and credential controls.
 
 ## Provider routes

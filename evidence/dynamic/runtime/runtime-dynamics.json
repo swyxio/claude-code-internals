@@ -1,0 +1,2240 @@
+{
+  "schemaVersion": 1,
+  "probe": "runtime/runtime-dynamics",
+  "capturedAt": "2026-07-08T21:59:01.153Z",
+  "subject": {
+    "version": "2.1.177",
+    "artifactSha256": "eb0730351be2f02b482b1855870f5877489085aac86b0c4c1db4e458d9e40ed9",
+    "artifactBytes": 225124512,
+    "platform": "darwin-arm64"
+  },
+  "isolation": {
+    "temporaryHomePerCase": true,
+    "temporaryProjectPerCase": true,
+    "inheritedEnvironment": false,
+    "dummyCredential": true,
+    "syntheticPromptsOnly": true,
+    "loopbackProvider": true,
+    "outboundNetworkPolicy": "sandbox-exec: deny outbound except localhost",
+    "nonessentialTrafficDisabled": true,
+    "telemetryDisabled": true,
+    "rawRequestBodiesRetained": false,
+    "rawProcessOutputRetained": false,
+    "rawTranscriptsRetained": false,
+    "temporaryDirectoriesRemoved": true
+  },
+  "runs": [
+    {
+      "label": "text-turn",
+      "invocation": {
+        "mode": "bare-safe-print",
+        "optionNames": [
+          "--print",
+          "--output-format",
+          "--verbose",
+          "--include-partial-messages",
+          "--model",
+          "--system-prompt",
+          "--bare",
+          "--safe-mode",
+          "--no-chrome",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "--session-id",
+          "--tools",
+          "--no-session-persistence"
+        ],
+        "tools": [],
+        "persistenceEnabled": false,
+        "syntheticPrompt": {
+          "bytes": 41,
+          "sha256": "3de5365d21506b0325f3147c067d128d879eb2493c7826a43c0fddccab3633ce"
+        },
+        "syntheticSystemPrompt": {
+          "bytes": 20,
+          "sha256": "b14d155a449f56a4991eaa3b978f3e7a189b280a34af6f01797391defa5583e0"
+        },
+        "fixture": {
+          "bytes": 26,
+          "sha256": "57f1a8465e7231646458689cd07d4d4fef98b654b977e9021e427fbc8eab15cb",
+          "mode": "600"
+        }
+      },
+      "process": {
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "durationMs": 232,
+        "stdout": {
+          "bytes": 4206,
+          "sha256": "8d51eb3d40cbbca0487defe4fa3ab00afe306e175b4ac118da2d8a9314339256",
+          "lineCount": 10,
+          "jsonLineCount": 10,
+          "nonJsonCount": 0,
+          "eventOrder": [
+            "system:init",
+            "system:status",
+            "stream_event",
+            "stream_event",
+            "stream_event",
+            "assistant",
+            "stream_event",
+            "stream_event",
+            "stream_event",
+            "result:success"
+          ],
+          "entries": [
+            {
+              "index": 0,
+              "fields": [
+                "agents",
+                "analytics_disabled",
+                "apiKeySource",
+                "claude_code_version",
+                "cwd",
+                "fast_mode_state",
+                "mcp_servers",
+                "model",
+                "output_style",
+                "permissionMode",
+                "plugins",
+                "product_feedback_disabled",
+                "session_id",
+                "skills",
+                "slash_commands",
+                "subtype",
+                "tools",
+                "type",
+                "uuid"
+              ],
+              "type": "system",
+              "subtype": "init",
+              "sessionIdSha256": "11e594f481958c10e3015d0bf0447a22f068a8a647f475df15ce2c7ab4b8f3f1"
+            },
+            {
+              "index": 1,
+              "fields": [
+                "session_id",
+                "status",
+                "subtype",
+                "type",
+                "uuid"
+              ],
+              "type": "system",
+              "subtype": "status",
+              "sessionIdSha256": "11e594f481958c10e3015d0bf0447a22f068a8a647f475df15ce2c7ab4b8f3f1"
+            },
+            {
+              "index": 2,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "ttft_ms",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "11e594f481958c10e3015d0bf0447a22f068a8a647f475df15ce2c7ab4b8f3f1",
+              "event": {
+                "fields": [
+                  "message",
+                  "type"
+                ],
+                "type": "message_start"
+              }
+            },
+            {
+              "index": 3,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "11e594f481958c10e3015d0bf0447a22f068a8a647f475df15ce2c7ab4b8f3f1",
+              "event": {
+                "fields": [
+                  "content_block",
+                  "index",
+                  "type"
+                ],
+                "type": "content_block_start",
+                "contentBlockType": "text"
+              }
+            },
+            {
+              "index": 4,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "11e594f481958c10e3015d0bf0447a22f068a8a647f475df15ce2c7ab4b8f3f1",
+              "event": {
+                "fields": [
+                  "delta",
+                  "index",
+                  "type"
+                ],
+                "type": "content_block_delta",
+                "deltaType": "text_delta"
+              }
+            },
+            {
+              "index": 5,
+              "fields": [
+                "message",
+                "parent_tool_use_id",
+                "request_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "assistant",
+              "sessionIdSha256": "11e594f481958c10e3015d0bf0447a22f068a8a647f475df15ce2c7ab4b8f3f1",
+              "message": {
+                "fields": [
+                  "content",
+                  "context_management",
+                  "id",
+                  "model",
+                  "role",
+                  "stop_reason",
+                  "stop_sequence",
+                  "type",
+                  "usage"
+                ],
+                "role": "assistant",
+                "content": {
+                  "kind": "blocks",
+                  "count": 1,
+                  "blocks": [
+                    {
+                      "type": "text",
+                      "fields": [
+                        "text",
+                        "type"
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "index": 6,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "11e594f481958c10e3015d0bf0447a22f068a8a647f475df15ce2c7ab4b8f3f1",
+              "event": {
+                "fields": [
+                  "index",
+                  "type"
+                ],
+                "type": "content_block_stop"
+              }
+            },
+            {
+              "index": 7,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "11e594f481958c10e3015d0bf0447a22f068a8a647f475df15ce2c7ab4b8f3f1",
+              "event": {
+                "fields": [
+                  "delta",
+                  "type",
+                  "usage"
+                ],
+                "type": "message_delta"
+              }
+            },
+            {
+              "index": 8,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "11e594f481958c10e3015d0bf0447a22f068a8a647f475df15ce2c7ab4b8f3f1",
+              "event": {
+                "fields": [
+                  "type"
+                ],
+                "type": "message_stop"
+              }
+            },
+            {
+              "index": 9,
+              "fields": [
+                "api_error_status",
+                "duration_api_ms",
+                "duration_ms",
+                "fast_mode_state",
+                "is_error",
+                "modelUsage",
+                "num_turns",
+                "permission_denials",
+                "result",
+                "session_id",
+                "stop_reason",
+                "subtype",
+                "terminal_reason",
+                "time_to_request_ms",
+                "total_cost_usd",
+                "ttft_ms",
+                "ttft_stream_ms",
+                "type",
+                "usage",
+                "uuid"
+              ],
+              "type": "result",
+              "subtype": "success",
+              "sessionIdSha256": "11e594f481958c10e3015d0bf0447a22f068a8a647f475df15ce2c7ab4b8f3f1",
+              "result": {
+                "kind": "string",
+                "bytes": 16,
+                "sha256": "9fe52de10d23043b3e221dbd94be7a4a9b9323b6ed82dae61058bb80ab463370"
+              }
+            }
+          ]
+        },
+        "stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "lineCount": 0,
+          "jsonLineCount": 0,
+          "nonJsonCount": 0,
+          "eventOrder": [],
+          "entries": []
+        }
+      },
+      "transport": {
+        "requestCount": 1,
+        "requestOrder": [
+          "POST /v1/messages"
+        ],
+        "requests": [
+          {
+            "method": "POST",
+            "pathname": "/v1/messages",
+            "queryFieldNames": [
+              "beta"
+            ],
+            "headerNames": [
+              "accept",
+              "accept-encoding",
+              "anthropic-beta",
+              "anthropic-dangerous-direct-browser-access",
+              "anthropic-version",
+              "connection",
+              "content-length",
+              "content-type",
+              "host",
+              "user-agent",
+              "x-api-key",
+              "x-app",
+              "x-claude-code-session-id",
+              "x-stainless-arch",
+              "x-stainless-lang",
+              "x-stainless-os",
+              "x-stainless-package-version",
+              "x-stainless-retry-count",
+              "x-stainless-runtime",
+              "x-stainless-runtime-version",
+              "x-stainless-timeout"
+            ],
+            "bodyBytes": 1224,
+            "bodySha256": "1d1d4d2e59f3551c1fa5f1efee0fe1d16fb18d7036bbf27bddea5a6f5d202120",
+            "bodyParsedAsJson": true,
+            "topLevelFields": [
+              "context_management",
+              "max_tokens",
+              "messages",
+              "metadata",
+              "model",
+              "output_config",
+              "stream",
+              "system",
+              "thinking",
+              "tools"
+            ],
+            "model": {
+              "bytes": 19,
+              "sha256": "204c888d8a85ac9c3d569731f0a9e0ca5dc8b2285428a80da005bd0234ab3009"
+            },
+            "stream": true,
+            "maxTokens": 32000,
+            "system": {
+              "kind": "blocks",
+              "count": 3,
+              "blocks": [
+                {
+                  "type": "text",
+                  "fields": [
+                    "text",
+                    "type"
+                  ]
+                },
+                {
+                  "type": "text",
+                  "fields": [
+                    "cache_control",
+                    "text",
+                    "type"
+                  ]
+                },
+                {
+                  "type": "text",
+                  "fields": [
+                    "cache_control",
+                    "text",
+                    "type"
+                  ]
+                }
+              ]
+            },
+            "messages": [
+              {
+                "fields": [
+                  "content",
+                  "role"
+                ],
+                "role": "user",
+                "content": {
+                  "kind": "blocks",
+                  "count": 2,
+                  "blocks": [
+                    {
+                      "type": "text",
+                      "fields": [
+                        "text",
+                        "type"
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "fields": [
+                        "cache_control",
+                        "text",
+                        "type"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "tools": {
+              "count": 0,
+              "names": [],
+              "fieldSets": []
+            }
+          }
+        ],
+        "unexpectedRequests": [],
+        "messageRequestCount": 1
+      },
+      "filesystem": {
+        "createdCount": 2,
+        "modifiedCount": 0,
+        "deletedCount": 0,
+        "changes": {
+          "created": [
+            {
+              "path": "home/.claude/.claude.json",
+              "bytes": 258,
+              "sha256": "b6b0b0abff9f2933de3aafc8858a0229bd4a3df8363d61e9d02ae50dd0c4b67a",
+              "mode": "600"
+            },
+            {
+              "path": "home/.claude/backups/.claude.json.backup.$EPOCH_MS",
+              "bytes": 50,
+              "sha256": "be2b22c75e987a63a2cfd5bb307c59013aedbb4a7a415c3f08cb9cac28ba4622",
+              "mode": "600"
+            }
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "transcriptCount": 0,
+        "processSentinel": {
+          "present": false
+        }
+      }
+    },
+    {
+      "label": "tool-loop",
+      "invocation": {
+        "mode": "bare-safe-print",
+        "optionNames": [
+          "--print",
+          "--output-format",
+          "--verbose",
+          "--include-partial-messages",
+          "--model",
+          "--system-prompt",
+          "--bare",
+          "--safe-mode",
+          "--no-chrome",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "--session-id",
+          "--tools",
+          "--allowedTools",
+          "--dangerously-skip-permissions"
+        ],
+        "tools": [
+          "Read",
+          "Bash"
+        ],
+        "persistenceEnabled": true,
+        "syntheticPrompt": {
+          "bytes": 41,
+          "sha256": "3de5365d21506b0325f3147c067d128d879eb2493c7826a43c0fddccab3633ce"
+        },
+        "syntheticSystemPrompt": {
+          "bytes": 20,
+          "sha256": "b14d155a449f56a4991eaa3b978f3e7a189b280a34af6f01797391defa5583e0"
+        },
+        "fixture": {
+          "bytes": 26,
+          "sha256": "57f1a8465e7231646458689cd07d4d4fef98b654b977e9021e427fbc8eab15cb",
+          "mode": "600"
+        }
+      },
+      "process": {
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "durationMs": 369,
+        "stdout": {
+          "bytes": 10418,
+          "sha256": "acc88bd5eb78731f4551b89c781648689aff9f33be1439bd4f5d6fc82ac1e2a5",
+          "lineCount": 28,
+          "jsonLineCount": 28,
+          "nonJsonCount": 0,
+          "eventOrder": [
+            "system:init",
+            "system:status",
+            "stream_event",
+            "stream_event",
+            "stream_event",
+            "assistant",
+            "stream_event",
+            "stream_event",
+            "stream_event",
+            "user",
+            "system:status",
+            "stream_event",
+            "stream_event",
+            "stream_event",
+            "assistant",
+            "stream_event",
+            "stream_event",
+            "stream_event",
+            "user",
+            "system:status",
+            "stream_event",
+            "stream_event",
+            "stream_event",
+            "assistant",
+            "stream_event",
+            "stream_event",
+            "stream_event",
+            "result:success"
+          ],
+          "entries": [
+            {
+              "index": 0,
+              "fields": [
+                "agents",
+                "analytics_disabled",
+                "apiKeySource",
+                "claude_code_version",
+                "cwd",
+                "fast_mode_state",
+                "mcp_servers",
+                "model",
+                "output_style",
+                "permissionMode",
+                "plugins",
+                "product_feedback_disabled",
+                "session_id",
+                "skills",
+                "slash_commands",
+                "subtype",
+                "tools",
+                "type",
+                "uuid"
+              ],
+              "type": "system",
+              "subtype": "init",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439"
+            },
+            {
+              "index": 1,
+              "fields": [
+                "session_id",
+                "status",
+                "subtype",
+                "type",
+                "uuid"
+              ],
+              "type": "system",
+              "subtype": "status",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439"
+            },
+            {
+              "index": 2,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "ttft_ms",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "event": {
+                "fields": [
+                  "message",
+                  "type"
+                ],
+                "type": "message_start"
+              }
+            },
+            {
+              "index": 3,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "event": {
+                "fields": [
+                  "content_block",
+                  "index",
+                  "type"
+                ],
+                "type": "content_block_start",
+                "contentBlockType": "tool_use"
+              }
+            },
+            {
+              "index": 4,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "event": {
+                "fields": [
+                  "delta",
+                  "index",
+                  "type"
+                ],
+                "type": "content_block_delta",
+                "deltaType": "input_json_delta"
+              }
+            },
+            {
+              "index": 5,
+              "fields": [
+                "message",
+                "parent_tool_use_id",
+                "request_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "assistant",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "message": {
+                "fields": [
+                  "content",
+                  "context_management",
+                  "id",
+                  "model",
+                  "role",
+                  "stop_reason",
+                  "stop_sequence",
+                  "type",
+                  "usage"
+                ],
+                "role": "assistant",
+                "content": {
+                  "kind": "blocks",
+                  "count": 1,
+                  "blocks": [
+                    {
+                      "type": "tool_use",
+                      "fields": [
+                        "id",
+                        "input",
+                        "name",
+                        "type"
+                      ],
+                      "toolName": "Read",
+                      "input": {
+                        "kind": "object",
+                        "fields": [
+                          "file_path"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "index": 6,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "event": {
+                "fields": [
+                  "index",
+                  "type"
+                ],
+                "type": "content_block_stop"
+              }
+            },
+            {
+              "index": 7,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "event": {
+                "fields": [
+                  "delta",
+                  "type",
+                  "usage"
+                ],
+                "type": "message_delta"
+              }
+            },
+            {
+              "index": 8,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "event": {
+                "fields": [
+                  "type"
+                ],
+                "type": "message_stop"
+              }
+            },
+            {
+              "index": 9,
+              "fields": [
+                "message",
+                "parent_tool_use_id",
+                "session_id",
+                "timestamp",
+                "tool_use_result",
+                "type",
+                "uuid"
+              ],
+              "type": "user",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "message": {
+                "fields": [
+                  "content",
+                  "role"
+                ],
+                "role": "user",
+                "content": {
+                  "kind": "blocks",
+                  "count": 1,
+                  "blocks": [
+                    {
+                      "type": "tool_result",
+                      "fields": [
+                        "content",
+                        "tool_use_id",
+                        "type"
+                      ],
+                      "content": {
+                        "kind": "string",
+                        "bytes": 30,
+                        "sha256": "75c34091ad8d6b855b6202dc0cc53578468ab3b49817bb16a88b66e0e8c42f23"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "index": 10,
+              "fields": [
+                "session_id",
+                "status",
+                "subtype",
+                "type",
+                "uuid"
+              ],
+              "type": "system",
+              "subtype": "status",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439"
+            },
+            {
+              "index": 11,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "ttft_ms",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "event": {
+                "fields": [
+                  "message",
+                  "type"
+                ],
+                "type": "message_start"
+              }
+            },
+            {
+              "index": 12,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "event": {
+                "fields": [
+                  "content_block",
+                  "index",
+                  "type"
+                ],
+                "type": "content_block_start",
+                "contentBlockType": "tool_use"
+              }
+            },
+            {
+              "index": 13,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "event": {
+                "fields": [
+                  "delta",
+                  "index",
+                  "type"
+                ],
+                "type": "content_block_delta",
+                "deltaType": "input_json_delta"
+              }
+            },
+            {
+              "index": 14,
+              "fields": [
+                "message",
+                "parent_tool_use_id",
+                "request_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "assistant",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "message": {
+                "fields": [
+                  "content",
+                  "context_management",
+                  "id",
+                  "model",
+                  "role",
+                  "stop_reason",
+                  "stop_sequence",
+                  "type",
+                  "usage"
+                ],
+                "role": "assistant",
+                "content": {
+                  "kind": "blocks",
+                  "count": 1,
+                  "blocks": [
+                    {
+                      "type": "tool_use",
+                      "fields": [
+                        "id",
+                        "input",
+                        "name",
+                        "type"
+                      ],
+                      "toolName": "Bash",
+                      "input": {
+                        "kind": "object",
+                        "fields": [
+                          "command",
+                          "description"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "index": 15,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "event": {
+                "fields": [
+                  "index",
+                  "type"
+                ],
+                "type": "content_block_stop"
+              }
+            },
+            {
+              "index": 16,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "event": {
+                "fields": [
+                  "delta",
+                  "type",
+                  "usage"
+                ],
+                "type": "message_delta"
+              }
+            },
+            {
+              "index": 17,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "event": {
+                "fields": [
+                  "type"
+                ],
+                "type": "message_stop"
+              }
+            },
+            {
+              "index": 18,
+              "fields": [
+                "message",
+                "parent_tool_use_id",
+                "session_id",
+                "timestamp",
+                "tool_use_result",
+                "type",
+                "uuid"
+              ],
+              "type": "user",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "message": {
+                "fields": [
+                  "content",
+                  "role"
+                ],
+                "role": "user",
+                "content": {
+                  "kind": "blocks",
+                  "count": 1,
+                  "blocks": [
+                    {
+                      "type": "tool_result",
+                      "fields": [
+                        "content",
+                        "is_error",
+                        "tool_use_id",
+                        "type"
+                      ],
+                      "isError": false,
+                      "content": {
+                        "kind": "string",
+                        "bytes": 31,
+                        "sha256": "cac1685585590361647e7a27b58a25a590f335bfcd0ab70fcdc0424e40c20843"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "index": 19,
+              "fields": [
+                "session_id",
+                "status",
+                "subtype",
+                "type",
+                "uuid"
+              ],
+              "type": "system",
+              "subtype": "status",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439"
+            },
+            {
+              "index": 20,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "ttft_ms",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "event": {
+                "fields": [
+                  "message",
+                  "type"
+                ],
+                "type": "message_start"
+              }
+            },
+            {
+              "index": 21,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "event": {
+                "fields": [
+                  "content_block",
+                  "index",
+                  "type"
+                ],
+                "type": "content_block_start",
+                "contentBlockType": "text"
+              }
+            },
+            {
+              "index": 22,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "event": {
+                "fields": [
+                  "delta",
+                  "index",
+                  "type"
+                ],
+                "type": "content_block_delta",
+                "deltaType": "text_delta"
+              }
+            },
+            {
+              "index": 23,
+              "fields": [
+                "message",
+                "parent_tool_use_id",
+                "request_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "assistant",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "message": {
+                "fields": [
+                  "content",
+                  "context_management",
+                  "id",
+                  "model",
+                  "role",
+                  "stop_reason",
+                  "stop_sequence",
+                  "type",
+                  "usage"
+                ],
+                "role": "assistant",
+                "content": {
+                  "kind": "blocks",
+                  "count": 1,
+                  "blocks": [
+                    {
+                      "type": "text",
+                      "fields": [
+                        "text",
+                        "type"
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "index": 24,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "event": {
+                "fields": [
+                  "index",
+                  "type"
+                ],
+                "type": "content_block_stop"
+              }
+            },
+            {
+              "index": 25,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "event": {
+                "fields": [
+                  "delta",
+                  "type",
+                  "usage"
+                ],
+                "type": "message_delta"
+              }
+            },
+            {
+              "index": 26,
+              "fields": [
+                "event",
+                "parent_tool_use_id",
+                "session_id",
+                "type",
+                "uuid"
+              ],
+              "type": "stream_event",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "event": {
+                "fields": [
+                  "type"
+                ],
+                "type": "message_stop"
+              }
+            },
+            {
+              "index": 27,
+              "fields": [
+                "api_error_status",
+                "duration_api_ms",
+                "duration_ms",
+                "fast_mode_state",
+                "is_error",
+                "modelUsage",
+                "num_turns",
+                "permission_denials",
+                "result",
+                "session_id",
+                "stop_reason",
+                "subtype",
+                "terminal_reason",
+                "time_to_request_ms",
+                "total_cost_usd",
+                "ttft_ms",
+                "ttft_stream_ms",
+                "type",
+                "usage",
+                "uuid"
+              ],
+              "type": "result",
+              "subtype": "success",
+              "sessionIdSha256": "e79acd97ac88086665d85a762f43d533a45195b6bac5961a993e6ed362471439",
+              "result": {
+                "kind": "string",
+                "bytes": 20,
+                "sha256": "20ddded2c9ea630ba9cf30a6bf9ef446341167f903d41cc90346b5ca44c808ba"
+              }
+            }
+          ]
+        },
+        "stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "lineCount": 0,
+          "jsonLineCount": 0,
+          "nonJsonCount": 0,
+          "eventOrder": [],
+          "entries": []
+        }
+      },
+      "transport": {
+        "requestCount": 3,
+        "requestOrder": [
+          "POST /v1/messages",
+          "POST /v1/messages",
+          "POST /v1/messages"
+        ],
+        "requests": [
+          {
+            "method": "POST",
+            "pathname": "/v1/messages",
+            "queryFieldNames": [
+              "beta"
+            ],
+            "headerNames": [
+              "accept",
+              "accept-encoding",
+              "anthropic-beta",
+              "anthropic-dangerous-direct-browser-access",
+              "anthropic-version",
+              "connection",
+              "content-length",
+              "content-type",
+              "host",
+              "user-agent",
+              "x-api-key",
+              "x-app",
+              "x-claude-code-session-id",
+              "x-stainless-arch",
+              "x-stainless-lang",
+              "x-stainless-os",
+              "x-stainless-package-version",
+              "x-stainless-retry-count",
+              "x-stainless-runtime",
+              "x-stainless-runtime-version",
+              "x-stainless-timeout"
+            ],
+            "bodyBytes": 3523,
+            "bodySha256": "461f39cdd7c365b2fdefa1372a34da49933e147abea54ce3ec9982b4d6757306",
+            "bodyParsedAsJson": true,
+            "topLevelFields": [
+              "context_management",
+              "max_tokens",
+              "messages",
+              "metadata",
+              "model",
+              "output_config",
+              "stream",
+              "system",
+              "thinking",
+              "tools"
+            ],
+            "model": {
+              "bytes": 19,
+              "sha256": "204c888d8a85ac9c3d569731f0a9e0ca5dc8b2285428a80da005bd0234ab3009"
+            },
+            "stream": true,
+            "maxTokens": 32000,
+            "system": {
+              "kind": "blocks",
+              "count": 3,
+              "blocks": [
+                {
+                  "type": "text",
+                  "fields": [
+                    "text",
+                    "type"
+                  ]
+                },
+                {
+                  "type": "text",
+                  "fields": [
+                    "cache_control",
+                    "text",
+                    "type"
+                  ]
+                },
+                {
+                  "type": "text",
+                  "fields": [
+                    "cache_control",
+                    "text",
+                    "type"
+                  ]
+                }
+              ]
+            },
+            "messages": [
+              {
+                "fields": [
+                  "content",
+                  "role"
+                ],
+                "role": "user",
+                "content": {
+                  "kind": "blocks",
+                  "count": 2,
+                  "blocks": [
+                    {
+                      "type": "text",
+                      "fields": [
+                        "text",
+                        "type"
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "fields": [
+                        "cache_control",
+                        "text",
+                        "type"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "tools": {
+              "count": 2,
+              "names": [
+                "Bash",
+                "Read"
+              ],
+              "fieldSets": [
+                [
+                  "description",
+                  "input_schema",
+                  "name"
+                ],
+                [
+                  "description",
+                  "input_schema",
+                  "name"
+                ]
+              ]
+            }
+          },
+          {
+            "method": "POST",
+            "pathname": "/v1/messages",
+            "queryFieldNames": [
+              "beta"
+            ],
+            "headerNames": [
+              "accept",
+              "accept-encoding",
+              "anthropic-beta",
+              "anthropic-dangerous-direct-browser-access",
+              "anthropic-version",
+              "connection",
+              "content-length",
+              "content-type",
+              "host",
+              "user-agent",
+              "x-api-key",
+              "x-app",
+              "x-claude-code-session-id",
+              "x-stainless-arch",
+              "x-stainless-lang",
+              "x-stainless-os",
+              "x-stainless-package-version",
+              "x-stainless-retry-count",
+              "x-stainless-runtime",
+              "x-stainless-runtime-version",
+              "x-stainless-timeout"
+            ],
+            "bodyBytes": 3895,
+            "bodySha256": "40e2ee96874f9f06dd686493e43b6d9cfe2894dab5a4db814dec7939f18e0ecf",
+            "bodyParsedAsJson": true,
+            "topLevelFields": [
+              "context_management",
+              "max_tokens",
+              "messages",
+              "metadata",
+              "model",
+              "output_config",
+              "stream",
+              "system",
+              "thinking",
+              "tools"
+            ],
+            "model": {
+              "bytes": 19,
+              "sha256": "204c888d8a85ac9c3d569731f0a9e0ca5dc8b2285428a80da005bd0234ab3009"
+            },
+            "stream": true,
+            "maxTokens": 32000,
+            "system": {
+              "kind": "blocks",
+              "count": 3,
+              "blocks": [
+                {
+                  "type": "text",
+                  "fields": [
+                    "text",
+                    "type"
+                  ]
+                },
+                {
+                  "type": "text",
+                  "fields": [
+                    "cache_control",
+                    "text",
+                    "type"
+                  ]
+                },
+                {
+                  "type": "text",
+                  "fields": [
+                    "cache_control",
+                    "text",
+                    "type"
+                  ]
+                }
+              ]
+            },
+            "messages": [
+              {
+                "fields": [
+                  "content",
+                  "role"
+                ],
+                "role": "user",
+                "content": {
+                  "kind": "blocks",
+                  "count": 2,
+                  "blocks": [
+                    {
+                      "type": "text",
+                      "fields": [
+                        "text",
+                        "type"
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "fields": [
+                        "text",
+                        "type"
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "fields": [
+                  "content",
+                  "role"
+                ],
+                "role": "assistant",
+                "content": {
+                  "kind": "blocks",
+                  "count": 1,
+                  "blocks": [
+                    {
+                      "type": "tool_use",
+                      "fields": [
+                        "id",
+                        "input",
+                        "name",
+                        "type"
+                      ],
+                      "toolName": "Read",
+                      "input": {
+                        "kind": "object",
+                        "fields": [
+                          "file_path"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "fields": [
+                  "content",
+                  "role"
+                ],
+                "role": "user",
+                "content": {
+                  "kind": "blocks",
+                  "count": 1,
+                  "blocks": [
+                    {
+                      "type": "tool_result",
+                      "fields": [
+                        "cache_control",
+                        "content",
+                        "tool_use_id",
+                        "type"
+                      ],
+                      "content": {
+                        "kind": "string",
+                        "bytes": 30,
+                        "sha256": "75c34091ad8d6b855b6202dc0cc53578468ab3b49817bb16a88b66e0e8c42f23"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "tools": {
+              "count": 2,
+              "names": [
+                "Bash",
+                "Read"
+              ],
+              "fieldSets": [
+                [
+                  "description",
+                  "input_schema",
+                  "name"
+                ],
+                [
+                  "description",
+                  "input_schema",
+                  "name"
+                ]
+              ]
+            }
+          },
+          {
+            "method": "POST",
+            "pathname": "/v1/messages",
+            "queryFieldNames": [
+              "beta"
+            ],
+            "headerNames": [
+              "accept",
+              "accept-encoding",
+              "anthropic-beta",
+              "anthropic-dangerous-direct-browser-access",
+              "anthropic-version",
+              "connection",
+              "content-length",
+              "content-type",
+              "host",
+              "user-agent",
+              "x-api-key",
+              "x-app",
+              "x-claude-code-session-id",
+              "x-stainless-arch",
+              "x-stainless-lang",
+              "x-stainless-os",
+              "x-stainless-package-version",
+              "x-stainless-retry-count",
+              "x-stainless-runtime",
+              "x-stainless-runtime-version",
+              "x-stainless-timeout"
+            ],
+            "bodyBytes": 4376,
+            "bodySha256": "4feaca77e34daf7300719953a0c1b230160bb96cc9c8ddc6ad5e01a95c3dfe9c",
+            "bodyParsedAsJson": true,
+            "topLevelFields": [
+              "context_management",
+              "max_tokens",
+              "messages",
+              "metadata",
+              "model",
+              "output_config",
+              "stream",
+              "system",
+              "thinking",
+              "tools"
+            ],
+            "model": {
+              "bytes": 19,
+              "sha256": "204c888d8a85ac9c3d569731f0a9e0ca5dc8b2285428a80da005bd0234ab3009"
+            },
+            "stream": true,
+            "maxTokens": 32000,
+            "system": {
+              "kind": "blocks",
+              "count": 3,
+              "blocks": [
+                {
+                  "type": "text",
+                  "fields": [
+                    "text",
+                    "type"
+                  ]
+                },
+                {
+                  "type": "text",
+                  "fields": [
+                    "cache_control",
+                    "text",
+                    "type"
+                  ]
+                },
+                {
+                  "type": "text",
+                  "fields": [
+                    "cache_control",
+                    "text",
+                    "type"
+                  ]
+                }
+              ]
+            },
+            "messages": [
+              {
+                "fields": [
+                  "content",
+                  "role"
+                ],
+                "role": "user",
+                "content": {
+                  "kind": "blocks",
+                  "count": 2,
+                  "blocks": [
+                    {
+                      "type": "text",
+                      "fields": [
+                        "text",
+                        "type"
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "fields": [
+                        "text",
+                        "type"
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "fields": [
+                  "content",
+                  "role"
+                ],
+                "role": "assistant",
+                "content": {
+                  "kind": "blocks",
+                  "count": 1,
+                  "blocks": [
+                    {
+                      "type": "tool_use",
+                      "fields": [
+                        "id",
+                        "input",
+                        "name",
+                        "type"
+                      ],
+                      "toolName": "Read",
+                      "input": {
+                        "kind": "object",
+                        "fields": [
+                          "file_path"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "fields": [
+                  "content",
+                  "role"
+                ],
+                "role": "user",
+                "content": {
+                  "kind": "blocks",
+                  "count": 1,
+                  "blocks": [
+                    {
+                      "type": "tool_result",
+                      "fields": [
+                        "content",
+                        "tool_use_id",
+                        "type"
+                      ],
+                      "content": {
+                        "kind": "string",
+                        "bytes": 30,
+                        "sha256": "75c34091ad8d6b855b6202dc0cc53578468ab3b49817bb16a88b66e0e8c42f23"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "fields": [
+                  "content",
+                  "role"
+                ],
+                "role": "assistant",
+                "content": {
+                  "kind": "blocks",
+                  "count": 1,
+                  "blocks": [
+                    {
+                      "type": "tool_use",
+                      "fields": [
+                        "id",
+                        "input",
+                        "name",
+                        "type"
+                      ],
+                      "toolName": "Bash",
+                      "input": {
+                        "kind": "object",
+                        "fields": [
+                          "command",
+                          "description"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "fields": [
+                  "content",
+                  "role"
+                ],
+                "role": "user",
+                "content": {
+                  "kind": "blocks",
+                  "count": 1,
+                  "blocks": [
+                    {
+                      "type": "tool_result",
+                      "fields": [
+                        "cache_control",
+                        "content",
+                        "is_error",
+                        "tool_use_id",
+                        "type"
+                      ],
+                      "isError": false,
+                      "content": {
+                        "kind": "string",
+                        "bytes": 31,
+                        "sha256": "cac1685585590361647e7a27b58a25a590f335bfcd0ab70fcdc0424e40c20843"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "tools": {
+              "count": 2,
+              "names": [
+                "Bash",
+                "Read"
+              ],
+              "fieldSets": [
+                [
+                  "description",
+                  "input_schema",
+                  "name"
+                ],
+                [
+                  "description",
+                  "input_schema",
+                  "name"
+                ]
+              ]
+            }
+          }
+        ],
+        "unexpectedRequests": [],
+        "messageRequestCount": 3
+      },
+      "filesystem": {
+        "createdCount": 4,
+        "modifiedCount": 0,
+        "deletedCount": 0,
+        "changes": {
+          "created": [
+            {
+              "path": "home/.claude/.claude.json",
+              "bytes": 258,
+              "sha256": "86eb114c7c6ef9e9b9d6f65359f710347fe6646841ba02082b03db21ad932fe9",
+              "mode": "600"
+            },
+            {
+              "path": "home/.claude/backups/.claude.json.backup.$EPOCH_MS",
+              "bytes": 50,
+              "sha256": "73665adaef34526ec752e18cd7d58ced858e1701625c81a4267d97a40289796c",
+              "mode": "600"
+            },
+            {
+              "path": "home/.claude/projects/$PROJECT_KEY/$UUID.jsonl",
+              "bytes": 6246,
+              "sha256": "fe281f441e2154a53aa14d669c6bc1688cbd14777665d4cc4017ca8511b730eb",
+              "mode": "600",
+              "jsonLines": {
+                "bytes": 6246,
+                "sha256": "fe281f441e2154a53aa14d669c6bc1688cbd14777665d4cc4017ca8511b730eb",
+                "lineCount": 9,
+                "jsonLineCount": 9,
+                "nonJsonCount": 0,
+                "eventOrder": [
+                  "queue-operation",
+                  "queue-operation",
+                  "user",
+                  "assistant",
+                  "user",
+                  "assistant",
+                  "user",
+                  "assistant",
+                  "last-prompt"
+                ],
+                "entries": [
+                  {
+                    "index": 0,
+                    "fields": [
+                      "content",
+                      "operation",
+                      "sessionId",
+                      "timestamp",
+                      "type"
+                    ],
+                    "type": "queue-operation",
+                    "content": {
+                      "kind": "string",
+                      "bytes": 41,
+                      "sha256": "3de5365d21506b0325f3147c067d128d879eb2493c7826a43c0fddccab3633ce"
+                    }
+                  },
+                  {
+                    "index": 1,
+                    "fields": [
+                      "operation",
+                      "sessionId",
+                      "timestamp",
+                      "type"
+                    ],
+                    "type": "queue-operation"
+                  },
+                  {
+                    "index": 2,
+                    "fields": [
+                      "cwd",
+                      "entrypoint",
+                      "gitBranch",
+                      "isSidechain",
+                      "message",
+                      "parentUuid",
+                      "permissionMode",
+                      "promptId",
+                      "promptSource",
+                      "sessionId",
+                      "timestamp",
+                      "type",
+                      "userType",
+                      "uuid",
+                      "version"
+                    ],
+                    "type": "user",
+                    "message": {
+                      "fields": [
+                        "content",
+                        "role"
+                      ],
+                      "role": "user",
+                      "content": {
+                        "kind": "string",
+                        "bytes": 41,
+                        "sha256": "3de5365d21506b0325f3147c067d128d879eb2493c7826a43c0fddccab3633ce"
+                      }
+                    }
+                  },
+                  {
+                    "index": 3,
+                    "fields": [
+                      "cwd",
+                      "entrypoint",
+                      "gitBranch",
+                      "isSidechain",
+                      "message",
+                      "parentUuid",
+                      "requestId",
+                      "sessionId",
+                      "timestamp",
+                      "type",
+                      "userType",
+                      "uuid",
+                      "version"
+                    ],
+                    "type": "assistant",
+                    "message": {
+                      "fields": [
+                        "content",
+                        "id",
+                        "model",
+                        "role",
+                        "stop_details",
+                        "stop_reason",
+                        "stop_sequence",
+                        "type",
+                        "usage"
+                      ],
+                      "role": "assistant",
+                      "content": {
+                        "kind": "blocks",
+                        "count": 1,
+                        "blocks": [
+                          {
+                            "type": "tool_use",
+                            "fields": [
+                              "id",
+                              "input",
+                              "name",
+                              "type"
+                            ],
+                            "toolName": "Read",
+                            "input": {
+                              "kind": "object",
+                              "fields": [
+                                "file_path"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "index": 4,
+                    "fields": [
+                      "cwd",
+                      "entrypoint",
+                      "gitBranch",
+                      "isSidechain",
+                      "message",
+                      "parentUuid",
+                      "promptId",
+                      "sessionId",
+                      "sourceToolAssistantUUID",
+                      "timestamp",
+                      "toolUseResult",
+                      "type",
+                      "userType",
+                      "uuid",
+                      "version"
+                    ],
+                    "type": "user",
+                    "message": {
+                      "fields": [
+                        "content",
+                        "role"
+                      ],
+                      "role": "user",
+                      "content": {
+                        "kind": "blocks",
+                        "count": 1,
+                        "blocks": [
+                          {
+                            "type": "tool_result",
+                            "fields": [
+                              "content",
+                              "tool_use_id",
+                              "type"
+                            ],
+                            "content": {
+                              "kind": "string",
+                              "bytes": 30,
+                              "sha256": "75c34091ad8d6b855b6202dc0cc53578468ab3b49817bb16a88b66e0e8c42f23"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "index": 5,
+                    "fields": [
+                      "cwd",
+                      "entrypoint",
+                      "gitBranch",
+                      "isSidechain",
+                      "message",
+                      "parentUuid",
+                      "requestId",
+                      "sessionId",
+                      "timestamp",
+                      "type",
+                      "userType",
+                      "uuid",
+                      "version"
+                    ],
+                    "type": "assistant",
+                    "message": {
+                      "fields": [
+                        "content",
+                        "id",
+                        "model",
+                        "role",
+                        "stop_details",
+                        "stop_reason",
+                        "stop_sequence",
+                        "type",
+                        "usage"
+                      ],
+                      "role": "assistant",
+                      "content": {
+                        "kind": "blocks",
+                        "count": 1,
+                        "blocks": [
+                          {
+                            "type": "tool_use",
+                            "fields": [
+                              "id",
+                              "input",
+                              "name",
+                              "type"
+                            ],
+                            "toolName": "Bash",
+                            "input": {
+                              "kind": "object",
+                              "fields": [
+                                "command",
+                                "description"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "index": 6,
+                    "fields": [
+                      "cwd",
+                      "entrypoint",
+                      "gitBranch",
+                      "isSidechain",
+                      "message",
+                      "parentUuid",
+                      "promptId",
+                      "sessionId",
+                      "sourceToolAssistantUUID",
+                      "timestamp",
+                      "toolUseResult",
+                      "type",
+                      "userType",
+                      "uuid",
+                      "version"
+                    ],
+                    "type": "user",
+                    "message": {
+                      "fields": [
+                        "content",
+                        "role"
+                      ],
+                      "role": "user",
+                      "content": {
+                        "kind": "blocks",
+                        "count": 1,
+                        "blocks": [
+                          {
+                            "type": "tool_result",
+                            "fields": [
+                              "content",
+                              "is_error",
+                              "tool_use_id",
+                              "type"
+                            ],
+                            "isError": false,
+                            "content": {
+                              "kind": "string",
+                              "bytes": 31,
+                              "sha256": "cac1685585590361647e7a27b58a25a590f335bfcd0ab70fcdc0424e40c20843"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "index": 7,
+                    "fields": [
+                      "cwd",
+                      "entrypoint",
+                      "gitBranch",
+                      "isSidechain",
+                      "message",
+                      "parentUuid",
+                      "requestId",
+                      "sessionId",
+                      "timestamp",
+                      "type",
+                      "userType",
+                      "uuid",
+                      "version"
+                    ],
+                    "type": "assistant",
+                    "message": {
+                      "fields": [
+                        "content",
+                        "id",
+                        "model",
+                        "role",
+                        "stop_details",
+                        "stop_reason",
+                        "stop_sequence",
+                        "type",
+                        "usage"
+                      ],
+                      "role": "assistant",
+                      "content": {
+                        "kind": "blocks",
+                        "count": 1,
+                        "blocks": [
+                          {
+                            "type": "text",
+                            "fields": [
+                              "text",
+                              "type"
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "index": 8,
+                    "fields": [
+                      "lastPrompt",
+                      "leafUuid",
+                      "sessionId",
+                      "type"
+                    ],
+                    "type": "last-prompt"
+                  }
+                ]
+              }
+            },
+            {
+              "path": "project/process-sentinel.txt",
+              "bytes": 18,
+              "sha256": "fea7cf5d6a124f097ab0e80c1104230f70bb40bfc6d1f7c979f3f426d9afa62f",
+              "mode": "644"
+            }
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "transcriptCount": 1,
+        "processSentinel": {
+          "present": true,
+          "bytes": 18,
+          "sha256": "fea7cf5d6a124f097ab0e80c1104230f70bb40bfc6d1f7c979f3f426d9afa62f",
+          "mode": "644"
+        }
+      }
+    }
+  ],
+  "observations": [
+    {
+      "id": "runtime.safe-startup-direct-post",
+      "basis": "observed-dynamic",
+      "claim": "Both bare-and-safe runs made POST /v1/messages their first loopback request, without the HEAD / preflight seen in the separate core bare-mode probe."
+    },
+    {
+      "id": "runtime.synthetic-turn-stream",
+      "basis": "observed-dynamic",
+      "claim": "A synthetic text response was adapted into stream-json lifecycle records and a success result."
+    },
+    {
+      "id": "runtime.tool-feedback-loop",
+      "basis": "observed-dynamic",
+      "claim": "One user turn executed Read then Bash across three Messages requests, feeding tool results back between requests."
+    },
+    {
+      "id": "runtime.tool-result-cache-boundary",
+      "basis": "observed-dynamic",
+      "claim": "The newest tool_result carried cache_control; on the following request the older result no longer did and the newest result carried it instead."
+    },
+    {
+      "id": "runtime.persistence-boundary",
+      "basis": "observed-dynamic",
+      "claim": "The persistence-enabled tool run created transcript JSONL state; the no-persistence text run did not."
+    },
+    {
+      "id": "runtime.process-file-side-effect",
+      "basis": "observed-dynamic",
+      "claim": "The Bash tool created a synthetic project sentinel under an inherited OS policy that denied non-loopback outbound networking."
+    }
+  ]
+}

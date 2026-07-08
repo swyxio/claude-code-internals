@@ -1,5 +1,7 @@
 # Permission Engine
 
+Visual companion: [settings and permissions map](../maps/settings-permissions.md).
+
 The permission engine decides whether a requested local capability may proceed, must be confirmed, should be denied, or should be constrained by a sandbox. Its effective decision combines mode, rules, managed policy, workspace trust, tool identity, arguments, and environment posture.
 
 ## Advertised modes
@@ -16,6 +18,11 @@ The root CLI accepts six permission modes:
 | `auto` | Use an automatic classifier and configured rule sets |
 
 The table describes advertised intent, not a complete per-tool matrix. In particular, `acceptEdits` should not be read as “allow every tool,” and `dontAsk` should not be equated with bypass.
+
+<span class="evidence-label observed">Observed dynamically</span> In one
+isolated Bash request, `dontAsk` without an allow rule returned an error tool
+result and did not execute. Adding `--allowedTools Bash` produced a non-error
+result and marker. [Permission probe](../dynamics/security-permissions-sandbox.md#dontask-and-explicit-allow).
 
 ## Decision model
 

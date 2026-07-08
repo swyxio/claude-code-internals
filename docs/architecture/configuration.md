@@ -1,5 +1,7 @@
 # Configuration Resolution
 
+Visual companion: [settings and permissions map](../maps/settings-permissions.md).
+
 Configuration is the control plane for tools, permissions, providers, extensions, persistence, integrations, and security posture. The critical distinction is not merely “which setting exists,” but **who supplied it and whether a less-trusted source may override it**.
 
 ## Visible sources
@@ -28,6 +30,12 @@ flowchart TD
 ```
 
 <span class="evidence-label derived">Derived</span> The diagram shows source categories and trust gates, not a complete last-write-wins order. The exact precedence may be key-specific: security policy can prohibit a behavior rather than simply provide a value, while explicit mode flags can suppress entire loaders.
+
+<span class="evidence-label observed">Observed dynamically</span> For the one
+scalar key exercised—model selection—`local` won over persisted user/project
+sources, an explicit settings file won next, and the CLI `--model` flag won
+last. This does not establish array/map merges or security-policy ceilings.
+[Probe and limits](../dynamics/extensions-runtime.md#settings-precedence).
 
 ## Validation behavior
 
@@ -60,4 +68,10 @@ The hook vocabulary includes `ConfigChange`, `InstructionsLoaded`, `CwdChanged`,
 
 ## What remains unknown
 
-The public evidence does not yet encode a complete settings schema, key-by-key source allowlist, or precedence matrix. Environment-variable presence in a bundle can also come from vendor code, tests, or disabled features. The [reference catalog](../reference/files-config-env.md) includes only variables tied to CLI help or a semantic anchor; raw string inventories are not treated as supported API.
+The public evidence does not yet encode a complete settings schema, key-by-key
+source allowlist, or universal precedence matrix. The dynamic model-selector
+result should not be projected onto other keys. Environment-variable presence
+in a bundle can also come from vendor code, tests, or disabled features. The
+[reference catalog](../reference/files-config-env.md) includes only variables
+tied to CLI help or a semantic anchor; raw string inventories are not treated
+as supported API.

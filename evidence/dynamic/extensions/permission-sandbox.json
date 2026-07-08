@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "probe": "permission-and-sandbox-behavior",
+  "safety": {
+    "temporaryHomes": true,
+    "temporaryGitProjects": true,
+    "loopbackProvider": true,
+    "dummyCredential": true,
+    "telemetryDisabled": true,
+    "scriptedBashOnly": true,
+    "writesConfinedToProbeRoots": true,
+    "externalNetworkIntentionallyUsed": false,
+    "outerLoopbackPolicyAppliedToPermissionCases": true,
+    "outerLoopbackPolicyAppliedToNestedSandboxCase": false,
+    "rawCommandsRetained": false,
+    "rawToolResultsRetained": false,
+    "rawPromptsRetained": false
+  },
+  "artifact": {
+    "version": "2.1.177",
+    "sha256": "eb0730351be2f02b482b1855870f5877489085aac86b0c4c1db4e458d9e40ed9",
+    "size": 225124512,
+    "platform": "darwin-arm64"
+  },
+  "permissionCases": [
+    {
+      "name": "dont-ask-without-allow-rule",
+      "run": {
+        "exitCode": 0,
+        "signal": null,
+        "stdoutPresent": true,
+        "stderrPresent": false,
+        "outputTruncated": false
+      },
+      "messagesRequestCount": 2,
+      "command": {
+        "normalizedBytes": 75,
+        "normalizedSha256": "8153f6f77ea12784b57ce3b7ac749623541c0903ee4ecb4bf1acfa77722dae42",
+        "rawRetained": false
+      },
+      "toolResult": {
+        "topLevelKeys": [
+          "cache_control",
+          "content",
+          "is_error",
+          "tool_use_id",
+          "type"
+        ],
+        "isError": true,
+        "contentType": "string"
+      },
+      "markerCreated": false,
+      "markerSha256": null
+    },
+    {
+      "name": "dont-ask-with-cli-allow-rule",
+      "run": {
+        "exitCode": 0,
+        "signal": null,
+        "stdoutPresent": true,
+        "stderrPresent": false,
+        "outputTruncated": false
+      },
+      "messagesRequestCount": 2,
+      "command": {
+        "normalizedBytes": 75,
+        "normalizedSha256": "8153f6f77ea12784b57ce3b7ac749623541c0903ee4ecb4bf1acfa77722dae42",
+        "rawRetained": false
+      },
+      "toolResult": {
+        "topLevelKeys": [
+          "cache_control",
+          "content",
+          "is_error",
+          "tool_use_id",
+          "type"
+        ],
+        "isError": false,
+        "contentType": "string"
+      },
+      "markerCreated": true,
+      "markerSha256": "bfa16c0f93019516102f57731f454d65cc2c5675dfebe532d45ac3a66e69099b"
+    }
+  ],
+  "sandboxCase": {
+    "name": "sandbox-fail-closed",
+    "run": {
+      "exitCode": 0,
+      "signal": null,
+      "stdoutPresent": true,
+      "stderrPresent": false,
+      "outputTruncated": false
+    },
+    "messagesRequestCount": 2,
+    "command": {
+      "normalizedBytes": 185,
+      "normalizedSha256": "5e6ec3b49434eea42d8287aaf9df04f188fe591a9ea08d785386c4922885d9a3",
+      "rawRetained": false
+    },
+    "toolResult": {
+      "topLevelKeys": [
+        "cache_control",
+        "content",
+        "is_error",
+        "tool_use_id",
+        "type"
+      ],
+      "isError": true,
+      "contentType": "string"
+    },
+    "sandboxSettings": {
+      "enabled": true,
+      "failIfUnavailable": true,
+      "autoAllowBashIfSandboxed": true,
+      "allowUnsandboxedCommands": false
+    },
+    "sandboxEnvironmentObserved": false,
+    "cwdWriteCreated": true,
+    "parentWriteCreated": false
+  },
+  "limits": [
+    "The permission probe compares dontAsk with and without one explicit CLI allow rule for a synthetic Bash command.",
+    "The sandbox probe checks one macOS fail-closed command and two temporary write locations; it is not an escape test or a complete policy audit.",
+    "A marker proves execution reached that write; absence can result from permission denial, sandbox denial, or command failure and is interpreted with the tool-result shape."
+  ]
+}

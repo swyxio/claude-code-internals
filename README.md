@@ -1,8 +1,9 @@
 # Claude Code Internals
 
 An evidence-linked, independently written reconstruction of Claude Code's native
-CLI architecture. The project is based on static inspection of the official
-macOS arm64 executable installed by `https://claude.ai/install.sh`.
+CLI architecture. The project combines static inspection with isolated dynamic
+probes of the official macOS arm64 executable installed by
+`https://claude.ai/install.sh`.
 
 **Snapshot:** Claude Code `2.1.177`, build
 `6fae7a072b111776fc95ca221caac31b7439eb25`, SHA-256
@@ -21,12 +22,19 @@ macOS arm64 executable installed by `https://claude.ai/install.sh`.
   state machines, and control-flow pseudocode. It is designed for browsing and
   may not compile.
 - [`evidence/`](evidence/) — artifact provenance, the complete Bun module
-  inventory, CLI help captures, and a machine-readable anchor/claim ledger.
+  inventory, CLI help captures, sanitized dynamic reports, and a
+  machine-readable anchor/claim ledger.
+- [`tools/probes/`](tools/probes/) — loopback provider fixtures and isolated
+  behavioral probes that never retain raw prompts or credentials.
 - [`tools/inspect-binary.mjs`](tools/inspect-binary.mjs) — a dependency-free,
   read-only parser for the `__BUN,__bun` module graph in this exact Mach-O
   packaging format.
 - [`docs/`](docs/) — the detailed GitHub Pages wiki, with architecture,
   extensibility, and security analysis.
+
+Start browsing with the [audience routes](docs/audiences/index.md), [visual map
+index](docs/maps/index.md), or [evidence-to-code
+cross-reference](docs/maps/evidence-code-cross-reference.md).
 
 The terminal UI is intentionally not reconstructed except where a presentation
 boundary affects the underlying protocol or state machine.
@@ -70,6 +78,25 @@ npm run check
 ignored `.work/` tree unless told otherwise. Do not commit the output. The
 public evidence records content hashes and byte offsets so a lawful local copy
 can be checked without republishing it.
+
+## Reproduce the dynamic probes
+
+The probes execute the exact pinned binary with temporary homes/projects,
+synthetic fixtures, dummy credentials, and loopback providers. Raw prompts,
+credentials, request bodies, transcripts, and command output are discarded;
+only structural summaries and hashes are committed.
+
+```bash
+npm run probe:core
+npm run probe:runtime
+npm run probe:extensions
+npm run validate
+```
+
+The runtime suite requires macOS `sandbox-exec` and denies non-loopback
+outbound sockets for the CLI and its child processes. The nested product
+sandbox case is intentionally not wrapped in a second Seatbelt profile because
+that would change the sandbox-availability behavior being tested.
 
 ## Evidence model
 

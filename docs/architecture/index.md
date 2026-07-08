@@ -2,6 +2,9 @@
 
 Claude Code `2.1.177` packages a local orchestration system into one native executable. The executable embeds a Bun runtime, a large application module, binding loaders, and platform-native add-ons. The model is reached over a provider transport; the client remains responsible for assembling context and executing local capabilities.
 
+For a compact linked view, use the [visual system map](../maps/system-map.md)
+and [execution-flow map](../maps/execution-flow.md).
+
 ## Architectural layers
 
 ```mermaid

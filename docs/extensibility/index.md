@@ -1,5 +1,7 @@
 # Extension Surface Map
 
+Visual companion: [linked extension-surface map](../maps/extension-surfaces.md).
+
 Claude Code has no single extension API. It composes instructions, lifecycle callbacks, tool providers, agents, plugins, protocol adapters, and external integrations. A useful extension model identifies both **what is extended** and **what authority the extension receives**.
 
 ## Surface matrix

@@ -1,5 +1,7 @@
 # Threat Model and Disclosure
 
+Visual companion: [threat model and control register](../maps/threat-model.md).
+
 This atlas documents mechanisms and review surfaces. It does not publish uncoordinated vulnerabilities, exploit chains, credentials, or attack tooling.
 
 ## Threat scenarios

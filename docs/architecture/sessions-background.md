@@ -1,5 +1,7 @@
 # Sessions and Background Work
 
+Visual companion: [persistence and data-flow map](../maps/persistence-dataflow.md).
+
 Sessions provide identity and persistence around the agent loop. Background agents, workflows, worktrees, and remote control add work that can outlive a foreground response, so lifecycle and storage must be considered together.
 
 ## Session identity operations
@@ -21,6 +23,12 @@ The CLI exposes:
 The `project purge [path]` help description names four categories it deletes: transcripts, tasks, file history, and a configuration entry. That is direct evidence that these categories belong to project state, though it does not establish their formats or locations.
 
 [`sessions.local-transcript`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/anchors.json) separately identifies transcript content in local persistence, while [`sessions.external-store`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/anchors.json) identifies a bounded external `SessionStore` load path. <span class="evidence-label derived">Derived</span> Session persistence is adapter-shaped rather than necessarily tied to one local file format.
+
+<span class="evidence-label observed">Observed dynamically</span> One
+persistence-enabled tool turn created a mode-`0600` JSONL transcript with nine
+event records: queue operations, alternating user/assistant tool history, and
+`last-prompt`. The matched no-session case created ordinary state/backup files
+but no transcript. [Runtime tool/session probe](../dynamics/runtime-tool-session.md#transcript-record-sequence).
 
 Automatic memory is separately configurable. [`memory.enable`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/anchors.json) says automatic memory reads and writes can be controlled independently. [`memory.project-path-hardening`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/anchors.json) prevents a checked-in project setting from redirecting its directory.
 
@@ -60,3 +68,6 @@ The lifecycle vocabulary includes `WorktreeCreate` and `WorktreeRemove`, making 
 ## Persistence hazards
 
 Sensitive material can enter transcripts, tool results, debug logs, tasks, memory, checkpoints, or background-agent messages. `--no-session-persistence` only promises to disable session persistence in print mode; it should not be assumed to disable provider logging, shell history, hook logs, MCP server storage, telemetry, or application-level caches.
+
+The dynamic no-session cases reinforce that narrow reading: both still wrote
+`.claude.json` plus a timestamped backup under their temporary homes.

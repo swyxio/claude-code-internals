@@ -1,0 +1,451 @@
+{
+  "schemaVersion": 1,
+  "kind": "deterministic-derived-topology",
+  "generatedFrom": {
+    "provenance": {
+      "path": "evidence/provenance.json",
+      "sha256": "99d516d0dc0a65efe4a083e845559ae03e3ac7af7b71fb218c4c92f31d4edece"
+    },
+    "inventory": {
+      "path": "evidence/binary-inventory.json",
+      "sha256": "32201d226533df69e030b47229d92bfa6565b228d1ced3e88762330810235c4d"
+    },
+    "bunStandaloneGraphSource": "https://github.com/oven-sh/bun/blob/2a41ca974b7302952252a20eddbb3b5c3f2dee9b/src/standalone_graph/StandaloneModuleGraph.zig",
+    "bunRevision": "2a41ca974b7302952252a20eddbb3b5c3f2dee9b"
+  },
+  "subject": {
+    "version": "2.1.177",
+    "platform": "darwin-arm64",
+    "artifactSha256": "eb0730351be2f02b482b1855870f5877489085aac86b0c4c1db4e458d9e40ed9",
+    "binarySize": 225124512
+  },
+  "constants": {
+    "sectionLengthHeaderSize": 8,
+    "offsetsRecordSize": 32,
+    "trailerSize": 16,
+    "moduleRecordSize": 52,
+    "bytecodeAlignment": 128,
+    "bytecodePayloadTargetModulo": 120
+  },
+  "fileLayout": {
+    "binary": {
+      "start": 0,
+      "endExclusive": 225124512,
+      "size": 225124512
+    },
+    "uninterpretedPrefix": {
+      "start": 0,
+      "endExclusive": 72368128,
+      "size": 72368128
+    },
+    "bunSection": {
+      "start": 72368128,
+      "endExclusive": 223132866,
+      "size": 150764738
+    },
+    "payloadLengthHeader": {
+      "start": 72368128,
+      "endExclusive": 72368136,
+      "size": 8
+    },
+    "bunPayload": {
+      "start": 72368136,
+      "endExclusive": 223132866,
+      "size": 150764730
+    },
+    "graphBytes": {
+      "start": 72368136,
+      "endExclusive": 223132818,
+      "size": 150764682
+    },
+    "offsets": {
+      "start": 223132818,
+      "endExclusive": 223132850,
+      "size": 32
+    },
+    "trailer": {
+      "start": 223132850,
+      "endExclusive": 223132866,
+      "size": 16
+    },
+    "uninterpretedSuffix": {
+      "start": 223132866,
+      "endExclusive": 225124512,
+      "size": 1991646
+    }
+  },
+  "graph": {
+    "byteCount": 150764682,
+    "modulesOffset": 150764109,
+    "modulesSize": 572,
+    "entryPointId": 0,
+    "compileArgvOffset": 150764681,
+    "compileArgvSize": 0,
+    "flags": 15,
+    "moduleCount": 11,
+    "coordinateSystem": "bun-payload-relative",
+    "moduleTable": {
+      "start": 150764109,
+      "endExclusive": 150764681,
+      "size": 572
+    },
+    "compileArgvValue": {
+      "start": 150764681,
+      "endExclusive": 150764681,
+      "size": 0
+    },
+    "compileArgvStorage": {
+      "start": 150764681,
+      "endExclusive": 150764682,
+      "size": 1
+    },
+    "flagsDecoded": {
+      "disableDefaultEnvFiles": true,
+      "disableAutoloadBunfig": true,
+      "disableAutoloadTsconfig": true,
+      "disableAutoloadPackageJson": true
+    }
+  },
+  "aggregates": {
+    "moduleCount": 11,
+    "contentBytes": 21644088,
+    "bytecodeBytes": 129119488,
+    "sourcemapBytes": 0,
+    "moduleInfoBytes": 0,
+    "byLoader": {
+      "js": 6,
+      "napi": 5
+    },
+    "byEncoding": {
+      "binary": 5,
+      "latin1": 6
+    },
+    "byFormat": {
+      "cjs": 6,
+      "none": 5
+    },
+    "bySide": {
+      "client": 5,
+      "server": 6
+    }
+  },
+  "entrypointPair": {
+    "moduleIndex": 0,
+    "name": "/$bunfs/root/src/entrypoints/cli.js",
+    "content": {
+      "payloadRange": {
+        "start": 129119680,
+        "endExclusive": 146157776,
+        "size": 17038096
+      },
+      "fileRange": {
+        "start": 201487816,
+        "endExclusive": 218525912,
+        "size": 17038096
+      }
+    },
+    "contentSha256": "45cb1eaa2b7e274ce87b1df0a1729f017ac06fffe782fac8acb42ab186243573",
+    "bytecodeCache": {
+      "payloadRange": {
+        "start": 120,
+        "endExclusive": 129119608,
+        "size": 129119488
+      },
+      "fileRange": {
+        "start": 72368256,
+        "endExclusive": 201487744,
+        "size": 129119488
+      }
+    },
+    "bytecodeOriginPath": "/$bunfs/root/src/entrypoints/cli.js",
+    "originMatchesModuleName": true,
+    "observedPayloadModulo128": 120,
+    "observedFileModulo128": 0
+  },
+  "modules": [
+    {
+      "index": 0,
+      "entry": true,
+      "name": "/$bunfs/root/src/entrypoints/cli.js",
+      "encoding": "latin1",
+      "loader": "js",
+      "moduleFormat": "cjs",
+      "side": "server",
+      "content": {
+        "payloadOffset": 129119680,
+        "fileOffset": 201487816,
+        "size": 17038096,
+        "sha256": "45cb1eaa2b7e274ce87b1df0a1729f017ac06fffe782fac8acb42ab186243573"
+      },
+      "sourcemapSize": 0,
+      "moduleInfoSize": 0,
+      "bytecodeCache": {
+        "payloadOffset": 120,
+        "fileOffset": 72368256,
+        "size": 129119488,
+        "originPath": "/$bunfs/root/src/entrypoints/cli.js"
+      }
+    },
+    {
+      "index": 1,
+      "entry": false,
+      "name": "/$bunfs/root/image-processor.js",
+      "encoding": "latin1",
+      "loader": "js",
+      "moduleFormat": "cjs",
+      "side": "server",
+      "content": {
+        "payloadOffset": 146157809,
+        "fileOffset": 218525945,
+        "size": 1976,
+        "sha256": "bbc4e1b101c19d67cc670e8e008a493fe0fbf13d4e377fe6f5103aa3c2668eb5"
+      },
+      "sourcemapSize": 0,
+      "moduleInfoSize": 0,
+      "bytecodeCache": null
+    },
+    {
+      "index": 2,
+      "entry": false,
+      "name": "/$bunfs/root/audio-capture.js",
+      "encoding": "latin1",
+      "loader": "js",
+      "moduleFormat": "cjs",
+      "side": "server",
+      "content": {
+        "payloadOffset": 146159816,
+        "fileOffset": 218527952,
+        "size": 1974,
+        "sha256": "0dc0f5e409316091e5d65c30c2be37a9a618baa685685dd1588d123529819914"
+      },
+      "sourcemapSize": 0,
+      "moduleInfoSize": 0,
+      "bytecodeCache": null
+    },
+    {
+      "index": 3,
+      "entry": false,
+      "name": "/$bunfs/root/url-handler.js",
+      "encoding": "latin1",
+      "loader": "js",
+      "moduleFormat": "cjs",
+      "side": "server",
+      "content": {
+        "payloadOffset": 146161819,
+        "fileOffset": 218529955,
+        "size": 1972,
+        "sha256": "9673ba0e074c7cf27d99c67148023a02e9a66130f27c57dc5fa61654cb598aa5"
+      },
+      "sourcemapSize": 0,
+      "moduleInfoSize": 0,
+      "bytecodeCache": null
+    },
+    {
+      "index": 4,
+      "entry": false,
+      "name": "/$bunfs/root/computer-use-swift.js",
+      "encoding": "latin1",
+      "loader": "js",
+      "moduleFormat": "cjs",
+      "side": "server",
+      "content": {
+        "payloadOffset": 146163827,
+        "fileOffset": 218531963,
+        "size": 1979,
+        "sha256": "6c65eb12d6e3f2251eb76c858945d5d4ca829e4e8fbc57659c6318d0cbe07235"
+      },
+      "sourcemapSize": 0,
+      "moduleInfoSize": 0,
+      "bytecodeCache": null
+    },
+    {
+      "index": 5,
+      "entry": false,
+      "name": "/$bunfs/root/computer-use-input.js",
+      "encoding": "latin1",
+      "loader": "js",
+      "moduleFormat": "cjs",
+      "side": "server",
+      "content": {
+        "payloadOffset": 146165842,
+        "fileOffset": 218533978,
+        "size": 1979,
+        "sha256": "8fc116877fbcdb1adb8eba070a035045246fe4c86edf04e6b9e744b1c09754f0"
+      },
+      "sourcemapSize": 0,
+      "moduleInfoSize": 0,
+      "bytecodeCache": null
+    },
+    {
+      "index": 6,
+      "entry": false,
+      "name": "/$bunfs/root/image-processor.node",
+      "encoding": "binary",
+      "loader": "napi",
+      "moduleFormat": "none",
+      "side": "client",
+      "content": {
+        "payloadOffset": 146167856,
+        "fileOffset": 218535992,
+        "size": 1249368,
+        "sha256": "77d12f8beb85f6d20c410637c774756ee8ece6adc307e377536f34f1b597b970"
+      },
+      "sourcemapSize": 0,
+      "moduleInfoSize": 0,
+      "bytecodeCache": null
+    },
+    {
+      "index": 7,
+      "entry": false,
+      "name": "/$bunfs/root/computer-use-swift.node",
+      "encoding": "binary",
+      "loader": "napi",
+      "moduleFormat": "none",
+      "side": "client",
+      "content": {
+        "payloadOffset": 147417262,
+        "fileOffset": 219785398,
+        "size": 879672,
+        "sha256": "5ce6c0773d532cd629dd4bd0eab9516dce20a5d66c6631f6be18f639d6a88524"
+      },
+      "sourcemapSize": 0,
+      "moduleInfoSize": 0,
+      "bytecodeCache": null
+    },
+    {
+      "index": 8,
+      "entry": false,
+      "name": "/$bunfs/root/computer-use-input.node",
+      "encoding": "binary",
+      "loader": "napi",
+      "moduleFormat": "none",
+      "side": "client",
+      "content": {
+        "payloadOffset": 148296972,
+        "fileOffset": 220665108,
+        "size": 1692096,
+        "sha256": "55bd5d0da1d7f6d1afa92de91c20957a77b4a25483562d2dac433cb3370344da"
+      },
+      "sourcemapSize": 0,
+      "moduleInfoSize": 0,
+      "bytecodeCache": null
+    },
+    {
+      "index": 9,
+      "entry": false,
+      "name": "/$bunfs/root/audio-capture.node",
+      "encoding": "binary",
+      "loader": "napi",
+      "moduleFormat": "none",
+      "side": "client",
+      "content": {
+        "payloadOffset": 149989101,
+        "fileOffset": 222357237,
+        "size": 438112,
+        "sha256": "6460a7e77d0fcd26325d36021ca0dd510bfd8620e6fd31b4bf7e82f48bfc3c37"
+      },
+      "sourcemapSize": 0,
+      "moduleInfoSize": 0,
+      "bytecodeCache": null
+    },
+    {
+      "index": 10,
+      "entry": false,
+      "name": "/$bunfs/root/url-handler.node",
+      "encoding": "binary",
+      "loader": "napi",
+      "moduleFormat": "none",
+      "side": "client",
+      "content": {
+        "payloadOffset": 150427244,
+        "fileOffset": 222795380,
+        "size": 336864,
+        "sha256": "d8d71dab05e50d523290839ea2b6d6b34ae7a7ab485fa088ba2441f71dd6853f"
+      },
+      "sourcemapSize": 0,
+      "moduleInfoSize": 0,
+      "bytecodeCache": null
+    }
+  ],
+  "nativePairs": [
+    {
+      "boundary": "image-processor",
+      "javascript": {
+        "index": 1,
+        "name": "/$bunfs/root/image-processor.js",
+        "contentSize": 1976
+      },
+      "native": {
+        "index": 6,
+        "name": "/$bunfs/root/image-processor.node",
+        "contentSize": 1249368
+      },
+      "relationship": "same virtual basename; call shape not asserted"
+    },
+    {
+      "boundary": "audio-capture",
+      "javascript": {
+        "index": 2,
+        "name": "/$bunfs/root/audio-capture.js",
+        "contentSize": 1974
+      },
+      "native": {
+        "index": 9,
+        "name": "/$bunfs/root/audio-capture.node",
+        "contentSize": 438112
+      },
+      "relationship": "same virtual basename; call shape not asserted"
+    },
+    {
+      "boundary": "url-handler",
+      "javascript": {
+        "index": 3,
+        "name": "/$bunfs/root/url-handler.js",
+        "contentSize": 1972
+      },
+      "native": {
+        "index": 10,
+        "name": "/$bunfs/root/url-handler.node",
+        "contentSize": 336864
+      },
+      "relationship": "same virtual basename; call shape not asserted"
+    },
+    {
+      "boundary": "computer-use-swift",
+      "javascript": {
+        "index": 4,
+        "name": "/$bunfs/root/computer-use-swift.js",
+        "contentSize": 1979
+      },
+      "native": {
+        "index": 7,
+        "name": "/$bunfs/root/computer-use-swift.node",
+        "contentSize": 879672
+      },
+      "relationship": "same virtual basename; call shape not asserted"
+    },
+    {
+      "boundary": "computer-use-input",
+      "javascript": {
+        "index": 5,
+        "name": "/$bunfs/root/computer-use-input.js",
+        "contentSize": 1979
+      },
+      "native": {
+        "index": 8,
+        "name": "/$bunfs/root/computer-use-input.node",
+        "contentSize": 1692096
+      },
+      "relationship": "same virtual basename; call shape not asserted"
+    }
+  ],
+  "securityEnvelope": {
+    "hardenedRuntime": true,
+    "entitlements": [
+      "com.apple.security.cs.allow-jit",
+      "com.apple.security.cs.allow-unsigned-executable-memory",
+      "com.apple.security.cs.disable-library-validation",
+      "com.apple.security.device.audio-input"
+    ]
+  }
+}

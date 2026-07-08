@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "probe": "settings-precedence",
+  "safety": {
+    "temporaryHome": true,
+    "temporaryGitProject": true,
+    "loopbackProvider": true,
+    "dummyCredential": true,
+    "telemetryDisabled": true,
+    "rawPromptsRetained": false,
+    "rawConfigurationRetained": false
+  },
+  "artifact": {
+    "version": "2.1.177",
+    "sha256": "eb0730351be2f02b482b1855870f5877489085aac86b0c4c1db4e458d9e40ed9",
+    "size": 225124512,
+    "platform": "darwin-arm64"
+  },
+  "fixture": {
+    "sources": [
+      "user",
+      "project",
+      "local",
+      "explicit",
+      "flag"
+    ],
+    "discriminant": "model request field",
+    "markerValuesRetained": false
+  },
+  "cases": [
+    {
+      "name": "user-source-only",
+      "selectedSource": "user",
+      "messagesRequestCount": 1,
+      "run": {
+        "exitCode": 0,
+        "signal": null,
+        "stdoutPresent": true,
+        "stderrPresent": false,
+        "outputTruncated": false
+      }
+    },
+    {
+      "name": "project-source-only",
+      "selectedSource": "project",
+      "messagesRequestCount": 1,
+      "run": {
+        "exitCode": 0,
+        "signal": null,
+        "stdoutPresent": true,
+        "stderrPresent": false,
+        "outputTruncated": false
+      }
+    },
+    {
+      "name": "local-source-only",
+      "selectedSource": "local",
+      "messagesRequestCount": 1,
+      "run": {
+        "exitCode": 0,
+        "signal": null,
+        "stdoutPresent": true,
+        "stderrPresent": false,
+        "outputTruncated": false
+      }
+    },
+    {
+      "name": "all-persisted-sources",
+      "selectedSource": "local",
+      "messagesRequestCount": 1,
+      "run": {
+        "exitCode": 0,
+        "signal": null,
+        "stdoutPresent": true,
+        "stderrPresent": false,
+        "outputTruncated": false
+      }
+    },
+    {
+      "name": "explicit-settings-file",
+      "selectedSource": "explicit",
+      "messagesRequestCount": 1,
+      "run": {
+        "exitCode": 0,
+        "signal": null,
+        "stdoutPresent": true,
+        "stderrPresent": false,
+        "outputTruncated": false
+      }
+    },
+    {
+      "name": "model-flag",
+      "selectedSource": "flag",
+      "messagesRequestCount": 1,
+      "run": {
+        "exitCode": 0,
+        "signal": null,
+        "stdoutPresent": true,
+        "stderrPresent": false,
+        "outputTruncated": false
+      }
+    }
+  ],
+  "observedOrder": {
+    "persistedWinner": "local",
+    "explicitWinner": "explicit",
+    "flagWinner": "flag"
+  },
+  "limits": [
+    "This probe measures model selection only; other setting keys can use key-specific merge rules.",
+    "The report records source labels, never the synthetic model marker strings or prompt bodies."
+  ]
+}
