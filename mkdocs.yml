@@ -83,6 +83,9 @@ nav:
       - Sessions and Background Work: architecture/sessions-background.md
       - Providers and Transport: architecture/providers-transport.md
       - Installer and Updater: architecture/updater-install.md
+  - Dynamic Analysis:
+      - Method and Probe Map: dynamics/index.md
+      - Provider Protocol Smoke Test: dynamics/protocol-smoke.md
   - Extensibility:
       - Extension Surface Map: extensibility/index.md
       - Instructions and Memory: extensibility/instructions-memory.md

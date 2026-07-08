@@ -1,8 +1,9 @@
 # Claude Code Internals
 
 An evidence-linked, independently written reconstruction of Claude Code's native
-CLI architecture. The project is based on static inspection of the official
-macOS arm64 executable installed by `https://claude.ai/install.sh`.
+CLI architecture. The project combines static inspection with isolated dynamic
+probes of the official macOS arm64 executable installed by
+`https://claude.ai/install.sh`.
 
 **Snapshot:** Claude Code `2.1.177`, build
 `6fae7a072b111776fc95ca221caac31b7439eb25`, SHA-256
@@ -21,7 +22,10 @@ macOS arm64 executable installed by `https://claude.ai/install.sh`.
   state machines, and control-flow pseudocode. It is designed for browsing and
   may not compile.
 - [`evidence/`](evidence/) — artifact provenance, the complete Bun module
-  inventory, CLI help captures, and a machine-readable anchor/claim ledger.
+  inventory, CLI help captures, sanitized dynamic reports, and a
+  machine-readable anchor/claim ledger.
+- [`tools/probes/`](tools/probes/) — loopback provider fixtures and isolated
+  behavioral probes that never retain raw prompts or credentials.
 - [`tools/inspect-binary.mjs`](tools/inspect-binary.mjs) — a dependency-free,
   read-only parser for the `__BUN,__bun` module graph in this exact Mach-O
   packaging format.

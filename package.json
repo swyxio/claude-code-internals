@@ -8,8 +8,11 @@
     "extract": "node tools/inspect-binary.mjs extract",
     "anchors": "node tools/inspect-binary.mjs anchors",
     "capture-help": "node tools/capture-cli-help.mjs",
+    "probe:core": "node tools/probes/core/protocol-smoke.mjs",
+    "test:probes": "node tools/probes/lib/sanitize-request.test.mjs",
     "verify-install": "bash tools/verify-install.sh",
-    "validate": "node tools/inspect-binary.synthetic.test.mjs && node tools/validate-evidence.mjs",
+    "validate:dynamic": "node tools/validate-dynamic-evidence.mjs",
+    "validate": "node tools/inspect-binary.synthetic.test.mjs && node tools/validate-evidence.mjs && npm run test:probes && npm run validate:dynamic",
     "check": "node tools/inspect-binary.test.mjs && npm run validate"
   },
   "engines": {

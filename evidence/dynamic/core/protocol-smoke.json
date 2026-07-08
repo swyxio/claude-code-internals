@@ -1,0 +1,455 @@
+{
+  "schemaVersion": 1,
+  "probe": "core/protocol-smoke",
+  "capturedAt": "2026-07-08T21:53:07.870Z",
+  "subject": {
+    "version": "2.1.177",
+    "artifactSha256": "eb0730351be2f02b482b1855870f5877489085aac86b0c4c1db4e458d9e40ed9",
+    "platform": "darwin-arm64"
+  },
+  "isolation": {
+    "temporaryHome": true,
+    "temporaryProject": true,
+    "loopbackProvider": true,
+    "dummyCredential": true,
+    "nonessentialTrafficDisabled": true,
+    "telemetryDisabled": true,
+    "sessionPersistenceDisabled": true,
+    "rawPromptsRetained": false,
+    "rawCredentialsRetained": false
+  },
+  "invocation": {
+    "executable": "$HOME/.local/bin/claude",
+    "mode": "bare-print",
+    "optionNames": [
+      "--bare",
+      "--print",
+      "--model",
+      "--output-format",
+      "--verbose",
+      "--include-partial-messages",
+      "--no-session-persistence",
+      "--tools",
+      "--permission-mode"
+    ],
+    "prompt": {
+      "bytes": 24,
+      "sha256": "f7c5cc12730576ddb417e0715f46ba49d152cc9425a5c0a5e9fa9ef8f15cd169"
+    },
+    "model": "claude-sonnet-4-5-20250929"
+  },
+  "result": {
+    "exitCode": 0,
+    "signal": null,
+    "stdout": {
+      "bytes": 4183,
+      "sha256": "742b295401e67a8322b3b74be2e277e29eaf4b22ded2a2780784de18a072c5f9"
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "truncated": false,
+    "stream": [
+      {
+        "type": "system",
+        "subtype": "init",
+        "keys": [
+          "agents",
+          "analytics_disabled",
+          "apiKeySource",
+          "claude_code_version",
+          "cwd",
+          "fast_mode_state",
+          "mcp_servers",
+          "model",
+          "output_style",
+          "permissionMode",
+          "plugins",
+          "product_feedback_disabled",
+          "session_id",
+          "skills",
+          "slash_commands",
+          "subtype",
+          "tools",
+          "type",
+          "uuid"
+        ],
+        "model": "claude-sonnet-4-5-20250929",
+        "tools": [],
+        "permissionMode": "dontAsk",
+        "sessionIdPresent": true
+      },
+      {
+        "type": "system",
+        "subtype": "status",
+        "keys": [
+          "session_id",
+          "status",
+          "subtype",
+          "type",
+          "uuid"
+        ],
+        "sessionIdPresent": true
+      },
+      {
+        "type": "stream_event",
+        "subtype": null,
+        "keys": [
+          "event",
+          "parent_tool_use_id",
+          "session_id",
+          "ttft_ms",
+          "type",
+          "uuid"
+        ],
+        "event": {
+          "type": "message_start",
+          "deltaType": null,
+          "contentBlockType": null
+        },
+        "sessionIdPresent": true
+      },
+      {
+        "type": "stream_event",
+        "subtype": null,
+        "keys": [
+          "event",
+          "parent_tool_use_id",
+          "session_id",
+          "type",
+          "uuid"
+        ],
+        "event": {
+          "type": "content_block_start",
+          "deltaType": null,
+          "contentBlockType": "text"
+        },
+        "sessionIdPresent": true
+      },
+      {
+        "type": "stream_event",
+        "subtype": null,
+        "keys": [
+          "event",
+          "parent_tool_use_id",
+          "session_id",
+          "type",
+          "uuid"
+        ],
+        "event": {
+          "type": "content_block_delta",
+          "deltaType": "text_delta",
+          "contentBlockType": null
+        },
+        "sessionIdPresent": true
+      },
+      {
+        "type": "assistant",
+        "subtype": null,
+        "keys": [
+          "message",
+          "parent_tool_use_id",
+          "request_id",
+          "session_id",
+          "type",
+          "uuid"
+        ],
+        "sessionIdPresent": true
+      },
+      {
+        "type": "stream_event",
+        "subtype": null,
+        "keys": [
+          "event",
+          "parent_tool_use_id",
+          "session_id",
+          "type",
+          "uuid"
+        ],
+        "event": {
+          "type": "content_block_stop",
+          "deltaType": null,
+          "contentBlockType": null
+        },
+        "sessionIdPresent": true
+      },
+      {
+        "type": "stream_event",
+        "subtype": null,
+        "keys": [
+          "event",
+          "parent_tool_use_id",
+          "session_id",
+          "type",
+          "uuid"
+        ],
+        "event": {
+          "type": "message_delta",
+          "deltaType": null,
+          "contentBlockType": null
+        },
+        "sessionIdPresent": true
+      },
+      {
+        "type": "stream_event",
+        "subtype": null,
+        "keys": [
+          "event",
+          "parent_tool_use_id",
+          "session_id",
+          "type",
+          "uuid"
+        ],
+        "event": {
+          "type": "message_stop",
+          "deltaType": null,
+          "contentBlockType": null
+        },
+        "sessionIdPresent": true
+      },
+      {
+        "type": "result",
+        "subtype": "success",
+        "keys": [
+          "api_error_status",
+          "duration_api_ms",
+          "duration_ms",
+          "fast_mode_state",
+          "is_error",
+          "modelUsage",
+          "num_turns",
+          "permission_denials",
+          "result",
+          "session_id",
+          "stop_reason",
+          "subtype",
+          "terminal_reason",
+          "time_to_request_ms",
+          "total_cost_usd",
+          "ttft_ms",
+          "ttft_stream_ms",
+          "type",
+          "usage",
+          "uuid"
+        ],
+        "result": {
+          "bytes": 8,
+          "sha256": "72d24b8649be84a58b00f0e85e42e4c131a9852d7d4857bf06174c1d8a353f66"
+        },
+        "sessionIdPresent": true
+      }
+    ]
+  },
+  "transport": {
+    "requestCount": 2,
+    "requests": [
+      {
+        "method": "HEAD",
+        "path": "/",
+        "headerNames": [
+          "accept",
+          "accept-encoding",
+          "connection",
+          "host",
+          "user-agent"
+        ],
+        "safeHeaders": {
+          "anthropicVersion": null,
+          "anthropicBeta": null,
+          "contentType": null,
+          "userAgent": "Bun/1.3.14"
+        },
+        "credentials": {
+          "apiKeyPresent": false,
+          "authorizationPresent": false
+        },
+        "body": {
+          "topLevelKeys": [],
+          "model": null,
+          "maxTokens": null,
+          "stream": null,
+          "metadataKeys": [],
+          "system": [],
+          "messages": [],
+          "tools": [],
+          "toolChoice": null
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/v1/messages",
+        "headerNames": [
+          "accept",
+          "accept-encoding",
+          "anthropic-beta",
+          "anthropic-dangerous-direct-browser-access",
+          "anthropic-version",
+          "connection",
+          "content-length",
+          "content-type",
+          "host",
+          "user-agent",
+          "x-api-key",
+          "x-app",
+          "x-claude-code-session-id",
+          "x-stainless-arch",
+          "x-stainless-lang",
+          "x-stainless-os",
+          "x-stainless-package-version",
+          "x-stainless-retry-count",
+          "x-stainless-runtime",
+          "x-stainless-runtime-version",
+          "x-stainless-timeout"
+        ],
+        "safeHeaders": {
+          "anthropicVersion": "2023-06-01",
+          "anthropicBeta": "claude-code-20250219,interleaved-thinking-2025-05-14,context-management-2025-06-27,prompt-caching-scope-2026-01-05",
+          "contentType": "application/json",
+          "userAgent": "claude-cli/2.1.177 (external, sdk-cli)"
+        },
+        "credentials": {
+          "apiKeyPresent": true,
+          "authorizationPresent": false
+        },
+        "body": {
+          "topLevelKeys": [
+            "context_management",
+            "max_tokens",
+            "messages",
+            "metadata",
+            "model",
+            "stream",
+            "system",
+            "thinking",
+            "tools"
+          ],
+          "model": "claude-sonnet-4-5-20250929",
+          "maxTokens": 32000,
+          "stream": true,
+          "metadataKeys": [
+            "user_id"
+          ],
+          "system": [
+            {
+              "type": "text",
+              "text": {
+                "bytes": 85,
+                "sha256": "b6334a3e36534d3a9d7ab1bab531c6871ba3ccd29783fb8b7887e23f15e36da1"
+              }
+            },
+            {
+              "type": "text",
+              "text": {
+                "bytes": 62,
+                "sha256": "0d7062851dd7bd7e66d4be4f12ac4951e3d2f587ec408295333a49963bd3f6b7"
+              },
+              "cacheControlType": "ephemeral"
+            },
+            {
+              "type": "text",
+              "text": {
+                "bytes": 125,
+                "sha256": "efb0c68c982cc4db0f164269523f958d7ec983e5bf5d02417467719a3e9d38f7"
+              },
+              "cacheControlType": "ephemeral"
+            }
+          ],
+          "messages": [
+            {
+              "role": "user",
+              "content": [
+                {
+                  "type": "text",
+                  "text": {
+                    "bytes": 306,
+                    "sha256": "11ed49b3c80fcdeb18cfaf973b0bc5e0b47871e84a0b457bf862a30cd402f5fc"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": {
+                    "bytes": 24,
+                    "sha256": "f7c5cc12730576ddb417e0715f46ba49d152cc9425a5c0a5e9fa9ef8f15cd169"
+                  },
+                  "cacheControlType": "ephemeral"
+                }
+              ]
+            }
+          ],
+          "tools": [],
+          "toolChoice": null
+        }
+      }
+    ]
+  },
+  "filesystem": {
+    "before": [],
+    "after": [
+      {
+        "path": "home/.claude/.claude.json",
+        "bytes": 258,
+        "sha256": "ba9e7ea3c94ade7bc57054f783dec00f05a7f2594dced6a333051ce2160d6252"
+      },
+      {
+        "path": "home/.claude/backups/.claude.json.backup.$EPOCH_MS",
+        "bytes": 50,
+        "sha256": "01c84214e65ae598bc4fa90bde3a6fcb4fa4c9e47387d0279a49be8a3ad79eb5"
+      }
+    ],
+    "shape": {
+      "type": "array",
+      "length": 2,
+      "items": [
+        {
+          "type": "object",
+          "keys": [
+            "bytes",
+            "path",
+            "sha256"
+          ],
+          "values": {
+            "bytes": {
+              "type": "number",
+              "value": 258
+            },
+            "path": {
+              "type": "string",
+              "bytes": 25,
+              "sha256": "b607d1cd2b8d9772a5f47f5ca7fdb000134f068eaba7828d4939d278bf372f91"
+            },
+            "sha256": {
+              "type": "string",
+              "bytes": 64,
+              "sha256": "8a37e0bb8dcd4be6ec49e74af2961bce05bdc25a843bd4175f22f26efe1c926b"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "keys": [
+            "bytes",
+            "path",
+            "sha256"
+          ],
+          "values": {
+            "bytes": {
+              "type": "number",
+              "value": 50
+            },
+            "path": {
+              "type": "string",
+              "bytes": 50,
+              "sha256": "bca717f765f276eac44bb9fa8878b832e444e1f3ca76b0d29b8bddb4c08f4be9"
+            },
+            "sha256": {
+              "type": "string",
+              "bytes": 64,
+              "sha256": "c5043d33a48b1dbb19b0aa1342852d94c3352145adc4fd5c6e1fb35f5106eefa"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
