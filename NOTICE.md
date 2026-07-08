@@ -23,3 +23,10 @@ The documentation site includes Latin-subset WOFF2 files for Barlow Condensed,
 Atkinson Hyperlegible, and Fragment Mono, sourced from Fontsource 5.2.8. Each is
 distributed under the SIL Open Font License 1.1. Family-specific copyright and
 license text is preserved under `docs/assets/fonts/*-OFL.txt`.
+
+## Diagram runtime
+
+Diagram pages self-host the minified Mermaid 11.16.0 browser runtime. Mermaid
+is distributed under the MIT License; its license text is preserved at
+`docs/assets/vendor/mermaid-LICENSE.txt`. The runtime is loaded only on pages
+that contain diagrams and is integrity-checked before execution.

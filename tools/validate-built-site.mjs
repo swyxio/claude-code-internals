@@ -22,6 +22,7 @@ const htmlFiles = collect(siteRoot, ".html");
 const failures = [];
 let mermaidTitleCount = 0;
 let mermaidDescriptionCount = 0;
+let mermaidRuntimePageCount = 0;
 
 function resolveTarget(source, rawTarget) {
   const target = rawTarget.split(/[?#]/u, 1)[0];
@@ -38,6 +39,14 @@ for (const source of htmlFiles) {
   assert(/<title>[^<]+<\/title>/u.test(html), `${relative(root, source)} has no title`);
   mermaidTitleCount += (html.match(/accTitle:/gu) || []).length;
   mermaidDescriptionCount += (html.match(/accDescr:/gu) || []).length;
+  const hasDiagram = html.includes("accTitle:");
+  const hasMermaidRuntime = html.includes("assets/vendor/mermaid-11.16.0.min.js");
+  assert.equal(
+    hasMermaidRuntime,
+    hasDiagram,
+    `${relative(root, source)} has the wrong conditional Mermaid runtime state`,
+  );
+  if (hasMermaidRuntime) mermaidRuntimePageCount += 1;
 
   for (const match of html.matchAll(/\b(?:href|src)="([^"]+)"/gu)) {
     const rawTarget = match[1];
@@ -58,6 +67,7 @@ assert(home.includes("Artifact address strip"), "built homepage is missing the a
 assert(home.includes('class="md-tabs"'), "built homepage is missing intent navigation tabs");
 assert(mermaidTitleCount > 0, "built site has no accessible Mermaid titles");
 assert.equal(mermaidTitleCount, mermaidDescriptionCount, "Mermaid titles and descriptions must remain paired");
+assert(mermaidRuntimePageCount > 0, "built site has no diagram runtime pages");
 
 assert.deepEqual(failures, [], `built site contains broken local links or assets:\n${failures.join("\n")}`);
 console.log(`built site: ${htmlFiles.length} HTML pages, ${mermaidTitleCount} named diagrams, and local assets validated`);

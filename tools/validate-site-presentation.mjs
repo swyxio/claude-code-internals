@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { dirname, extname, relative, resolve } from "node:path";
 
@@ -23,7 +24,7 @@ function collect(directory, extension) {
 const stylesheetPaths = ["tokens.css", "layout.css", "content.css", "home.css"].map((name) =>
   resolve(docsRoot, "stylesheets", name),
 );
-const scriptPaths = ["mermaid-loader.js", "site-ui.js"].map((name) =>
+const scriptPaths = ["site-ui.js"].map((name) =>
   resolve(docsRoot, "javascripts", name),
 );
 const fontAssetPaths = [
@@ -36,11 +37,15 @@ const fontAssetPaths = [
   "atkinson-hyperlegible-OFL.txt",
   "fragment-mono-OFL.txt",
 ].map((name) => resolve(docsRoot, "assets/fonts", name));
+const vendorAssetPaths = ["mermaid-11.16.0.min.js", "mermaid-LICENSE.txt"].map((name) =>
+  resolve(docsRoot, "assets/vendor", name),
+);
 
 for (const path of [
   ...stylesheetPaths,
   ...scriptPaths,
   ...fontAssetPaths,
+  ...vendorAssetPaths,
   resolve(docsRoot, "assets/atlas-mark.svg"),
 ]) {
   assert(existsSync(path), `missing presentation asset: ${relative(root, path)}`);
@@ -59,7 +64,6 @@ for (const path of scriptPaths) {
 }
 
 assert(config.includes("font: false"), "remote Material fonts must remain disabled");
-assert(!config.includes("https://unpkg.com/mermaid"), "Mermaid must be loaded lazily with integrity checking");
 assert(config.includes("navigation.tabs"), "intent navigation tabs are required");
 assert(config.includes("navigation.path"), "deep pages require breadcrumbs");
 assert(config.includes("navigation.footer"), "deep pages require previous/next navigation");
@@ -87,8 +91,18 @@ for (const path of allDocs) {
 }
 assert(mermaidDiagramCount > 0, "no Mermaid diagrams were found");
 
-const mermaidLoader = readFileSync(resolve(docsRoot, "javascripts/mermaid-loader.js"), "utf8");
-assert(!/mermaid\.(?:initialize|run)\s*\(/u.test(mermaidLoader), "Material must remain the sole Mermaid renderer");
+const template = readFileSync(resolve(root, "overrides/main.html"), "utf8");
+assert(template.includes("page.content"), "Mermaid must only preload on pages that contain diagrams");
+assert(template.includes("mermaid-11.16.0.min.js"), "Mermaid must remain version-pinned");
+const mermaidIntegrity = `sha384-${createHash("sha384")
+  .update(readFileSync(resolve(docsRoot, "assets/vendor/mermaid-11.16.0.min.js")))
+  .digest("base64")}`;
+assert(template.includes(`integrity="${mermaidIntegrity}"`), "Mermaid integrity must match the vendored runtime");
+assert(
+  template.indexOf("mermaid-11.16.0") <
+    template.indexOf("{{ super() }}", template.indexOf("{% block scripts %}")),
+  "Mermaid must load before Material's renderer",
+);
 const siteUi = readFileSync(resolve(docsRoot, "javascripts/site-ui.js"), "utf8");
 assert(siteUi.includes("wrapper.scrollWidth > wrapper.clientWidth"), "table regions must be conditional on overflow");
 assert(!siteUi.includes('aria-label", "Scrollable data table"'), "table regions need heading-specific labels");
