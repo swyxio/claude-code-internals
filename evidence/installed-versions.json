@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-07-08T20:19:11Z",
+  "directory": "$HOME/.local/share/claude/versions",
+  "activeVersion": "2.1.177",
+  "versions": [
+    {
+      "version": "2.1.174",
+      "size": 224051232,
+      "sha256": "20c5380b4423be9963c510f5464cc1f443235a9b4423179f9c01f28021b81bad"
+    },
+    {
+      "version": "2.1.175",
+      "size": 224216352,
+      "sha256": "6b75bf132c866ed409bf913c318ca32011e73ffb12d3cd67ecc37bc4ee9ec65d"
+    },
+    {
+      "version": "2.1.177",
+      "size": 225124512,
+      "sha256": "eb0730351be2f02b482b1855870f5877489085aac86b0c4c1db4e458d9e40ed9"
+    }
+  ]
+}

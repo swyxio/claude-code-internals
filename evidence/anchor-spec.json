@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "description": "Short, exact strings used to locate independently described behavior in the recovered 2.1.177 entry bundle.",
+  "anchors": [
+    {
+      "id": "build.git-sha",
+      "subsystem": "build",
+      "claim": "The bundle carries its source revision identifier.",
+      "needle": "GIT_SHA:\"6fae7a072b111776fc95ca221caac31b7439eb25\""
+    },
+    {
+      "id": "entrypoint.routing",
+      "subsystem": "startup",
+      "claim": "One binary selects CLI, IDE, remote, SDK, MCP, GitHub Action, and other entrypoint identities from an environment discriminator.",
+      "needle": "CLAUDE_CODE_ENTRYPOINT"
+    },
+    {
+      "id": "deeplink.argument-injection",
+      "subsystem": "security",
+      "claim": "The deep-link handler rejects trailing arguments after the URI as possible argument injection.",
+      "needle": "rejected deep-link invocation"
+    },
+    {
+      "id": "workspace-trust.proxy-helper",
+      "subsystem": "security",
+      "claim": "A proxy authentication helper sourced from project/local settings is skipped before workspace trust is accepted.",
+      "needle": "workspace trust not yet accepted"
+    },
+    {
+      "id": "socket.directory-mode",
+      "subsystem": "security",
+      "claim": "Local IPC checks require a 0700 socket directory.",
+      "needle": "Insecure socket directory permissions"
+    },
+    {
+      "id": "permissions.managed-only",
+      "subsystem": "permissions",
+      "claim": "Managed policy can make non-managed permission rules ineffective.",
+      "needle": "allowManagedPermissionRulesOnly"
+    },
+    {
+      "id": "permissions.disable-bypass",
+      "subsystem": "permissions",
+      "claim": "Policy can disable bypass-permissions mode.",
+      "needle": "disableBypassPermissionsMode"
+    },
+    {
+      "id": "permissions.subprocess-scrub",
+      "subsystem": "permissions",
+      "claim": "A subprocess hardening mode forces default permissions unless tools are explicitly allowed.",
+      "needle": "CLAUDE_CODE_SUBPROCESS_ENV_SCRUB"
+    },
+    {
+      "id": "sandbox.fail-closed",
+      "subsystem": "sandbox",
+      "claim": "Managed deployments can fail startup when a required sandbox is unavailable.",
+      "needle": "failIfUnavailable"
+    },
+    {
+      "id": "sandbox.no-escape",
+      "subsystem": "sandbox",
+      "claim": "Configuration can make the per-command sandbox-disable parameter ineffective.",
+      "needle": "allowUnsandboxedCommands"
+    },
+    {
+      "id": "sandbox.auto-allow",
+      "subsystem": "sandbox",
+      "claim": "Sandboxed Bash commands can be auto-allowed by an explicit setting.",
+      "needle": "autoAllowBashIfSandboxed"
+    },
+    {
+      "id": "sandbox.weaker-network",
+      "subsystem": "sandbox",
+      "claim": "A macOS compatibility option explicitly weakens network isolation.",
+      "needle": "enableWeakerNetworkIsolation"
+    },
+    {
+      "id": "sandbox.weaker-nested",
+      "subsystem": "sandbox",
+      "claim": "Nested execution has a separate explicit weaker-sandbox compatibility option.",
+      "needle": "enableWeakerNestedSandbox"
+    },
+    {
+      "id": "hooks.lifecycle",
+      "subsystem": "hooks",
+      "claim": "The hook bus includes pre/post tool, permission, session, subagent, compaction, worktree, and file/config lifecycle events.",
+      "needle": "PreToolUse"
+    },
+    {
+      "id": "agent-loop.core-generator",
+      "subsystem": "agent-loop",
+      "claim": "The central turn engine is implemented as an asynchronous generator.",
+      "needle": "async function*iNO(H,_)"
+    },
+    {
+      "id": "tools.registry",
+      "subsystem": "tools",
+      "claim": "A built-in registry assembles tool implementations before mode and feature filtering.",
+      "needle": "function wc(){return["
+    },
+    {
+      "id": "tools.execution-pipeline",
+      "subsystem": "tools",
+      "claim": "Individual tool calls pass through a shared asynchronous execution pipeline.",
+      "needle": "async function k0O(H,_,q,K,O,T,z,$,Y,A,w,f)"
+    },
+    {
+      "id": "tools.bash-readonly-source",
+      "subsystem": "tools",
+      "claim": "The bundle preserves an original filename for Bash read-only validation logic.",
+      "needle": "src/tools/BashTool/readOnlyValidation.ts"
+    },
+    {
+      "id": "plugins.cli-loader",
+      "subsystem": "plugins",
+      "claim": "Plugin directories can be loaded while suppressing their MCP contribution.",
+      "needle": "--plugin-dir-no-mcp"
+    },
+    {
+      "id": "plugins.monitor-trust",
+      "subsystem": "plugins",
+      "claim": "Plugin monitor scripts execute unsandboxed at the same trust tier as hooks.",
+      "needle": "unsandboxed, same trust tier as hooks"
+    },
+    {
+      "id": "plugins.component-inventory",
+      "subsystem": "plugins",
+      "claim": "The plugin inventory includes skills, agents, hooks, MCP, LSP, output styles, and channels.",
+      "needle": "[\"skills\",\"agents\",\"hooks\",\"mcp\",\"lsp\",\"output-style\",\"channel\"]"
+    },
+    {
+      "id": "mcp.settings",
+      "subsystem": "mcp",
+      "claim": "MCP servers are loaded from a typed settings record.",
+      "needle": "mcpServers"
+    },
+    {
+      "id": "mcp.strict-mode",
+      "subsystem": "mcp",
+      "claim": "Strict MCP mode excludes sources other than the explicitly supplied configuration.",
+      "needle": "strictMcpConfig"
+    },
+    {
+      "id": "mcp.transports",
+      "subsystem": "mcp",
+      "claim": "MCP configuration recognizes stdio, SSE, IDE-SSE, HTTP, WebSocket, and SDK transport families.",
+      "needle": "k.enum([\"stdio\",\"sse\",\"sse-ide\",\"http\",\"ws\",\"sdk\"])"
+    },
+    {
+      "id": "mcp.project-approval",
+      "subsystem": "mcp",
+      "claim": "Project-scoped MCP approvals are persisted separately from discovery.",
+      "needle": "enabledMcpjsonServers"
+    },
+    {
+      "id": "skills.dynamic-refresh",
+      "subsystem": "skills",
+      "claim": "The engine can push a replacement slash-command list when skills are discovered mid-session.",
+      "needle": "commands_changed"
+    },
+    {
+      "id": "tools.aliases",
+      "subsystem": "tools",
+      "claim": "Tool names support configurable single-hop aliases before resolution.",
+      "needle": "toolAliases"
+    },
+    {
+      "id": "agents.append-prompt",
+      "subsystem": "agents",
+      "claim": "An optional prompt fragment is propagated to Task subagents and nested subagents.",
+      "needle": "appendSubagentSystemPrompt"
+    },
+    {
+      "id": "agents.lifecycle-hook",
+      "subsystem": "agents",
+      "claim": "Subagent startup is observable through the hook lifecycle.",
+      "needle": "SubagentStart"
+    },
+    {
+      "id": "agents.pending-turn-state",
+      "subsystem": "agents",
+      "claim": "Turn completion records pending background-agent and workflow counts.",
+      "needle": "pending_background_agent_count"
+    },
+    {
+      "id": "agent-loop.idle-boundary",
+      "subsystem": "agent-loop",
+      "claim": "The session idle signal is emitted only after held-back results flush and the background-agent loop exits.",
+      "needle": "heldBackResult flushes"
+    },
+    {
+      "id": "remote.startup",
+      "subsystem": "remote-control",
+      "claim": "Remote Control can start automatically for each session.",
+      "needle": "remoteControlAtStartup"
+    },
+    {
+      "id": "remote.peer-isolation",
+      "subsystem": "remote-control",
+      "claim": "Peer-machine isolation can require explicit approval before cross-machine messages.",
+      "needle": "isolatePeerMachines"
+    },
+    {
+      "id": "memory.enable",
+      "subsystem": "memory",
+      "claim": "Automatic memory reads and writes are independently configurable.",
+      "needle": "autoMemoryEnabled"
+    },
+    {
+      "id": "memory.project-path-hardening",
+      "subsystem": "memory",
+      "claim": "A custom auto-memory directory is ignored when supplied by checked-in project settings.",
+      "needle": "Ignored if set in projectSettings"
+    },
+    {
+      "id": "compaction.lifecycle",
+      "subsystem": "context",
+      "claim": "Compaction emits separate progress and completed-boundary events.",
+      "needle": "compact_boundary"
+    },
+    {
+      "id": "auth.api-key",
+      "subsystem": "authentication",
+      "claim": "Direct API-key authentication is supported.",
+      "needle": "ANTHROPIC_API_KEY"
+    },
+    {
+      "id": "auth.api-key-helper",
+      "subsystem": "authentication",
+      "claim": "A shell helper can supply the API key.",
+      "needle": "apiKeyHelper"
+    },
+    {
+      "id": "auth.macos-keychain",
+      "subsystem": "authentication",
+      "claim": "The macOS credential path invokes the system keychain command.",
+      "needle": "add-generic-password"
+    },
+    {
+      "id": "auth.oauth-url",
+      "subsystem": "authentication",
+      "claim": "Claude.ai OAuth authorization uses an explicit endpoint constant.",
+      "needle": "CLAUDE_AI_AUTHORIZE_URL"
+    },
+    {
+      "id": "providers.bedrock",
+      "subsystem": "providers",
+      "claim": "Amazon Bedrock is an alternate provider route.",
+      "needle": "CLAUDE_CODE_USE_BEDROCK"
+    },
+    {
+      "id": "providers.vertex",
+      "subsystem": "providers",
+      "claim": "Google Vertex AI is an alternate provider route.",
+      "needle": "CLAUDE_CODE_USE_VERTEX"
+    },
+    {
+      "id": "providers.foundry",
+      "subsystem": "providers",
+      "claim": "Microsoft Foundry is an alternate provider route.",
+      "needle": "CLAUDE_CODE_USE_FOUNDRY"
+    },
+    {
+      "id": "telemetry.batch-endpoint",
+      "subsystem": "telemetry",
+      "claim": "First-party event logging batches to a versioned API path.",
+      "needle": "/api/event_logging/v2/batch"
+    },
+    {
+      "id": "telemetry.disable",
+      "subsystem": "telemetry",
+      "claim": "A direct telemetry disable switch exists alongside other observability controls.",
+      "needle": "DISABLE_TELEMETRY"
+    },
+    {
+      "id": "telemetry.nonessential-off",
+      "subsystem": "telemetry",
+      "claim": "Nonessential outbound traffic can be disabled with an environment control.",
+      "needle": "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC"
+    },
+    {
+      "id": "updates.release-origin",
+      "subsystem": "updates",
+      "claim": "Native releases are fetched from Anthropic's Claude Code release origin.",
+      "needle": "downloads.claude.ai/claude-code-releases"
+    },
+    {
+      "id": "sessions.external-store",
+      "subsystem": "persistence",
+      "claim": "An external SessionStore adapter has a bounded load path.",
+      "needle": "SessionStore.load() timed out"
+    },
+    {
+      "id": "sessions.local-transcript",
+      "subsystem": "persistence",
+      "claim": "Local persistence distinguishes session transcript content.",
+      "needle": "session_transcript"
+    },
+    {
+      "id": "network.first-party-boundary",
+      "subsystem": "network",
+      "claim": "The HTTP layer distinguishes Anthropic-operated endpoints from external HTTP destinations.",
+      "needle": "is Anthropic-operated. Use firstPartyApi"
+    },
+    {
+      "id": "auto-mode.anti-bypass",
+      "subsystem": "security",
+      "claim": "The automatic permission classifier treats attempts to tunnel around a denial as bypass behavior.",
+      "needle": "Auto-Mode Bypass"
+    }
+  ]
+}

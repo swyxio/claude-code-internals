@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "binaryVersion": "2.1.177",
+  "binarySha256": "eb0730351be2f02b482b1855870f5877489085aac86b0c4c1db4e458d9e40ed9",
+  "note": "Captured from --help invocations with a temporary clean HOME/config, an allowlisted environment, safe mode, and nonessential traffic disabled; no configuration or credential subcommand was invoked.",
+  "captures": [
+    {
+      "command": [
+        "claude",
+        "--help"
+      ],
+      "file": "cli-help/root.txt",
+      "bytes": 15388,
+      "sha256": "a9c896f9a7b2d119508b6ab906b8fb5eb25e2f9c26dac2544610903fb69ac8a3"
+    },
+    {
+      "command": [
+        "claude",
+        "agents",
+        "--help"
+      ],
+      "file": "cli-help/agents.txt",
+      "bytes": 2594,
+      "sha256": "a6b848b41074c07667ca8d3ac27165286d6ff33fc085cae42dcacb75bc222652"
+    },
+    {
+      "command": [
+        "claude",
+        "auth",
+        "--help"
+      ],
+      "file": "cli-help/auth.txt",
+      "bytes": 330,
+      "sha256": "07245cbb719ae3b2d0fb0d4700338c41b7a5e7b3f21db70469e40b00f8f2abb0"
+    },
+    {
+      "command": [
+        "claude",
+        "auto-mode",
+        "--help"
+      ],
+      "file": "cli-help/auto-mode.txt",
+      "bytes": 537,
+      "sha256": "8431ad0afd3b49b1f663c6c7e22edf8c72d8db07060aef5901eb32e76cd83087"
+    },
+    {
+      "command": [
+        "claude",
+        "install",
+        "--help"
+      ],
+      "file": "cli-help/install.txt",
+      "bytes": 254,
+      "sha256": "4dc358a42314bf21801781a0fe1d856ba5196a7aa59d48de63fd8e6632dd9505"
+    },
+    {
+      "command": [
+        "claude",
+        "mcp",
+        "--help"
+      ],
+      "file": "cli-help/mcp.txt",
+      "bytes": 2025,
+      "sha256": "1aa71d3f51311bb3148b4bae12d5683d6fc1d783c4707fc03c0fe670a29374c1"
+    },
+    {
+      "command": [
+        "claude",
+        "plugin",
+        "--help"
+      ],
+      "file": "cli-help/plugin.txt",
+      "bytes": 1770,
+      "sha256": "6a539e94161c26f9105359f82b85181305693a232e86b68fcb3b23d8d7740292"
+    },
+    {
+      "command": [
+        "claude",
+        "plugin",
+        "init",
+        "--help"
+      ],
+      "file": "cli-help/plugin-init.txt",
+      "bytes": 595,
+      "sha256": "1b9f6394b117fd7f329992f81a4d0a1ee2451510f3e6b122ecf12b7c5fcec010"
+    },
+    {
+      "command": [
+        "claude",
+        "plugin",
+        "install",
+        "--help"
+      ],
+      "file": "cli-help/plugin-install.txt",
+      "bytes": 595,
+      "sha256": "7de34d1bf8db846942b4d9c20989c6e99d0f6cd2f89058fc89231e5c6ead35cd"
+    },
+    {
+      "command": [
+        "claude",
+        "plugin",
+        "validate",
+        "--help"
+      ],
+      "file": "cli-help/plugin-validate.txt",
+      "bytes": 321,
+      "sha256": "e146361297e7bb24690f3fceb4cb5a90d0f9ae878cd92ec2f61dcee4533813a1"
+    },
+    {
+      "command": [
+        "claude",
+        "project",
+        "--help"
+      ],
+      "file": "cli-help/project.txt",
+      "bytes": 343,
+      "sha256": "fa6e79173381d13045aacb1d41e46ed3f0aab4ac9db57ee3ef13f496ac429449"
+    },
+    {
+      "command": [
+        "claude",
+        "setup-token",
+        "--help"
+      ],
+      "file": "cli-help/setup-token.txt",
+      "bytes": 158,
+      "sha256": "30e80d20606eeb0d3effe932cf096b7e735618dec042343af4e9f68b6448aa08"
+    },
+    {
+      "command": [
+        "claude",
+        "ultrareview",
+        "--help"
+      ],
+      "file": "cli-help/ultrareview.txt",
+      "bytes": 440,
+      "sha256": "44ab283b4ddbbbf222144e3b153c2dcab01d9d35dd6b6d65d3ff518e1ebf9fdf"
+    },
+    {
+      "command": [
+        "claude",
+        "update",
+        "--help"
+      ],
+      "file": "cli-help/update.txt",
+      "bytes": 132,
+      "sha256": "51feb83b686c647c851607150f44773f0b07bda378a32fcac40cbc8b77ff39c6"
+    }
+  ]
+}

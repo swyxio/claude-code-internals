@@ -1,0 +1,111 @@
+site_name: Claude Code Internals Atlas
+site_description: Independent, evidence-backed reconstruction of Claude Code 2.1.177 internals
+site_url: https://swyxio.github.io/claude-code-internals/
+repo_url: https://github.com/swyxio/claude-code-internals
+repo_name: swyxio/claude-code-internals
+edit_uri: edit/main/docs/
+copyright: Independent research. Not affiliated with or endorsed by Anthropic.
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.tooltips
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - https://unpkg.com/mermaid@11.16.0/dist/mermaid.min.js
+  - javascripts/mermaid-init.js
+
+nav:
+  - Overview:
+      - Atlas Home: index.md
+      - Scope and Method: scope-and-method.md
+      - Snapshot 2.1.177: snapshot-2.1.177.md
+  - Architecture:
+      - System Map: architecture/index.md
+      - Mach-O and Bun Container: architecture/binary-container.md
+      - Startup and Entrypoint Routing: architecture/startup.md
+      - Configuration Resolution: architecture/configuration.md
+      - Agent Loop, Context, and Compaction: architecture/agent-loop-context.md
+      - Tool Runtime: architecture/tool-runtime.md
+      - Permission Engine: architecture/permissions.md
+      - Sessions and Background Work: architecture/sessions-background.md
+      - Providers and Transport: architecture/providers-transport.md
+      - Installer and Updater: architecture/updater-install.md
+  - Extensibility:
+      - Extension Surface Map: extensibility/index.md
+      - Instructions and Memory: extensibility/instructions-memory.md
+      - Hooks: extensibility/hooks.md
+      - Model Context Protocol: extensibility/mcp.md
+      - Plugins and Marketplaces: extensibility/plugins.md
+      - Agents and Skills: extensibility/agents-skills.md
+      - Headless and Integrations: extensibility/headless-integrations.md
+  - Security:
+      - Trust Boundaries: security/index.md
+      - Workspace and Sandbox: security/workspace-sandbox.md
+      - Authentication and Secrets: security/auth-secrets.md
+      - Extension Supply Chain: security/extension-supply-chain.md
+      - Network and Telemetry: security/network-telemetry.md
+      - Normal, Safe, and Bare Modes: security/runtime-modes.md
+      - Threat Model and Disclosure: security/threat-model-disclosure.md
+  - Reference:
+      - CLI Reference: reference/cli.md
+      - Files, Configuration, and Environment: reference/files-config-env.md
+      - Hook and Plugin Catalog: reference/hooks-plugins.md
+      - Protocols and Native Modules: reference/protocols-native.md
+  - Evidence and Governance:
+      - Reconstruction Methodology: evidence/methodology.md
+      - Claim Ledger: evidence/claim-ledger.md
+      - Versions and Limitations: evidence/versions-limitations.md
+      - Legal and Ethics: legal-and-ethics.md

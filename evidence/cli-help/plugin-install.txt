@@ -1,0 +1,13 @@
+Usage: claude plugin install|i [options] <plugin>
+
+Install a plugin from available marketplaces (use plugin@marketplace for
+specific marketplace)
+
+Options:
+  --config <key=value>  Set a userConfig option declared in the plugin's
+                        manifest (repeatable). Values are validated against the
+                        schema and stored via the same path as the interactive
+                        /plugin configure flow.
+  -h, --help            Display help for command
+  -s, --scope <scope>   Installation scope: user, project, or local (default:
+                        "user")

@@ -1,0 +1,18 @@
+{
+  "name": "claude-code-internals",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "inspect": "node tools/inspect-binary.mjs inventory",
+    "extract": "node tools/inspect-binary.mjs extract",
+    "anchors": "node tools/inspect-binary.mjs anchors",
+    "capture-help": "node tools/capture-cli-help.mjs",
+    "verify-install": "bash tools/verify-install.sh",
+    "validate": "node tools/inspect-binary.synthetic.test.mjs && node tools/validate-evidence.mjs",
+    "check": "node tools/inspect-binary.test.mjs && npm run validate"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
