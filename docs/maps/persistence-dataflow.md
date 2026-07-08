@@ -6,6 +6,8 @@ This map separates **turn context**, **local session transcripts**, **external s
 
 ```mermaid
 flowchart LR
+    accTitle: Persistence and Data Flow - State-flow map
+    accDescr: Diagram showing state-flow map in the Persistence and Data Flow section.
     Input["[D:F1] User / SDK input"] --> Turn["[D:F2] In-memory turn state"]
     Model["[D:F3] Model stream"] --> Turn
     Turn --> Tool["[D:F4] Tool + hook results"] --> Turn

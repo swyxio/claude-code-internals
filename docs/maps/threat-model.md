@@ -16,6 +16,8 @@ it is supporting evidence, not a general containment certification.
 
 ```mermaid
 flowchart LR
+    accTitle: Threat Model - Trust-zone data-flow diagram
+    accDescr: Diagram showing trust-zone data-flow diagram in the Threat Model section.
     User["[D:Z1] User / operator"]
     Repo["[D:Z2] Workspace-controlled files"]
     Runtime["[D:Z3] Signed local runtime"]
@@ -60,6 +62,8 @@ flowchart LR
 
 ```mermaid
 flowchart TD
+    accTitle: Threat Model - Representative attack paths
+    accDescr: Diagram showing representative attack paths in the Threat Model section.
     Repo["[D:A1] Untrusted repository"] --> Instructions["[D:A2] Instructions / settings / MCP / plugin references"]
     Instructions --> Trust["[D:A3] Workspace and extension trust gates"]
     Trust --> Prompt["[D:A4] Prompt / tool-surface influence"]

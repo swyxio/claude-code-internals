@@ -6,6 +6,8 @@ Claude Code’s native installation uses version-named executables and an active
 
 ```mermaid
 sequenceDiagram
+    accTitle: Installer and Updater - Captured installation flow
+    accDescr: Diagram showing captured installation flow in the Installer and Updater section.
     participant Shell as install.sh
     participant Origin as downloads.claude.ai
     participant Stage as Staging executable

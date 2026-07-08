@@ -6,6 +6,8 @@ This map inventories network-capable seams without claiming that each one is act
 
 ```mermaid
 flowchart LR
+    accTitle: Providers and Network Surfaces - Model-provider selection
+    accDescr: Diagram showing model-provider selection in the Providers and Network Surfaces section.
     Env["[D:P1] Provider environment switches"] --> Select["[D:P2] Select exactly one route"]
     Select --> Anthropic["[D:P3] Anthropic"]
     Select --> Bedrock["[D:P4] Amazon Bedrock"]
@@ -31,6 +33,8 @@ flowchart LR
 
 ```mermaid
 flowchart TB
+    accTitle: Providers and Network Surfaces - Egress and ingress topology
+    accDescr: Diagram showing egress and ingress topology in the Providers and Network Surfaces section.
     Runtime["[D:N1] Local Claude Code runtime"]
     First["[D:N2] First-party HTTP partition"]
     External["[D:N3] External HTTP partition"]

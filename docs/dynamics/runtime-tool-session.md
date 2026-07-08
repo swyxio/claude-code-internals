@@ -15,6 +15,8 @@ as follows:
 
 ```mermaid
 sequenceDiagram
+    accTitle: Runtime Tool Loop and Session Persistence - Three-request feedback loop
+    accDescr: Diagram showing three-request feedback loop in the Runtime Tool Loop and Session Persistence section.
   participant U as Synthetic user turn
   participant C as Claude Code
   participant L as Loopback provider

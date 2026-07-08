@@ -1,38 +1,133 @@
-# Claude Code Internals Atlas
+---
+hide:
+  - navigation
+  - toc
+---
 
-This site is an independent, evidence-backed map of the installed Claude Code native executable. It explains the runtime architecture, extension surfaces, trust boundaries, security controls, persistence model, provider routes, and update path of the `2.1.177` macOS arm64 build. Terminal rendering is covered only where it intersects those systems.
+<section class="atlas-hero">
+  <div class="atlas-hero__copy">
+    <div class="atlas-hero__eyebrow">Independent runtime research · snapshot 2.1.177</div>
+    <h1>A field atlas of one compiled agent runtime.</h1>
+    <p class="atlas-hero__lead">
+      Follow Claude Code from native container to provider stream, tool execution,
+      persistence, extensions, and trust boundaries—then continue from each claim
+      into committed evidence and independently authored reconstruction contracts.
+    </p>
+    <div class="atlas-hero__actions">
+      <a class="atlas-action atlas-action--primary" href="maps/system-map/">Open the system map <span aria-hidden="true">→</span></a>
+      <a class="atlas-action" href="audiences/">Choose by goal</a>
+    </div>
+  </div>
 
-The atlas is not a source-code mirror. It contains independently written descriptions and reconstruction contracts linked to reproducible evidence: artifact hashes, Mach-O and Bun metadata, read-only CLI help captures, short semantic anchors, and byte offsets. The executable and its recovered bundle are not distributed.
+  <aside class="atlas-specimen" aria-label="Artifact identity">
+    <div class="atlas-specimen__label">Specimen register</div>
+    <dl>
+      <dt>Artifact</dt><dd>Claude Code 2.1.177</dd>
+      <dt>Target</dt><dd>darwin-arm64</dd>
+      <dt>Size</dt><dd>225,124,512 bytes</dd>
+      <dt>Graph</dt><dd>11 modules · entry 0 · flags 15</dd>
+      <dt>SHA-256</dt><dd>eb073035…e40ed9</dd>
+    </dl>
+    <div class="atlas-module-band" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </aside>
 
-!!! warning "Independent project"
-    This project is not affiliated with, sponsored by, or endorsed by Anthropic. “Claude” and “Claude Code” are used only to identify the product being studied. See [Legal and Ethics](legal-and-ethics.md) before reproducing the analysis.
+  <div class="atlas-address" role="figure" aria-label="Proportional binary layout: 72,368,128-byte prefix, 150,764,738-byte Bun section, and 1,991,646-byte suffix">
+    <div class="atlas-address__header">
+      <span>Artifact address strip</span>
+      <code>0x00000000 → 0x0D6B20A0</code>
+    </div>
+    <div class="atlas-address__bar" aria-hidden="true">
+      <span class="atlas-address__segment atlas-address__segment--prefix">Mach-O prefix</span>
+      <span class="atlas-address__segment atlas-address__segment--bun">__BUN,__bun</span>
+      <span class="atlas-address__segment atlas-address__segment--suffix"></span>
+    </div>
+    <div class="atlas-address__legend">
+      <span>Prefix · 72,368,128 B</span>
+      <span>Bun section @ 0x04504000 · 150,764,738 B</span>
+      <span>Suffix · 1,991,646 B</span>
+      <a href="https://github.com/swyxio/claude-code-internals/blob/main/evidence/binary-topology.json">Open derived topology</a>
+    </div>
+  </div>
+</section>
 
-## What is established
+<p class="atlas-legal-note">
+  Independent research; not affiliated with or endorsed by Anthropic. The atlas
+  publishes evidence summaries and explanatory contracts, not the executable or
+  recovered proprietary source. <a href="legal-and-ethics/">Read the publication boundary.</a>
+</p>
 
-<span class="evidence-label observed">Observed</span> The active launcher resolves to a signed arm64 Mach-O at `~/.local/share/claude/versions/2.1.177`. Its SHA-256 is `eb0730351be2f02b482b1855870f5877489085aac86b0c4c1db4e458d9e40ed9`, and its download-manifest checksum matched at capture time. [Artifact provenance](https://github.com/swyxio/claude-code-internals/blob/main/evidence/provenance.json)
+## Navigate by the question
 
-<span class="evidence-label observed">Observed</span> The executable contains one `__BUN,__bun` section with an 11-module standalone graph: one large JavaScript entry module, five small JavaScript native-binding loaders, and five matching N-API modules. [Binary inventory](https://github.com/swyxio/claude-code-internals/blob/main/evidence/binary-inventory.json)
+<div class="atlas-route-list">
+  <a class="atlas-route" href="maps/execution-flow/">
+    <span class="atlas-route__verb">Trace</span>
+    <strong>Follow a tool call</strong>
+    <span class="atlas-route__detail">Startup → model stream → permission decision → local execution → tool result.</span>
+    <span class="atlas-route__arrow" aria-hidden="true">→</span>
+  </a>
+  <a class="atlas-route" href="maps/extension-surfaces/">
+    <span class="atlas-route__verb">Extend</span>
+    <strong>Choose an extension surface</strong>
+    <span class="atlas-route__detail">Compare instructions, skills, agents, hooks, plugins, MCP, and headless integration.</span>
+    <span class="atlas-route__arrow" aria-hidden="true">→</span>
+  </a>
+  <a class="atlas-route" href="maps/threat-model/">
+    <span class="atlas-route__verb">Secure</span>
+    <strong>Audit a trust boundary</strong>
+    <span class="atlas-route__detail">See what crosses the workspace, provider, extension, persistence, and update boundaries.</span>
+    <span class="atlas-route__arrow" aria-hidden="true">→</span>
+  </a>
+  <a class="atlas-route" href="maps/evidence-code-cross-reference/">
+    <span class="atlas-route__verb">Verify</span>
+    <strong>Follow a claim to proof</strong>
+    <span class="atlas-route__detail">Move from prose to claim ID, sanitized evidence, binary anchor, and reconstructed contract.</span>
+    <span class="atlas-route__arrow" aria-hidden="true">→</span>
+  </a>
+</div>
 
-<span class="evidence-label observed">Observed</span> The CLI advertises interactive, print, stream-JSON, MCP, plugin, custom-agent, background-agent, worktree, remote-control, IDE, and multiple authentication/provider paths. Captures used only `--help` under a temporary clean home/config and an allowlisted environment; only help output was retained. [CLI help index](https://github.com/swyxio/claude-code-internals/blob/main/evidence/cli-help-index.json)
+## Evidence posture
 
-<span class="evidence-label derived">Derived</span> The executable is best understood as a local orchestration runtime around a remote model service. The client owns context assembly, extension discovery, permissions, tool execution, persistence, integrations, and transport selection; model inference remains remote.
+Every non-trivial statement carries one of three confidence classes. The visual
+language is deliberately structural: text and shape identify the class, while
+color is only a second signal.
 
-## Reading the atlas
+<div class="atlas-basis-ledger" role="figure" aria-label="The claim ledger contains 32 observed facts, 52 derived interpretations, and one hypothesis">
+  <div class="atlas-basis-ledger__bar" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="atlas-basis-ledger__labels">
+    <span><span class="evidence-label observed">Observed</span> 32 artifact or runtime facts</span>
+    <span><span class="evidence-label derived">Derived</span> 52 bounded interpretations</span>
+    <span><span class="evidence-label hypothesis">Hypothesis</span> 1 explicit open model</span>
+  </div>
+</div>
 
-Every non-trivial technical statement is assigned one of three confidence classes:
-
-| Label | Meaning | Appropriate use |
-|---|---|---|
-| **Observed** | Directly supported by the captured artifact, command output, or signed metadata. | Describe a version-pinned fact. |
-| **Derived** | A documented interpretation that follows from multiple observations. | Explain architecture or likely control flow. |
-| **Hypothesis** | A plausible model that is not yet uniquely established. | Guide further research, never assert a guarantee. |
-
-Anchor names such as [`permissions.disable-bypass`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/anchors.json) identify short strings in the private local extraction. The public ledger records their purpose, count, and byte locations without publishing surrounding proprietary code.
+<div class="atlas-established">
+  <div class="atlas-established__item">
+    <div><span class="evidence-label observed">Observed</span></div>
+    <p>The active launcher resolves to a signed arm64 Mach-O at <code>~/.local/share/claude/versions/2.1.177</code>. Its SHA-256 is <code>eb0730351be2f02b482b1855870f5877489085aac86b0c4c1db4e458d9e40ed9</code>. <a href="https://github.com/swyxio/claude-code-internals/blob/main/evidence/provenance.json">Artifact provenance</a></p>
+  </div>
+  <div class="atlas-established__item">
+    <div><span class="evidence-label observed">Observed</span></div>
+    <p>The executable contains one <code>__BUN,__bun</code> section with an 11-module graph: one large JavaScript entry module, five native-binding loaders, and five matching N-API modules. <a href="https://github.com/swyxio/claude-code-internals/blob/main/evidence/binary-inventory.json">Binary inventory</a></p>
+  </div>
+  <div class="atlas-established__item">
+    <div><span class="evidence-label observed">Observed</span></div>
+    <p>Isolated probes exercised provider streaming, a three-request <code>Read → Bash</code> loop, session persistence, settings precedence, concurrent hooks, MCP stdio, extension discovery, permissions, and sandbox containment. <a href="dynamics/">Browse runtime observations</a></p>
+  </div>
+  <div class="atlas-established__item">
+    <div><span class="evidence-label derived">Derived</span></div>
+    <p>The executable is best modeled as a local orchestration runtime around a remote model service. The client owns context assembly, extension discovery, permissions, tool execution, persistence, integrations, and transport selection.</p>
+  </div>
+</div>
 
 ## System at a glance
 
 ```mermaid
 flowchart LR
+    accTitle: Claude Code internals - System at a glance
+    accDescr: Diagram showing system at a glance in the Claude Code internals section.
     User["User or SDK client"] --> CLI["CLI and protocol adapters"]
     CLI --> Config["Configuration and extension discovery"]
     Config --> Loop["Agent turn engine"]
@@ -47,14 +142,14 @@ flowchart LR
     Hooks --> Loop
 ```
 
-Start with the [visual map index](maps/index.md) or choose an
-[audience-specific reading path](audiences/index.md). The long-form
-[architecture](architecture/index.md), [extension](extensibility/index.md), and
-[trust-boundary](security/index.md) chapters provide the surrounding analysis.
-The [evidence-to-code cross-reference](maps/evidence-code-cross-reference.md)
-and [claim ledger](evidence/claim-ledger.md) are the shortest paths from prose
-back to source-of-truth evidence and browsable reconstruction files.
+Continue with the [one-page boundary map](maps/system-map.md), choose an
+[audience-specific route](audiences/index.md), or inspect the
+[evidence-to-code index](maps/evidence-code-cross-reference.md).
 
 ## Deliberate omissions
 
-The project does not publish the native executable, extracted JavaScript, native add-ons, deminified function bodies, authentication material, local configuration, transcripts, or private debug data. The reconstructed modules in the repository are independently authored explanatory contracts; they may be incomplete and are not represented as Anthropic’s original source tree.
+The project does not publish the native executable, extracted JavaScript,
+native add-ons, deminified function bodies, authentication material, local
+configuration, transcripts, or private debug data. Reconstructed modules are
+independently authored explanatory contracts; they may be incomplete and are
+not represented as Anthropic's original source tree.

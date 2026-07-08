@@ -6,6 +6,8 @@ This map distinguishes **known source categories and hard constraints** from **u
 
 ```mermaid
 flowchart TD
+    accTitle: Settings and Permissions Precedence - Settings contribution map
+    accDescr: Diagram showing settings contribution map in the Settings and Permissions Precedence section.
     Policy["[O:S1] policySettings"] --> Resolver["[D:S7] Per-key resolver + provenance"]
     Flags["[O:S2] flagSettings / CLI"] --> Resolver
     User["[O:S3] userSettings"] --> Resolver
@@ -51,6 +53,8 @@ keeps the general precedence and merge contracts open.
 
 ```mermaid
 flowchart TD
+    accTitle: Settings and Permissions Precedence - Permission decision composition
+    accDescr: Diagram showing permission decision composition in the Settings and Permissions Precedence section.
     Request["[D:P1] Tool + effective input + mode"] --> Managed["[D:P2] Filter rules by managed constraints"]
     Managed --> Match["[H:P3] Match applicable rules"]
     Match --> Evidence["[D:P4] Gather tool check / permission hook / classifier / sandbox facts"]

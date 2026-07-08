@@ -26,6 +26,8 @@ Project-scoped `.mcp.json` servers have an approval state. `mcp list` and `mcp g
 
 ```mermaid
 stateDiagram-v2
+    accTitle: Model Context Protocol - Source and approval model
+    accDescr: Diagram showing source and approval model in the Model Context Protocol section.
     [*] --> Discovered
     Discovered --> Pending: project-scoped and undecided
     Pending --> Approved: operator approves

@@ -19,7 +19,9 @@
     "verify-install": "bash tools/verify-install.sh",
     "validate:dynamic": "node tools/validate-dynamic-evidence.mjs",
     "validate:topology": "node tools/validate-binary-topology.mjs",
-    "validate": "node tools/inspect-binary.synthetic.test.mjs && node tools/validate-evidence.mjs && npm run validate:topology && npm run test:probes && npm run test:runtime && npm run test:extensions && npm run validate:dynamic && npm run validate:links",
+    "validate:presentation": "node --check docs/javascripts/mermaid-loader.js && node --check docs/javascripts/site-ui.js && node tools/validate-site-presentation.mjs",
+    "validate:built": "node tools/validate-built-site.mjs",
+    "validate": "node tools/inspect-binary.synthetic.test.mjs && node tools/validate-evidence.mjs && npm run validate:topology && npm run test:probes && npm run test:runtime && npm run test:extensions && npm run validate:dynamic && npm run validate:links && npm run validate:presentation",
     "check": "node tools/inspect-binary.test.mjs && npm run validate"
   },
   "engines": {

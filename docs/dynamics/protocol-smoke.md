@@ -12,6 +12,8 @@ against a loopback Anthropic-compatible endpoint in `--bare --print` mode.
 
 ```mermaid
 sequenceDiagram
+    accTitle: Provider Protocol Smoke Test - Boundary sequence
+    accDescr: Diagram showing boundary sequence in the Provider Protocol Smoke Test section.
   participant C as Claude Code 2.1.177
   participant L as Loopback provider
   participant O as stream-json stdout

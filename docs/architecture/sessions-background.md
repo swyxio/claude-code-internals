@@ -36,6 +36,8 @@ Automatic memory is separately configurable. [`memory.enable`](https://github.co
 
 ```mermaid
 flowchart LR
+    accTitle: Sessions and Background Work - Background coordination
+    accDescr: Diagram showing background coordination in the Sessions and Background Work section.
     Parent["Parent session"] --> Dispatch["Background-agent dispatcher"]
     Dispatch --> A1["Agent session A"]
     Dispatch --> A2["Agent session B"]

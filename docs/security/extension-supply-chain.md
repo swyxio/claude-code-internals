@@ -6,6 +6,8 @@ Extensions can arrive from the user, repository, local project state, a plugin a
 
 ```mermaid
 flowchart TD
+    accTitle: Extension Supply Chain - Threat paths
+    accDescr: Diagram showing threat paths in the Extension Supply Chain section.
     Repo["Repository"] --> Instructions["Instructions / skills"]
     Repo --> ProjectCfg["Hooks / MCP / plugin refs"]
     Market["Marketplace"] --> Plugin["Plugin archive"]

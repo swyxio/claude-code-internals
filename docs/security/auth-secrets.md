@@ -16,6 +16,8 @@ The `auth` command supports login, logout, and status; `setup-token` creates a l
 
 ```mermaid
 flowchart TD
+    accTitle: Authentication and Secrets - Credential resolution model
+    accDescr: Diagram showing credential resolution model in the Authentication and Secrets section.
     Need["Provider requires credentials"] --> Provider{"Selected provider"}
     Provider -->|Anthropic| First["Explicit API key / helper / OAuth-keychain"]
     Provider -->|Bedrock| AWS["AWS credential chain"]

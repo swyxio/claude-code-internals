@@ -22,6 +22,8 @@ The parser locates the `__BUN` segment and `__bun` section through Mach-O load c
 
 ```mermaid
 flowchart LR
+    accTitle: Mach-O and Bun Container - Embedded graph framing
+    accDescr: Diagram showing embedded graph framing in the Mach-O and Bun Container section.
     MachO["Mach-O file"] --> Text["Native runtime segments"]
     MachO --> Bun["__BUN,__bun"]
     Bun --> Bytecode["Entrypoint bytecode"]

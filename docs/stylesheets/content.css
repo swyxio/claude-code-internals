@@ -1,0 +1,219 @@
+.md-typeset p,
+.md-typeset li {
+  hanging-punctuation: first last;
+}
+
+.md-typeset a:not(.headerlink):not(.md-button):not(.atlas-route) {
+  text-decoration-color: color-mix(in srgb, var(--atlas-interaction) 38%, transparent);
+  text-decoration-thickness: 0.075em;
+  text-underline-offset: 0.18em;
+}
+
+.md-typeset a:not(.headerlink):not(.md-button):not(.atlas-route):hover {
+  color: var(--atlas-interaction-hover);
+  text-decoration-color: currentColor;
+}
+
+.evidence-label {
+  align-items: center;
+  border: 1px solid currentColor;
+  border-left-width: 0.22rem;
+  border-radius: var(--atlas-radius);
+  display: inline-flex;
+  font-family: var(--atlas-mono-font);
+  font-size: 0.61rem;
+  font-weight: 700;
+  gap: 0.32rem;
+  letter-spacing: 0.055em;
+  line-height: 1.45;
+  margin-right: 0.35rem;
+  padding: 0.14rem 0.42rem 0.13rem 0.3rem;
+  text-transform: uppercase;
+  vertical-align: 0.08rem;
+}
+
+.evidence-label::before {
+  border-right: 1px solid currentColor;
+  padding-right: 0.3rem;
+}
+
+.evidence-label.observed {
+  background: var(--atlas-observed-bg);
+  color: var(--atlas-observed);
+}
+
+.evidence-label.observed::before { content: "[O]"; }
+
+.evidence-label.derived {
+  background: var(--atlas-derived-bg);
+  color: var(--atlas-derived);
+}
+
+.evidence-label.derived::before { content: "[D]"; }
+
+.evidence-label.hypothesis {
+  background: var(--atlas-hypothesis-bg);
+  color: var(--atlas-hypothesis);
+}
+
+.evidence-label.hypothesis::before { content: "[H]"; }
+
+.evidence-note {
+  border-left: 0.18rem solid var(--atlas-rule);
+  color: var(--atlas-ink-soft);
+  font-size: 0.78rem;
+  margin: 1.2rem 0;
+  padding: 0.2rem 0 0.2rem 0.8rem;
+}
+
+.md-typeset__table {
+  border: var(--atlas-rule-width) solid var(--atlas-rule-soft);
+  border-radius: var(--atlas-radius);
+  display: block;
+  margin: 1.25rem 0;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-color: var(--atlas-rule) var(--atlas-panel);
+}
+
+.md-typeset table:not([class]) {
+  border-collapse: collapse;
+  display: table;
+  font-size: 0.72rem;
+  margin: 0;
+  min-width: 100%;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--atlas-panel-strong);
+  border-bottom: 1px solid var(--atlas-rule);
+  color: var(--atlas-ink);
+  font-family: var(--atlas-mono-font);
+  font-size: 0.61rem;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+  line-height: 1.35;
+  padding: 0.6rem 0.7rem;
+  position: sticky;
+  text-transform: uppercase;
+  top: 0;
+  white-space: normal;
+  z-index: 1;
+}
+
+.md-typeset table:not([class]) td {
+  border-top: 1px solid var(--atlas-rule-soft);
+  line-height: 1.5;
+  padding: 0.62rem 0.7rem;
+  vertical-align: top;
+}
+
+.md-typeset table:not([class]) tr:hover td {
+  background: color-mix(in srgb, var(--atlas-panel) 58%, transparent);
+}
+
+.md-typeset code {
+  border-radius: 0.12rem;
+  font-variant-ligatures: none;
+}
+
+.md-typeset pre > code {
+  line-height: 1.62;
+}
+
+.md-typeset .highlight,
+.md-typeset pre {
+  border-radius: var(--atlas-radius);
+}
+
+.md-typeset .highlight {
+  border: 1px solid var(--atlas-rule-soft);
+}
+
+.md-typeset blockquote {
+  border-left-color: var(--atlas-derived);
+  color: var(--atlas-ink-soft);
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-color: var(--atlas-rule);
+  border-radius: var(--atlas-radius);
+  box-shadow: none;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-family: var(--atlas-mono-font);
+  font-size: 0.65rem;
+  letter-spacing: 0.025em;
+}
+
+.mermaid {
+  background:
+    linear-gradient(var(--atlas-rule-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--atlas-rule-soft) 1px, transparent 1px),
+    var(--atlas-canvas-raised);
+  background-size: 1.25rem 1.25rem;
+  border: 1px solid var(--atlas-rule);
+  border-radius: var(--atlas-radius);
+  margin: 1.4rem 0;
+  min-height: 8rem;
+  overflow-x: auto;
+  padding: 1.25rem;
+  scrollbar-color: var(--atlas-rule) var(--atlas-panel);
+  text-align: center;
+}
+
+.atlas-source-link::after {
+  content: " ↗";
+  font-family: var(--atlas-mono-font);
+  font-size: 0.72em;
+  text-decoration: none;
+}
+
+.atlas-source-link[data-atlas-source="evidence"] {
+  text-decoration-color: var(--atlas-interaction);
+}
+
+.atlas-source-link[data-atlas-source="reconstruction"] {
+  text-decoration-color: var(--atlas-interaction);
+}
+
+@media screen and (max-width: 44.984375em) {
+  .md-typeset__table {
+    margin-inline: -0.8rem;
+    max-width: calc(100% + 1.6rem);
+  }
+
+  .md-typeset table:not([class]) {
+    font-size: 0.68rem;
+  }
+
+  .mermaid {
+    margin-inline: -0.8rem;
+    padding: 0.9rem 0.75rem;
+  }
+
+}
+
+@media print {
+  .md-header,
+  .md-tabs,
+  .md-sidebar,
+  .md-footer,
+  .md-content__button {
+    display: none !important;
+  }
+
+  .md-content,
+  .md-content__inner {
+    margin: 0;
+    max-width: none;
+    padding: 0;
+  }
+
+  .mermaid {
+    break-inside: avoid;
+  }
+}

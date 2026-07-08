@@ -16,6 +16,8 @@ The CLI’s bare-mode description explicitly says Bedrock, Vertex, and Foundry u
 
 ```mermaid
 flowchart LR
+    accTitle: Providers and Transport - Provider routes
+    accDescr: Diagram showing provider routes in the Providers and Transport section.
     Loop["Agent turn engine"] --> Select["Provider/model resolver"]
     Select --> Anthropic["Anthropic API"]
     Select --> Bedrock["Amazon Bedrock"]

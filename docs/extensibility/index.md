@@ -1,4 +1,4 @@
-# Extension Surface Map
+# Extensions and Integrations
 
 Visual companion: [linked extension-surface map](../maps/extension-surfaces.md).
 
@@ -20,10 +20,22 @@ Claude Code has no single extension API. It composes instructions, lifecycle cal
 
 “Can execute” describes capability, not automatic permission. A model still encounters the permission layer for tool calls, but a command hook may run because a lifecycle event fired rather than because the model selected a tool.
 
+## Continue by authority
+
+| If the extension needs to… | Start with | Verify against |
+|---|---|---|
+| Add instructions or reusable procedures | [Instructions and memory](instructions-memory.md) → [agents and skills](agents-skills.md) | [Extension discovery observation](../dynamics/extensions-runtime.md#agent-skill-and-plugin-discovery) |
+| React to lifecycle events or run local commands | [Hooks](hooks.md) | [Concurrent hook observation](../dynamics/extensions-runtime.md#hook-scheduling-and-payloads) |
+| Expose tools, resources, or prompts across a process boundary | [Model Context Protocol](mcp.md) | [Observed stdio sequence](../dynamics/extensions-runtime.md#mcp-stdio-handshake-and-dispatch) |
+| Ship several component types together | [Plugins and marketplaces](plugins.md) | [Extension supply-chain review](../security/extension-supply-chain.md) |
+| Drive sessions from another program or application | [Headless, SDK, IDE, and remote integration](headless-integrations.md) | [CLI and protocol reference](../reference/protocols-native.md) |
+
 ## Composition model
 
 ```mermaid
 flowchart TD
+    accTitle: Extensions and Integrations - Composition model
+    accDescr: Diagram showing composition model in the Extensions and Integrations section.
     Sources["User / project / local / policy / explicit flags"] --> Resolver["Extension resolver"]
     Resolver --> Context["Instructions, memory, skills"]
     Resolver --> Lifecycle["Hooks and workflows"]
