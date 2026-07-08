@@ -13,6 +13,12 @@ The CLI supports:
 
 <span class="evidence-label derived">Derived</span> An agent definition is a policy bundle, not just a prompt. Its effective behavior depends on inherited and overridden tools, model, directories, extensions, and permission mode.
 
+<span class="evidence-label observed">Observed dynamically</span> Selecting one
+inline synthetic agent increased the init agent catalog by one, added its
+prompt marker at the request system boundary, and narrowed advertised tools to
+the agent's `Read` allowlist. This proves selected-agent assembly for the
+fixture, not complete parent/child inheritance.
+
 ## Delegation flow
 
 ```mermaid
@@ -47,6 +53,11 @@ The `agents --json` command reports active sessions and can include completed on
 Skills provide named procedures that can be resolved with `/skill-name`. Root help says bare mode still resolves skills even while automatic plugin sync and `CLAUDE.md` discovery are skipped. Skills can originate from directories or plugin packages.
 
 <span class="evidence-label derived">Derived</span> [`skills.dynamic-refresh`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/anchors.json) records `commands_changed`, allowing the engine to replace the slash-command list when discovery changes mid-session.
+
+An isolated user-home skill appeared in both skill and slash-command catalogs;
+an explicit local plugin contributed one namespaced plugin skill. See the
+[discovery probe](../dynamics/extensions-runtime.md#agent-skill-and-plugin-discovery)
+and [sanitized report](https://github.com/swyxio/claude-code-internals/blob/main/evidence/dynamic/extensions/discovery.json).
 
 ## Security inheritance
 

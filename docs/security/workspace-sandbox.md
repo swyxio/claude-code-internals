@@ -45,6 +45,13 @@ flowchart LR
 
 `autoAllowBashIfSandboxed` affects the first decision because containment is expected in the second stage. It should be enabled only when the actual sandbox profile is understood and fail-closed behavior is acceptable.
 
+<span class="evidence-label observed">Observed dynamically</span> With the
+probed fail-closed settings and explicit Bash allow rule, one command wrote in
+its temporary cwd, was denied a write to the temporary parent, and returned an
+error result for the failed compound command. `CLAUDE_CODE_SANDBOXED` was not
+present in that tool environment, so it is not a sufficient runtime indicator.
+[Probe details](../dynamics/security-permissions-sandbox.md#fail-closed-sandbox-write-boundary).
+
 ## Environment scrubbing
 
 <span class="evidence-label derived">Derived</span> [`permissions.subprocess-scrub`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/anchors.json) says a subprocess hardening mode forces default permissions unless tools are explicitly allowed.
@@ -65,4 +72,5 @@ Directory permissions do not replace message authentication, and argument valida
 - What happens when the sandbox implementation is missing or crashes mid-command?
 - Are background agents and hook commands subject to the same profile?
 
-The atlas does not claim answers that have not been safely exercised.
+The atlas answers only the two-location write case above; the remaining
+questions have not been safely exercised.

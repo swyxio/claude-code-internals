@@ -46,6 +46,24 @@ This state machine is directly suggested by CLI behavior, although the persisten
 
 [`plugins.cli-loader`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/anchors.json) records a plugin-directory loading path that suppresses the plugin’s MCP contribution. This is another composition control: operators can use non-MCP plugin components without connecting its servers.
 
+## Dynamically observed stdio flow
+
+<span class="evidence-label observed">Observed dynamically</span> A strict,
+isolated stdio fixture received:
+
+```text
+initialize → notifications/initialized → tools/list → tools/call
+```
+
+The client proposed protocol version `2025-11-25`, advertised `elicitation` and
+`roots` capabilities, exposed remote `probe_echo` to the model as
+`mcp__probe__probe_echo`, and sent `claudecode/toolUseId` plus `progressToken`
+inside the call `_meta`. [Probe details](../dynamics/extensions-runtime.md#mcp-stdio-handshake-and-dispatch)
+· [sanitized report](https://github.com/swyxio/claude-code-internals/blob/main/evidence/dynamic/extensions/mcp-protocol.json).
+
+This is one stdio path; other transports, OAuth, retries, cancellation,
+resources, prompts, and elicitation responses remain open.
+
 ## Stdio risk
 
 A stdio server is a child process. Its configuration can choose an executable, arguments, and environment variables. Starting it crosses the same broad trust boundary as running a command hook, even if its subsequent protocol is structured JSON-RPC.
@@ -58,7 +76,11 @@ HTTP/SSE servers can receive tool arguments, prompts, resource identifiers, and 
 
 ## Names and collisions
 
-<span class="evidence-label hypothesis">Hypothesis</span> Effective MCP tool names require a namespace or collision policy when multiple servers expose the same name. The anchor ledger does not yet establish the exact normalization in every entrypoint. Reconstructions should retain both server identity and remote tool name rather than flattening to one opaque string.
+<span class="evidence-label observed">Observed dynamically</span> The exercised
+server/tool pair became `mcp__probe__probe_echo`. Collision handling and
+normalization for arbitrary names or other entrypoints remain unknown.
+Reconstructions should retain both server identity and remote tool name rather
+than flattening to one opaque string.
 
 ## Server mode
 

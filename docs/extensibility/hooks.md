@@ -47,13 +47,30 @@ This has several consequences:
 
 ## Ordering and failure
 
-<span class="evidence-label hypothesis">Hypothesis</span> Multiple matching hooks probably run in a deterministic configured order, but the public ledger does not establish concurrency, timeout, or error-composition rules for every hook type. A safe extension must not depend on another hook having run unless ordering is explicitly documented and tested.
+<span class="evidence-label observed">Observed dynamically</span> Two matching
+sibling `PreToolUse` command hooks were dispatched concurrently in the isolated
+probe: both `hook_started` records appeared before either `hook_response`.
+Operating-system process start and completion order can differ from declaration
+order. A safe extension must not coordinate sibling side effects by array
+position. [Probe details](../dynamics/extensions-runtime.md#hook-scheduling-and-payloads)
+· claim `dynamic.hooks.concurrent-siblings` in the
+[claim ledger](https://github.com/swyxio/claude-code-internals/blob/main/evidence/claims.ndjson).
+
+Timeout, cancellation, result-composition, and ordering across other hook types
+remain open. The observation narrows one `PreToolUse` command-hook path rather
+than establishing a universal scheduler contract.
 
 Pre-tool hooks are part of control, not permission authority. A hook returning “continue” should not bypass managed policy. Conversely, a hook may impose an additional block or validation step even after a tool is otherwise allowable.
 
 ## Stream visibility
 
 `--include-hook-events` adds hook lifecycle events to stream-JSON output. This makes hook activity observable to SDK consumers, but may expose command names, paths, payload fragments, or extension metadata. Logs and recordings should be redacted before publication.
+
+The sanitized probe records field names—but not values—for
+`UserPromptSubmit`, `PreToolUse`, `PostToolUse`, and `Stop` payloads. Tool events
+included tool identity/input fields; post-tool added response and duration;
+stop added background/session work state. See the
+[structural report](https://github.com/swyxio/claude-code-internals/blob/main/evidence/dynamic/extensions/hooks-ordering.json).
 
 ## Author checklist
 

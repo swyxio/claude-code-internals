@@ -31,6 +31,12 @@ flowchart TD
 
 <span class="evidence-label derived">Derived</span> The diagram shows source categories and trust gates, not a complete last-write-wins order. The exact precedence may be key-specific: security policy can prohibit a behavior rather than simply provide a value, while explicit mode flags can suppress entire loaders.
 
+<span class="evidence-label observed">Observed dynamically</span> For the one
+scalar key exercised—model selection—`local` won over persisted user/project
+sources, an explicit settings file won next, and the CLI `--model` flag won
+last. This does not establish array/map merges or security-policy ceilings.
+[Probe and limits](../dynamics/extensions-runtime.md#settings-precedence).
+
 ## Validation behavior
 
 Interactive startup can surface invalid settings. The `--print` help text says settings that fail validation are silently ignored in non-interactive mode. That asymmetry matters for automation: a typo may produce a permissive or feature-incomplete run rather than a startup error.
@@ -62,4 +68,10 @@ The hook vocabulary includes `ConfigChange`, `InstructionsLoaded`, `CwdChanged`,
 
 ## What remains unknown
 
-The public evidence does not yet encode a complete settings schema, key-by-key source allowlist, or precedence matrix. Environment-variable presence in a bundle can also come from vendor code, tests, or disabled features. The [reference catalog](../reference/files-config-env.md) includes only variables tied to CLI help or a semantic anchor; raw string inventories are not treated as supported API.
+The public evidence does not yet encode a complete settings schema, key-by-key
+source allowlist, or universal precedence matrix. The dynamic model-selector
+result should not be projected onto other keys. Environment-variable presence
+in a bundle can also come from vendor code, tests, or disabled features. The
+[reference catalog](../reference/files-config-env.md) includes only variables
+tied to CLI help or a semantic anchor; raw string inventories are not treated
+as supported API.
