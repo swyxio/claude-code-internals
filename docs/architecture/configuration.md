@@ -19,6 +19,8 @@ Bundle anchors also distinguish managed policy from ordinary settings. [`permiss
 
 ```mermaid
 flowchart TD
+    accTitle: Configuration Resolution - Reconstructed trust ordering
+    accDescr: Diagram showing reconstructed trust ordering in the Configuration Resolution section.
     Policy["Managed policy"] --> Merge["Validated effective configuration"]
     Flags["CLI flags / explicit settings"] --> Merge
     User["User settings"] --> Merge

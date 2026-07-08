@@ -23,6 +23,8 @@ The CLI surface establishes several instruction paths:
 
 ```mermaid
 flowchart LR
+    accTitle: Instructions and Memory - Discovery and scope
+    accDescr: Diagram showing discovery and scope in the Instructions and Memory section.
     User["User-level instructions"] --> Merge["Instruction assembly"]
     Project["Project CLAUDE.md / rules"] --> Trust["Workspace scope and trust"] --> Merge
     Added["--add-dir roots"] --> Merge

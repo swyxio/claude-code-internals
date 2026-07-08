@@ -28,6 +28,8 @@ Plugins can enter a session through persisted installation, marketplace resoluti
 
 ```mermaid
 flowchart TD
+    accTitle: Plugins and Marketplaces - Composite trust
+    accDescr: Diagram showing composite trust in the Plugins and Marketplaces section.
     Package["Plugin package"] --> Manifest["Manifest and configuration schema"]
     Package --> Skills["Skills / instructions"]
     Package --> Agents["Custom agents"]

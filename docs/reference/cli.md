@@ -18,7 +18,11 @@ This is a subsystem-oriented reference for the `2.1.177` command surface. The so
 | `ultrareview` | Start cloud-hosted multi-agent review | Upload/network implications require separate review |
 | `update` / `upgrade` | Check and install updates | Replaces active version selection |
 
-Only the help surfaces were invoked for evidence capture. A command appearing here was not executed as part of documentation.
+This reference table is derived from help captures; a command appearing here
+was not executed merely to populate the table. Separate, named
+[runtime observations](../dynamics/index.md) did execute narrow print-mode,
+provider, tool, MCP, settings, hook, permission, and sandbox scenarios under
+temporary isolation and synthetic fixtures.
 
 ## Session and identity options
 

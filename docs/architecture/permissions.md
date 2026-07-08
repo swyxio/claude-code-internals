@@ -28,6 +28,8 @@ result and marker. [Permission probe](../dynamics/security-permissions-sandbox.m
 
 ```mermaid
 flowchart TD
+    accTitle: Permission Engine - Decision model
+    accDescr: Diagram showing decision model in the Permission Engine section.
     Call["Validated tool request"] --> Trust{"Workspace / source trusted?"}
     Trust -- No --> Reject["Reject or require trust"]
     Trust -- Yes --> Managed["Apply managed restrictions"]

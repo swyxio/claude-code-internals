@@ -32,6 +32,8 @@ The second anchor is evidence of a suppression control. It does not imply a comp
 
 ```mermaid
 flowchart LR
+    accTitle: Network and Telemetry - Data-flow model
+    accDescr: Diagram showing data-flow model in the Network and Telemetry section.
     Context["Selected session context"] --> Provider["Provider endpoint"]
     Tools["MCP / web / plugin requests"] --> ThirdParty["Third-party endpoints"]
     Runtime["Operational events"] --> Telemetry["Telemetry/error endpoints"]

@@ -8,6 +8,8 @@ The agent loop coordinates remote model output with local context, tools, extens
 
 ```mermaid
 stateDiagram-v2
+    accTitle: Agent Loop, Context, and Compaction - Turn state machine
+    accDescr: Diagram showing turn state machine in the Agent Loop, Context, and Compaction section.
     [*] --> Preparing
     Preparing: Resolve instructions, memory, tools, model
     Preparing --> Requesting

@@ -1,0 +1,164 @@
+@font-face {
+  font-display: swap;
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../assets/fonts/barlow-condensed-latin-600-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/barlow-condensed-latin-700-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Atkinson Hyperlegible";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Atkinson Hyperlegible";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/atkinson-hyperlegible-latin-700-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Fragment Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/fragment-mono-latin-400-normal.woff2") format("woff2");
+}
+
+:root {
+  --atlas-display-font: "Barlow Condensed", "Arial Narrow", ui-sans-serif, sans-serif;
+  --atlas-body-font: "Atkinson Hyperlegible", ui-sans-serif, system-ui, sans-serif;
+  --atlas-mono-font: "Fragment Mono", "SFMono-Regular", ui-monospace, monospace;
+  --atlas-shell-width: 96rem;
+  --atlas-prose-width: 52rem;
+  --atlas-radius: 0.2rem;
+  --atlas-rule-width: 1px;
+  --md-text-font: var(--atlas-body-font);
+  --md-code-font: var(--atlas-mono-font);
+  --md-mermaid-edge-color: var(--atlas-rule);
+  --md-mermaid-font-family: var(--atlas-mono-font);
+  --md-mermaid-label-bg-color: var(--atlas-canvas-raised);
+  --md-mermaid-label-fg-color: var(--atlas-ink);
+  --md-mermaid-node-bg-color: var(--atlas-derived-bg);
+  --md-mermaid-node-fg-color: var(--atlas-ink);
+  --md-mermaid-sequence-actor-bg-color: var(--atlas-derived-bg);
+  --md-mermaid-sequence-actor-border-color: var(--atlas-derived);
+  --md-mermaid-sequence-actor-fg-color: var(--atlas-ink);
+  --md-mermaid-sequence-actor-line-color: var(--atlas-rule);
+  --md-mermaid-sequence-actorman-bg-color: var(--atlas-panel);
+  --md-mermaid-sequence-actorman-line-color: var(--atlas-rule);
+  --md-mermaid-sequence-box-bg-color: var(--atlas-panel);
+  --md-mermaid-sequence-box-fg-color: var(--atlas-ink);
+  --md-mermaid-sequence-label-bg-color: var(--atlas-canvas-raised);
+  --md-mermaid-sequence-label-fg-color: var(--atlas-ink);
+  --md-mermaid-sequence-loop-bg-color: var(--atlas-panel);
+  --md-mermaid-sequence-loop-border-color: var(--atlas-rule);
+  --md-mermaid-sequence-loop-fg-color: var(--atlas-ink);
+  --md-mermaid-sequence-message-fg-color: var(--atlas-ink);
+  --md-mermaid-sequence-message-line-color: var(--atlas-rule);
+  --md-mermaid-sequence-note-bg-color: var(--atlas-hypothesis-bg);
+  --md-mermaid-sequence-note-border-color: var(--atlas-hypothesis);
+  --md-mermaid-sequence-note-fg-color: var(--atlas-ink);
+  --md-mermaid-sequence-number-bg-color: var(--atlas-interaction-bg);
+  --md-mermaid-sequence-number-fg-color: var(--atlas-ink);
+}
+
+[data-md-color-scheme="default"] {
+  --atlas-canvas: #f3f6f7;
+  --atlas-canvas-raised: #ffffff;
+  --atlas-panel: #e8eef1;
+  --atlas-panel-strong: #dbe4e8;
+  --atlas-ink: #162128;
+  --atlas-ink-soft: #45545c;
+  --atlas-rule: #a9b8be;
+  --atlas-rule-soft: #d3dde1;
+  --atlas-interaction: #76447d;
+  --atlas-interaction-hover: #57305e;
+  --atlas-interaction-bg: #efe4f1;
+  --atlas-header: #17252d;
+  --atlas-header-ink: #edf3f5;
+  --atlas-observed: #0b6e4f;
+  --atlas-observed-bg: #e0f1e9;
+  --atlas-derived: #285f9e;
+  --atlas-derived-bg: #e1ebf7;
+  --atlas-hypothesis: #7a5000;
+  --atlas-hypothesis-bg: #f5ead2;
+  --atlas-focus: #76447d;
+  --atlas-binary-entry: #2f816f;
+  --atlas-binary-runtime: #3d63a5;
+  --atlas-binary-native: #6f8792;
+  --atlas-binary-runtime-ink: #ffffff;
+  --md-default-bg-color: var(--atlas-canvas);
+  --md-default-fg-color: var(--atlas-ink);
+  --md-default-fg-color--light: var(--atlas-ink-soft);
+  --md-default-fg-color--lighter: #71828a;
+  --md-default-fg-color--lightest: rgba(22, 33, 40, 0.12);
+  --md-code-bg-color: #e5ecef;
+  --md-code-fg-color: #263a48;
+  --md-primary-fg-color: var(--atlas-header);
+  --md-primary-fg-color--light: #2e414b;
+  --md-primary-fg-color--dark: #0f191e;
+  --md-primary-bg-color: var(--atlas-header-ink);
+  --md-primary-bg-color--light: #c9d5da;
+  --md-accent-fg-color: var(--atlas-interaction-hover);
+  --md-typeset-a-color: var(--atlas-interaction);
+}
+
+[data-md-color-scheme="slate"] {
+  --md-hue: 200;
+  --atlas-canvas: #10181d;
+  --atlas-canvas-raised: #162128;
+  --atlas-panel: #1b2930;
+  --atlas-panel-strong: #23353e;
+  --atlas-ink: #e5edf0;
+  --atlas-ink-soft: #b6c4c9;
+  --atlas-rule: #52636b;
+  --atlas-rule-soft: #2d4049;
+  --atlas-interaction: #dda9e7;
+  --atlas-interaction-hover: #f1cff7;
+  --atlas-interaction-bg: #382b3c;
+  --atlas-header: #0c1317;
+  --atlas-header-ink: #edf3f5;
+  --atlas-observed: #62c49a;
+  --atlas-observed-bg: #173a30;
+  --atlas-derived: #8ab4f0;
+  --atlas-derived-bg: #1e354f;
+  --atlas-hypothesis: #f0c36b;
+  --atlas-hypothesis-bg: #443719;
+  --atlas-focus: #dda9e7;
+  --atlas-binary-entry: #62ad9c;
+  --atlas-binary-runtime: #6e93d8;
+  --atlas-binary-native: #77909a;
+  --atlas-binary-runtime-ink: #10181d;
+  --md-default-bg-color: var(--atlas-canvas);
+  --md-default-fg-color: var(--atlas-ink);
+  --md-default-fg-color--light: var(--atlas-ink-soft);
+  --md-default-fg-color--lighter: #8d9ea5;
+  --md-default-fg-color--lightest: rgba(229, 237, 240, 0.12);
+  --md-code-bg-color: #1a2931;
+  --md-code-fg-color: #d8e7ed;
+  --md-primary-fg-color: var(--atlas-header);
+  --md-primary-fg-color--light: #1f3038;
+  --md-primary-fg-color--dark: #080d10;
+  --md-primary-bg-color: var(--atlas-header-ink);
+  --md-primary-bg-color--light: #aab9bf;
+  --md-accent-fg-color: var(--atlas-interaction-hover);
+  --md-typeset-a-color: var(--atlas-interaction);
+}
+
+html {
+  accent-color: var(--atlas-focus);
+}

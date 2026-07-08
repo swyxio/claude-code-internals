@@ -25,6 +25,8 @@ The reconstructed hook path separates event selection, optional matching, handle
 
 ```mermaid
 flowchart LR
+    accTitle: Hooks - Matching and execution
+    accDescr: Diagram showing matching and execution in the Hooks section.
     Event["Lifecycle event + payload"] --> Select["Select configured event entries"]
     Select --> Match["Apply tool/event matcher"]
     Match --> Handler["Command, prompt, or monitor handler"]

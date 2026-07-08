@@ -35,6 +35,8 @@ Three anchors expose separate policy dimensions:
 
 ```mermaid
 flowchart LR
+    accTitle: Workspace and Sandbox - Command decision versus containment
+    accDescr: Diagram showing command decision versus containment in the Workspace and Sandbox section.
     Request["Shell/tool request"] --> Permission{"Permission decision"}
     Permission -- Deny --> Stop["No execution"]
     Permission -- Allow --> Build["Build sandbox profile"]

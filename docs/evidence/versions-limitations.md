@@ -33,9 +33,16 @@ Only the macOS arm64 native build was parsed. Linux, Windows, x86_64, WSL, and p
 
 The artifact does not reveal model implementation, server authorization, account flags, remote policy, retention, or provider infrastructure. Endpoint and client-schema anchors are not server source.
 
-### No production runtime probing
+### Controlled runtime coverage only
 
-Published evidence comes from static inspection and read-only help. The project did not log into accounts, run tools, connect MCP servers, invoke remote control, capture network traffic, or mutate settings to produce this documentation.
+Published dynamic evidence comes from narrow synthetic scenarios against the
+exact artifact: a loopback model provider, temporary homes and projects, dummy
+credentials, disposable settings, a fixture MCP server, and bounded filesystem
+effects. The probes exercised provider streaming, a `Read` → `Bash` tool loop,
+session persistence, one scalar settings key, sibling command hooks, MCP stdio,
+explicit extension discovery, permission rules, and sandbox containment. They
+did not log into production accounts, contact Anthropic services, exercise
+remote control, or establish universal defaults.
 
 ### Bundling and minification
 
@@ -63,6 +70,8 @@ Artifact facts remain historically valid, while deployment advice and legal link
 
 ```mermaid
 flowchart LR
+    accTitle: Versions and Limitations - Version-diff procedure
+    accDescr: Diagram showing version-diff procedure in the Versions and Limitations section.
     Old["Old signed artifact"] --> OI["Inventory + anchors"]
     New["New signed artifact"] --> NI["Inventory + anchors"]
     OI --> Diff["Compare graph, hashes, CLI, anchors"]
@@ -74,17 +83,20 @@ flowchart LR
 
 Do not diff only pretty-printed bundle text. Stable layers include signature/build metadata, module graph, content hashes, help captures, semantic anchor resolution, and independently reconstructed contracts.
 
-## Known research gaps
+## Research coverage and open gaps
 
-- Complete configuration schema and source precedence.
-- Runtime tool registry and tool schemas by mode.
-- Permission-rule grammar and canonicalization.
-- Hook payload/result contracts and ordering.
-- Stream-JSON event schemas.
-- IDE, Chrome, and remote-control IPC framing/authentication.
-- Native add-on interfaces and OS permission flows.
-- Session storage locations, encryption, and retention.
-- Provider-specific retry, fallback, and error normalization.
-- Effective telemetry payloads and redaction.
+| Surface | Current status | Remaining gap |
+|---|---|---|
+| Configuration precedence | **Partially exercised** | One scalar model selector was tested across persisted, explicit-settings, and CLI layers; per-key merge behavior and the complete schema remain open. |
+| Runtime tool registry | **Partially exercised** | `Read` and `Bash` were exercised; schemas and mode-dependent catalogs for the remaining tools are unexercised. |
+| Permission rules | **Partially exercised** | `dontAsk` denial and an explicit `--allowedTools Bash` allow were contrasted; full grammar and canonicalization remain open. |
+| Hooks | **Partially exercised** | Sibling `PreToolUse` command hooks were observed dispatching concurrently; the full payload/result matrix and cross-event ordering remain open. |
+| Stream JSON | **Observed in named probes** | Core wrapper and provider event ordering were captured; cancellation, malformed streams, retries, and compaction remain open. |
+| MCP | **Observed over fixture stdio** | Initialization, discovery, and one tool call were captured; other transports, auth, elicitation, and failure paths remain open. |
+| Sessions | **Partially exercised** | A mode-0600 JSONL transcript shape was captured; encryption, retention, migration, and external stores remain open. |
+| IDE, Chrome, and remote control | **Unexercised dynamically** | IPC framing, peer authentication, approval flows, and lifecycle behavior. |
+| Native add-ons | **Unexercised dynamically** | N-API interfaces and OS permission flows. |
+| Provider resilience | **Unexercised dynamically** | Retry, fallback, cancellation, rate-limit, and error normalization behavior. |
+| Telemetry | **Unexercised dynamically** | Effective payloads, redaction, batching, and disabled-mode guarantees. |
 
 Each gap should be addressed with synthetic data and minimal authority. Security-relevant results must pass disclosure review before publication.

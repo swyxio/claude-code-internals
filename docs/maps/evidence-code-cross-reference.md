@@ -13,6 +13,8 @@ or search `dynamic.` in
 
 ```mermaid
 flowchart LR
+    accTitle: Evidence-to-Code Cross-Reference - Traceability chain
+    accDescr: Diagram showing traceability chain in the Evidence-to-Code Cross-Reference section.
     Artifact["[O:X1] Inspected 2.1.177 executable"] --> Inventory["[O:X2] Binary inventory + provenance"]
     Artifact --> Bundle["[O:X3] Recovered entry content"]
     Spec["[O:X4] Exact anchor needles"] --> Match["[O:X5] Anchor offsets / contexts"]

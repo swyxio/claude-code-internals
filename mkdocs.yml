@@ -8,28 +8,39 @@ copyright: Independent research. Not affiliated with or endorsed by Anthropic.
 
 theme:
   name: material
+  custom_dir: overrides
   language: en
+  logo: assets/atlas-mark.svg
+  favicon: assets/atlas-mark.svg
+  font: false
   features:
+    - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.indexes
+    - navigation.path
+    - navigation.footer
     - navigation.top
     - navigation.tracking
+    - toc.follow
     - search.highlight
     - search.suggest
     - content.code.copy
+    - content.action.edit
+    - content.action.view
     - content.tooltips
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: deep purple
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: deep purple
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
@@ -61,72 +72,78 @@ markdown_extensions:
       custom_checkbox: true
 
 extra_css:
-  - stylesheets/extra.css
+  - stylesheets/tokens.css
+  - stylesheets/layout.css
+  - stylesheets/content.css
+  - stylesheets/home.css
 
 extra_javascript:
-  - https://unpkg.com/mermaid@11.16.0/dist/mermaid.min.js
-  - javascripts/mermaid-init.js
+  - javascripts/mermaid-loader.js
+  - javascripts/site-ui.js
 
 nav:
-  - Overview:
+  - Start:
       - Atlas Home: index.md
-      - Scope and Method: scope-and-method.md
-      - Snapshot 2.1.177: snapshot-2.1.177.md
-  - Reading Paths:
-      - Choose Your Route: audiences/index.md
-  - Maps:
-      - Map Index: maps/index.md
-      - System Map: maps/system-map.md
-      - Execution Flow: maps/execution-flow.md
-      - Extension Surfaces: maps/extension-surfaces.md
-      - Settings and Permissions: maps/settings-permissions.md
-      - Persistence and Data Flow: maps/persistence-dataflow.md
-      - Providers and Network: maps/provider-network.md
-      - Threat Model: maps/threat-model.md
-      - Evidence to Code: maps/evidence-code-cross-reference.md
-  - Architecture:
-      - System Map: architecture/index.md
-      - Mach-O and Bun Container: architecture/binary-container.md
-      - Bun and JSC Deep Dive: architecture/bun-jsc-deep-dive.md
-      - Startup and Entrypoint Routing: architecture/startup.md
-      - Configuration Resolution: architecture/configuration.md
-      - Agent Loop, Context, and Compaction: architecture/agent-loop-context.md
-      - Tool Runtime: architecture/tool-runtime.md
-      - Permission Engine: architecture/permissions.md
-      - Sessions and Background Work: architecture/sessions-background.md
-      - Providers and Transport: architecture/providers-transport.md
-      - Installer and Updater: architecture/updater-install.md
-  - Dynamic Analysis:
-      - Method and Probe Map: dynamics/index.md
-      - Provider Protocol Smoke Test: dynamics/protocol-smoke.md
-      - Runtime Probe Method: dynamics/runtime-probe-method.md
-      - Runtime Startup and Provider Turn: dynamics/runtime-startup-provider.md
-      - Runtime Tool Loop and Sessions: dynamics/runtime-tool-session.md
-      - Extension Runtime: dynamics/extensions-runtime.md
-      - Permissions and Sandbox: dynamics/security-permissions-sandbox.md
-  - Extensibility:
-      - Extension Surface Map: extensibility/index.md
+      - Choose by Goal: audiences/index.md
+      - Map and Evidence Legend: maps/index.md
+      - One-Page System Boundary Map: maps/system-map.md
+      - Scope and Publication Boundaries: scope-and-method.md
+      - Versioned Snapshot 2.1.177: snapshot-2.1.177.md
+  - Runtime:
+      - Runtime Architecture Overview: architecture/index.md
+      - Packaging and Startup:
+          - Mach-O and Bun Container: architecture/binary-container.md
+          - Bun and JSC Deep Dive: architecture/bun-jsc-deep-dive.md
+          - Startup and Entrypoint Routing: architecture/startup.md
+          - Installer and Updater: architecture/updater-install.md
+      - Turn and Execution:
+          - Execution Flow Map: maps/execution-flow.md
+          - Agent Loop, Context, and Compaction: architecture/agent-loop-context.md
+          - Tool Runtime: architecture/tool-runtime.md
+          - Permission Engine: architecture/permissions.md
+      - State and Transport:
+          - Configuration Resolution: architecture/configuration.md
+          - Sessions and Background Work: architecture/sessions-background.md
+          - Model Providers and Streaming: architecture/providers-transport.md
+  - Extensions:
+      - Extension Overview: extensibility/index.md
+      - Extension Capability Matrix: maps/extension-surfaces.md
       - Instructions and Memory: extensibility/instructions-memory.md
-      - Hooks: extensibility/hooks.md
-      - Model Context Protocol: extensibility/mcp.md
-      - Plugins and Marketplaces: extensibility/plugins.md
       - Agents and Skills: extensibility/agents-skills.md
-      - Headless and Integrations: extensibility/headless-integrations.md
+      - Hooks: extensibility/hooks.md
+      - Plugins and Marketplaces: extensibility/plugins.md
+      - Model Context Protocol: extensibility/mcp.md
+      - Headless, SDK, IDE, and Remote: extensibility/headless-integrations.md
   - Security:
-      - Trust Boundaries: security/index.md
+      - Security Overview: security/index.md
+      - Threat Model and Controls: maps/threat-model.md
       - Workspace and Sandbox: security/workspace-sandbox.md
+      - Settings and Policy Map: maps/settings-permissions.md
       - Authentication and Secrets: security/auth-secrets.md
+      - Network Data-Flow Map: maps/provider-network.md
+      - Network Egress and Telemetry Controls: security/network-telemetry.md
+      - Persistence Data-Flow Map: maps/persistence-dataflow.md
       - Extension Supply Chain: security/extension-supply-chain.md
-      - Network and Telemetry: security/network-telemetry.md
       - Normal, Safe, and Bare Modes: security/runtime-modes.md
-      - Threat Model and Disclosure: security/threat-model-disclosure.md
+      - Security Research and Disclosure: security/threat-model-disclosure.md
+  - Observations:
+      - Observation and Probe Index: dynamics/index.md
+      - Runtime Probe Method: dynamics/runtime-probe-method.md
+      - Observed Provider Startup - Bare: dynamics/protocol-smoke.md
+      - Observed Provider Startup - Safe and Bare: dynamics/runtime-startup-provider.md
+      - Observed Tool Loop and Sessions: dynamics/runtime-tool-session.md
+      - Observed Extension Runtime: dynamics/extensions-runtime.md
+      - Observed Permissions and Sandbox: dynamics/security-permissions-sandbox.md
+  - Evidence:
+      - Evidence and Traceability Overview: evidence/index.md
+      - Evidence Method and Reproduction: evidence/methodology.md
+      - Claim Catalog: evidence/claim-ledger.md
+      - Evidence-to-Code Index: maps/evidence-code-cross-reference.md
+      - Version Scope and Open Gaps: evidence/versions-limitations.md
+      - Legal and Ethics: legal-and-ethics.md
   - Reference:
+      - Reference Index: reference/index.md
       - CLI Reference: reference/cli.md
       - Files, Configuration, and Environment: reference/files-config-env.md
       - Hook and Plugin Catalog: reference/hooks-plugins.md
       - Protocols and Native Modules: reference/protocols-native.md
-  - Evidence and Governance:
-      - Reconstruction Methodology: evidence/methodology.md
-      - Claim Ledger: evidence/claim-ledger.md
-      - Versions and Limitations: evidence/versions-limitations.md
-      - Legal and Ethics: legal-and-ethics.md

@@ -9,7 +9,10 @@ The atlas asks a narrow question: **what can be responsibly established about th
 - CLI-advertised commands, modes, protocols, and extension entry points.
 - Independently reconstructed architecture for startup, configuration, the agent loop, tools, permissions, sessions, memory, providers, updates, and integrations.
 - Security mechanisms and attack surfaces visible in the local client.
-- Reproducible, read-only inspection tooling and a version-pinned evidence ledger.
+- Reproducible static inspection plus isolated, synthetic runtime probes against
+  loopback fixtures and temporary state.
+- A version-pinned evidence ledger that keeps static, dynamic, derived, and open
+  claims distinct.
 
 ## Out of scope
 
@@ -23,20 +26,33 @@ The atlas asks a narrow question: **what can be responsibly established about th
 
 ```mermaid
 flowchart TD
+    accTitle: Scope and Method - Research pipeline
+    accDescr: Diagram showing research pipeline in the Scope and Method section.
     A["Resolve installed launcher"] --> B["Hash and inspect signature"]
     B --> C["Parse Mach-O load commands"]
     C --> D["Locate __BUN,__bun"]
     D --> E["Parse Bun standalone graph"]
     E --> F["Record module metadata and content hashes"]
     F --> G["Resolve short semantic anchors privately"]
+    B --> P["Run exact binary in temporary isolation"]
+    P --> Q["Route provider and MCP traffic to fixtures"]
+    Q --> R["Retain structural summaries only"]
     G --> H["Write independent subsystem contracts"]
+    R --> H
     H --> I["Attach observed / derived / hypothesis labels"]
-    I --> J["Publish metadata and prose, not recovered code"]
+    I --> J["Validate publication boundary"]
+    J --> K["Publish metadata and prose, not recovered code"]
 ```
 
 The container parser follows the MIT-licensed [`StandaloneModuleGraph.zig`](https://github.com/oven-sh/bun/blob/2a41ca974b7302952252a20eddbb3b5c3f2dee9b/src/standalone_graph/StandaloneModuleGraph.zig) layout at the full upstream commit resolved from the artifact’s embedded Bun revision prefix. The repository’s [`inspect-binary.mjs`](https://github.com/swyxio/claude-code-internals/blob/main/tools/inspect-binary.mjs) locates the Mach-O section, bounds-checks every pointer, decodes the module table, and hashes module contents. Extraction is available for local study, but its default output is ignored by version control.
 
-CLI surfaces are captured by invoking only `--help`. The capture index states the command, byte size, and digest for each output. Commands that can start servers, inspect project configuration, update the executable, authenticate, or delete state were not executed merely to document them.
+CLI reference surfaces are captured by invoking only `--help`. Separately,
+named dynamic probes execute narrow scenarios with a temporary `HOME`, project,
+and configuration; dummy credentials; loopback provider or MCP fixtures; an
+allowlisted environment; bounded output; and an OS-enforced non-loopback network
+denial where the scenario allows it. Commands that authenticate, update the
+executable, delete real state, or contact production services are not exercised.
+See the [runtime probe method](dynamics/runtime-probe-method.md).
 
 ## The reconstruction contract
 
@@ -63,4 +79,10 @@ This hierarchy prevents a current web page or a later release from silently chan
 
 ## Privacy discipline
 
-CLI captures run only `--help` under a temporary clean home/config, safe mode, an allowlisted environment, and disabled nonessential traffic. The research process did not intentionally inspect or publish macOS Keychain contents, transcripts, project settings, environment secrets, or network captures. Public path fields are normalized to `$HOME`.
+CLI captures and dynamic probes use temporary homes/configuration, allowlisted
+environments, disabled nonessential traffic, and structural sanitizers. Dynamic
+reports retain field names, types, counts, ordering, hashes, and bounded file
+shapes—not raw prompts, tool descriptions, credentials, commands, provider
+payload text, or transcript content. The research process does not inspect or
+publish macOS Keychain contents, real user transcripts, project settings, or
+environment secrets. Public path fields are normalized to `$HOME`.

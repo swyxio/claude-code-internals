@@ -34,6 +34,8 @@ offsets record says the preceding graph is 150,764,682 bytes.
 
 ```mermaid
 flowchart LR
+    accTitle: Bun Standalone Graph and JSC Cache Deep Dive - Byte layout
+    accDescr: Diagram showing byte layout in the Bun Standalone Graph and JSC Cache Deep Dive section.
   A["File 0..72,368,128<br/>Mach-O bytes before __bun"]
   B["8-byte payload length<br/>72,368,128..72,368,136"]
   C["Graph bytes<br/>150,764,682 bytes"]
@@ -140,6 +142,8 @@ schemas, call frequency, or permission behavior.
 
 ```mermaid
 flowchart LR
+    accTitle: Bun Standalone Graph and JSC Cache Deep Dive - Native boundary map
+    accDescr: Diagram showing native boundary map in the Bun Standalone Graph and JSC Cache Deep Dive section.
   JS["Small CJS wrapper"] --> NAPI["Opaque .node / N-API module"]
   NAPI --> OS["OS-native capability surface"]
   APP["Bundled CLI entrypoint"] --> JS

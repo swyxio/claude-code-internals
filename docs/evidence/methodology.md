@@ -3,12 +3,17 @@
 Browse the result through the
 [evidence-to-code cross-reference](../maps/evidence-code-cross-reference.md).
 
-The project uses an evidence-preserving pipeline: identify one artifact, derive bounded metadata, locate short semantic anchors privately, write an independent architecture, and publish only claims that can point back to that evidence.
+The project uses an evidence-preserving pipeline: identify one artifact, derive
+bounded metadata, locate short semantic anchors privately, exercise selected
+runtime boundaries under temporary isolation, write an independent architecture,
+and publish only claims that can point back to sanitized evidence.
 
 ## Pipeline
 
 ```mermaid
 flowchart TD
+    accTitle: Reconstruction Methodology - Pipeline
+    accDescr: Diagram showing pipeline in the Reconstruction Methodology section.
     Resolve["Resolve launcher symlink"] --> Identify["Version, size, SHA-256"]
     Identify --> Sign["Signature, authority, entitlements"]
     Sign --> MachO["Parse Mach-O load commands"]
@@ -16,7 +21,11 @@ flowchart TD
     Bun --> Hashes["Hash every embedded module"]
     Hashes --> Private["Optional private local extraction"]
     Private --> Anchors["Resolve short semantic anchors"]
-    Anchors --> Claims["Versioned claim records"]
+    Identify --> Isolate["Temporary home, project, and allowlisted environment"]
+    Isolate --> Fixtures["Loopback provider and MCP fixtures"]
+    Fixtures --> Sanitize["Structural sanitizer and file-shape diff"]
+    Anchors --> Claims["Versioned static claims"]
+    Sanitize --> Claims
     Claims --> Reconstruct["Independent subsystem contracts"]
     Reconstruct --> Docs["Derived explanations and hypotheses"]
     Docs --> Validate["Evidence + publication hygiene checks"]
@@ -50,13 +59,29 @@ Local extraction is optional and writes to an ignored work directory. It is used
 
 An occurrence count is not a confidence score. A frequently repeated string may come from duplicated schema or vendor code; a unique message can be more diagnostic. The canonical machine-readable interpretations are separate records in [`claims.ndjson`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/claims.ndjson), where each statement receives an observed, derived, or hypothesis basis.
 
-## 4. Independent reconstruction
+## 4. Controlled runtime probes
+
+Dynamic probes run the exact artifact under a fresh temporary `HOME`,
+configuration directory, and project with dummy credentials, disabled
+nonessential traffic, bounded output, and loopback fixtures. Core and extension
+scenarios inherit an OS policy that denies non-loopback network access; the
+nested product-sandbox scenario omits the outer policy so it can test the
+product boundary without confounding it.
+
+Only structural summaries enter `evidence/dynamic/`: field names, value types,
+counts, event ordering, hashes, modes, and relative file shapes. Raw prompts,
+tool descriptions, command text, provider content, credentials, user settings,
+and transcript content are rejected by sanitizers and offline validators. See
+the [runtime probe method](../dynamics/runtime-probe-method.md) and
+[observation index](../dynamics/index.md) for scenario-specific limits.
+
+## 5. Independent reconstruction
 
 The [`reconstructed/`](https://github.com/swyxio/claude-code-internals/tree/main/reconstructed) files describe contracts, state transitions, side effects, trust boundaries, and unresolved questions. Names such as `turn-engine.ts` or `permissions/engine.ts` are analytical names unless a virtual path or preserved source filename is explicitly anchored.
 
 The reconstruction does not need to compile. Fidelity is measured by traceability and explanatory power, not by reproducing proprietary implementation.
 
-## 5. Claim classes
+## 6. Claim classes
 
 | Class | Required support | Example |
 |---|---|---|
@@ -66,7 +91,7 @@ The reconstruction does not need to compile. Fidelity is measured by traceabilit
 
 When a page mixes classes, labels are placed at paragraph level. “Observed” never means independently security-audited.
 
-## 6. Reproduction
+## 7. Reproduction
 
 Against the exact installed artifact:
 
@@ -91,9 +116,25 @@ npm run check
 
 The explicit `--out` arguments write the inventory and anchor ledger. Without `--out`, those two commands are previews printed to stdout and do not regenerate the committed files. `capture-help` writes its documented help captures and index from a temporary clean home/config and allowlisted environment. Review every diff before committing, and never add `.work/` extraction output.
 
-## 7. Hygiene validation
+Dynamic evidence has a separate safety contract. Read the
+[probe method](../dynamics/runtime-probe-method.md) before running
+`npm run probe:core`, `npm run probe:runtime`, or
+`npm run probe:extensions`; then use `npm run validate:dynamic` to verify the
+sanitized report shapes. Do not redirect those probes to a production provider
+or reuse a real user home/configuration.
 
-`npm run validate` exercises the parser against a synthetic Mach-O/Bun graph, reconciles cross-file hashes, pointers, CLI captures, claims, and generated anchor coordinates, then scans the publication set. The scan rejects known recovered-module hashes, executable/archive magic, private-key and token patterns, native executable extensions, and unexpectedly large files—even when a file is force-added inside an ignored directory. `npm run check` adds exact-fixture malformed-metadata tests and verifies every anchor occurrence against the private entry-module bytes. Documentation adds a strict MkDocs build so missing nav pages, malformed links, or unsupported Markdown fail before deployment.
+## 8. Hygiene validation
+
+`npm run validate` exercises the parser against a synthetic Mach-O/Bun graph,
+reconciles cross-file hashes, pointers, CLI captures, claims, and generated
+anchor coordinates, validates dynamic report invariants and presentation
+routes, then scans the publication set. The scan rejects known recovered-module
+hashes, executable/archive magic, private-key and token patterns, native
+executable extensions, and unexpectedly large files—even when a file is
+force-added inside an ignored directory. `npm run check` adds exact-fixture
+malformed-metadata tests and verifies every anchor occurrence against the
+private entry-module bytes. Documentation adds a strict MkDocs build plus a
+generated route/asset audit before deployment.
 
 ## Reproducibility limits
 

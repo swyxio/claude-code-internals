@@ -43,6 +43,8 @@ Use bare mode to answer: **can this task run from a deliberately enumerated set 
 
 ```mermaid
 flowchart TD
+    accTitle: Normal, Safe, and Bare Modes - Security selection guide
+    accDescr: Diagram showing security selection guide in the Normal, Safe, and Bare Modes section.
     Start["What are you trying to isolate?"] --> Broken{"Suspect customization failure?"}
     Broken -- Yes --> Safe["Use safe mode"]
     Broken -- No --> Ambient{"Need minimal ambient state / CI reproducibility?"}

@@ -22,6 +22,8 @@ The workspace-trust dialog is skipped in print mode. Invalid settings are silent
 
 ```mermaid
 flowchart LR
+    accTitle: Headless and Integrations - Protocol boundary
+    accDescr: Diagram showing protocol boundary in the Headless and Integrations section.
     Client["SDK / script"] -->|"stream-JSON input"| Adapter["Headless adapter"]
     Adapter --> Loop["Shared agent loop"]
     Loop --> Events["Normalized event stream"]

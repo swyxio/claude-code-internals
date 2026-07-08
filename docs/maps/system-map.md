@@ -1,4 +1,4 @@
-# System Map
+# One-Page System Boundary Map
 
 This map separates the signed native container, portable orchestration control plane, enforcement boundaries, extensions, persistent state, and remote dependencies. Boxes are reconstructed responsibilities, not claims about Anthropic’s original source tree.
 
@@ -6,6 +6,8 @@ This map separates the signed native container, portable orchestration control p
 
 ```mermaid
 flowchart TB
+    accTitle: One-Page System Boundary Map - Packaging and runtime boundary
+    accDescr: Diagram showing packaging and runtime boundary in the One-Page System Boundary Map section.
     Launcher["[O:P1] ~/.local/bin/claude symlink"] --> MachO["[O:P2] Signed arm64 Mach-O 2.1.177"]
     MachO --> Bun["[O:P3] __BUN standalone graph"]
     Bun --> Entry["[O:P4] 17,038,096-byte CJS entry module"]
@@ -32,6 +34,8 @@ flowchart TB
 
 ```mermaid
 flowchart LR
+    accTitle: One-Page System Boundary Map - Runtime responsibility map
+    accDescr: Diagram showing runtime responsibility map in the One-Page System Boundary Map section.
     subgraph Inputs["Input and control surfaces"]
       CLI["[O:R1] CLI / stream-JSON"]
       IDE["[O:R2] IDE / Chrome / remote-control flags"]

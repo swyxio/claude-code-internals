@@ -49,6 +49,8 @@ The stream-JSON boundary added orchestration records around it:
 
 ```mermaid
 sequenceDiagram
+    accTitle: Runtime Startup and Provider Turn - Provider-to-CLI event adaptation
+    accDescr: Diagram showing provider-to-cli event adaptation in the Runtime Startup and Provider Turn section.
   participant C as Claude Code
   participant L as Loopback Messages API
   participant O as stream-json stdout

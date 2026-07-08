@@ -1,4 +1,4 @@
-# Trust Boundaries
+# Security, Privacy, and Data
 
 Visual companion: [threat model and control register](../maps/threat-model.md).
 
@@ -18,10 +18,22 @@ Claude Code runs with the user’s operating-system identity and coordinates con
 
 The highest-value assets are API/OAuth/cloud credentials, source code, uncommitted changes, local personal files, transcripts and memory, signing identity, remote-control sessions, and the integrity of tool results returned to the model.
 
+## Trace a boundary
+
+| Boundary or asset | Map | Control detail | Runtime observation |
+|---|---|---|---|
+| Repository → trusted runtime configuration | [Settings and policy](../maps/settings-permissions.md) | [Workspace and sandbox](workspace-sandbox.md) | [Permission and sandbox probe](../dynamics/security-permissions-sandbox.md) |
+| Model request → local side effect | [Execution flow](../maps/execution-flow.md#tool-call-pipeline) | [Permission engine](../architecture/permissions.md) | [Observed tool loop](../dynamics/runtime-tool-session.md) |
+| Extension source → executable authority | [Extension capability matrix](../maps/extension-surfaces.md) | [Extension supply chain](extension-supply-chain.md) | [Observed extension runtime](../dynamics/extensions-runtime.md) |
+| Local context → provider or telemetry egress | [Network data flow](../maps/provider-network.md) | [Network and telemetry controls](network-telemetry.md) | Provider fixtures only; telemetry remains unexercised |
+| Turn state → durable local data | [Persistence data flow](../maps/persistence-dataflow.md) | [Persistence hazards](../architecture/sessions-background.md#persistence-hazards) | [Observed transcript shape](../dynamics/runtime-tool-session.md#transcript-record-sequence) |
+
 ## Boundary map
 
 ```mermaid
 flowchart TB
+    accTitle: Security, Privacy, and Data - Boundary map
+    accDescr: Diagram showing boundary map in the Security, Privacy, and Data section.
     Repo["Repository-controlled content"] --> Trust["Workspace trust"]
     UserCfg["User / managed configuration"] --> Config["Configuration resolver"]
     Trust --> Config

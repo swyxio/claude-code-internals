@@ -23,6 +23,8 @@ These are invocation surfaces, not necessarily separate processes. The routing a
 
 ```mermaid
 sequenceDiagram
+    accTitle: Startup and Entrypoint Routing - Reconstructed startup sequence
+    accDescr: Diagram showing reconstructed startup sequence in the Startup and Entrypoint Routing section.
     participant OS as Process environment
     participant Boot as Native/Bun bootstrap
     participant Route as Entrypoint router

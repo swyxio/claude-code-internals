@@ -25,3 +25,5 @@ jobs:
         run: python -m pip install -r requirements-docs.txt
       - name: Build wiki with strict link checking
         run: python -m mkdocs build --strict
+      - name: Validate generated routes and assets
+        run: npm run validate:built

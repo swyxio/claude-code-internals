@@ -23,6 +23,8 @@ fixture, not complete parent/child inheritance.
 
 ```mermaid
 sequenceDiagram
+    accTitle: Agents and Skills - Delegation flow
+    accDescr: Diagram showing delegation flow in the Agents and Skills section.
     participant P as Parent agent
     participant D as Dispatcher
     participant C as Child agent

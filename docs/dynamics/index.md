@@ -1,4 +1,4 @@
-# Dynamic Analysis
+# Runtime Observations
 
 Static anchors show that a string, schema, or branch exists. Dynamic probes show
 which boundaries the installed executable actually crosses under a controlled
@@ -36,6 +36,8 @@ and [request sanitizer](https://github.com/swyxio/claude-code-internals/blob/mai
 
 ```mermaid
 flowchart LR
+    accTitle: Runtime Observations - Probe map
+    accDescr: Diagram showing probe map in the Runtime Observations section.
   B[Signed Claude binary] --> R[Isolated runner]
   R --> H[Temporary home]
   R --> P[Temporary project]

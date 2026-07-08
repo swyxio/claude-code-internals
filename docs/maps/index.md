@@ -23,7 +23,7 @@ Every mapping uses repository URLs rooted at the merge target:
 | `E:` | Parsed evidence, anchors, claims, provenance | `https://github.com/swyxio/claude-code-internals/blob/main/evidence/...` |
 | `R:` | Independently authored reconstruction | `https://github.com/swyxio/claude-code-internals/blob/main/reconstructed/...` |
 | `H:` | Version-matched CLI help capture | `https://github.com/swyxio/claude-code-internals/blob/main/evidence/cli-help/...` |
-| `D:` | Existing long-form documentation source | `https://github.com/swyxio/claude-code-internals/blob/main/docs/...` |
+| `D:` | Long-form explanation inside this atlas | Relative `.md` page link, rendered as an on-site route |
 
 Anchor references use the exact `anchorId` from [`E:anchors`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/anchors.json). Claim references use the exact `id` from [`E:claims`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/claims.ndjson). Reconstructed filenames are explanatory boundaries, not recovered Anthropic source filenames.
 
@@ -45,6 +45,8 @@ Anchor references use the exact `anchorId` from [`E:anchors`](https://github.com
 
 ```mermaid
 flowchart LR
+    accTitle: Maps and Cross-References - One-screen orientation
+    accDescr: Diagram showing one-screen orientation in the Maps and Cross-References section.
     User["[O:S1] User / SDK / remote caller"] --> Boot["[D:S2] Entrypoint + startup plan"]
     Boot --> Settings["[D:S3] Settings + extension resolution"]
     Settings --> Loop["[D:S4] Async turn engine"]
@@ -79,4 +81,5 @@ flowchart LR
 - A valid signature authenticates the outer executable; it does not attest user-installed extensions.
 - Remote endpoint, payload, persistence encoding, hook ordering, and per-key precedence details remain unknown where the reconstruction injects an interface.
 
-For the legal and publication boundary, use [`D:legal-and-ethics`](https://github.com/swyxio/claude-code-internals/blob/main/docs/legal-and-ethics.md).
+For the legal and publication boundary, use
+[`D:legal-and-ethics`](../legal-and-ethics.md).

@@ -1,14 +1,27 @@
-# System Map
+# Runtime Architecture
 
 Claude Code `2.1.177` packages a local orchestration system into one native executable. The executable embeds a Bun runtime, a large application module, binding loaders, and platform-native add-ons. The model is reached over a provider transport; the client remains responsible for assembling context and executing local capabilities.
 
 For a compact linked view, use the [visual system map](../maps/system-map.md)
 and [execution-flow map](../maps/execution-flow.md).
 
+## Trace the runtime by question
+
+| Question | Mechanism | Runtime observation / proof |
+|---|---|---|
+| What is actually packaged in the executable? | [Mach-O and Bun container](binary-container.md) → [Bun/JSC deep dive](bun-jsc-deep-dive.md) | [Derived binary topology](https://github.com/swyxio/claude-code-internals/blob/main/evidence/binary-topology.json) |
+| What happens before the first model request? | [Startup and entrypoint routing](startup.md) → [configuration resolution](configuration.md) | [Observed provider startup](../dynamics/runtime-startup-provider.md) |
+| How does a model request become a local side effect? | [Agent loop](agent-loop-context.md) → [tool runtime](tool-runtime.md) → [permission engine](permissions.md) | [Observed tool loop](../dynamics/runtime-tool-session.md) |
+| What can outlive one turn? | [Sessions and background work](sessions-background.md) | [Observed transcript shape](../dynamics/runtime-tool-session.md#transcript-record-sequence) |
+| What can leave the process? | [Model providers and streaming](providers-transport.md) | [Network data-flow map](../maps/provider-network.md) |
+| How is the artifact replaced? | [Installer and updater](updater-install.md) | [Versioned snapshot](../snapshot-2.1.177.md) |
+
 ## Architectural layers
 
 ```mermaid
 flowchart TB
+    accTitle: Runtime Architecture - Architectural layers
+    accDescr: Diagram showing architectural layers in the Runtime Architecture section.
     subgraph Interfaces
       TTY["Interactive terminal"]
       Print["Print / JSON / stream-JSON"]

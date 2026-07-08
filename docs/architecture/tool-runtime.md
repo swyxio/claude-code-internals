@@ -8,6 +8,8 @@ Tools turn model output into local side effects. After registry and alias resolu
 
 ```mermaid
 flowchart TD
+    accTitle: Tool Runtime - Reconstructed dispatch pipeline
+    accDescr: Diagram showing reconstructed dispatch pipeline in the Tool Runtime section.
     Request["Model tool-use block"] --> Resolve["Resolve canonical tool name"]
     Resolve --> Alias["Apply configured single-hop alias"]
     Alias --> Available{"Present in effective tool registry?"}

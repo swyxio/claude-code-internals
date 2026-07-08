@@ -35,6 +35,8 @@ and `dynamic.mcp.stdio-flow` in
 
 ```mermaid
 flowchart TD
+    accTitle: Extension Surface Matrix - Plugin composition map
+    accDescr: Diagram showing plugin composition map in the Extension Surface Matrix section.
     Package["[D:E1] Plugin package"] --> Manifest["[D:E2] Manifest + userConfig schema"]
     Package --> Skills["[O:E3] Skills"]
     Package --> Agents["[O:E4] Agents"]

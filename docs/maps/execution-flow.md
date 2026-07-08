@@ -6,6 +6,8 @@ This page follows one conversational request from process startup to session idl
 
 ```mermaid
 flowchart TD
+    accTitle: Execution Call Graph and State Machines - Startup call graph
+    accDescr: Diagram showing startup call graph in the Execution Call Graph and State Machines section.
     Args["[O:C1] argv + environment + cwd"] --> Parse["[D:C2] parse arguments"]
     Parse --> Mode["[D:C3] select entrypoint/mode"]
     Mode --> Settings["[D:C4] resolve settings + provenance"]
@@ -37,6 +39,8 @@ The phase sequence is a readable reconstruction. Exact concurrent prefetch, help
 
 ```mermaid
 stateDiagram-v2
+    accTitle: Execution Call Graph and State Machines - Turn state machine
+    accDescr: Diagram showing turn state machine in the Execution Call Graph and State Machines section.
     [*] --> Prepare
     Prepare --> StreamModel: [D:T1] request selected model
     StreamModel --> EmitFrames: [D:T2] assistant / tool / usage frames
@@ -67,6 +71,8 @@ stateDiagram-v2
 
 ```mermaid
 flowchart TD
+    accTitle: Execution Call Graph and State Machines - Tool-call pipeline
+    accDescr: Diagram showing tool-call pipeline in the Execution Call Graph and State Machines section.
     Raw["[D:X1] Raw tool-use input"] --> Coerce["[D:X2] coerceInput"]
     Coerce --> Parse["[D:X3] schema safeParse"]
     Parse -- invalid --> ValidationError["[D:X4] input error result"]
