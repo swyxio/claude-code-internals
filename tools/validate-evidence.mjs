@@ -194,6 +194,12 @@ const forbiddenMagic = new Set([
   "504b0708",
 ]);
 const inspectedFiles = new Set();
+const permittedLargeFiles = new Map([
+  [
+    resolve(root, "docs/assets/vendor/mermaid-11.16.0.min.js"),
+    "74d7c46dabca328c2294733910a8aa1ed0c37451776e8d5295da38a2b758fb9b",
+  ],
+]);
 function inspectFile(path) {
   const absolute = resolve(path);
   if (inspectedFiles.has(absolute) || !existsSync(absolute)) return;
@@ -204,9 +210,15 @@ function inspectFile(path) {
     !forbiddenExtensions.has(extname(absolute)),
     `embedded executable must not be committed: ${absolute}`,
   );
-  assert(stat.size < 2_000_000, `unexpectedly large committed file: ${absolute} (${stat.size} bytes)`);
+  assert(
+    stat.size < 2_000_000 || permittedLargeFiles.has(absolute),
+    `unexpectedly large committed file: ${absolute} (${stat.size} bytes)`,
+  );
   const bytes = readFileSync(absolute);
   const contentHash = createHash("sha256").update(bytes).digest("hex");
+  if (permittedLargeFiles.has(absolute)) {
+    assert.equal(contentHash, permittedLargeFiles.get(absolute), `vendored asset hash drift: ${absolute}`);
+  }
   assert(
     !forbiddenContentHashes.has(contentHash),
     `known recovered artifact content must not be committed: ${absolute}`,

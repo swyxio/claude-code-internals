@@ -78,7 +78,6 @@ extra_css:
   - stylesheets/home.css
 
 extra_javascript:
-  - javascripts/mermaid-loader.js
   - javascripts/site-ui.js
 
 nav:
