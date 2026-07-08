@@ -1,5 +1,8 @@
 # Reconstruction Methodology
 
+Browse the result through the
+[evidence-to-code cross-reference](../maps/evidence-code-cross-reference.md).
+
 The project uses an evidence-preserving pipeline: identify one artifact, derive bounded metadata, locate short semantic anchors privately, write an independent architecture, and publish only claims that can point back to that evidence.
 
 ## Pipeline

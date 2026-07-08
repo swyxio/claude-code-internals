@@ -1,5 +1,9 @@
 # Mach-O and Bun Container
 
+For the exact byte ranges, 52-byte module-record interpretation, JSC cache
+alignment, all eleven modules, and native wrapper pairings, continue to the
+[Bun and JSC deep dive](bun-jsc-deep-dive.md).
+
 The installed artifact is both a native macOS executable and a container for the JavaScript application graph. Understanding those two layers prevents native-runtime features from being incorrectly attributed to the Claude Code application.
 
 ## Native envelope

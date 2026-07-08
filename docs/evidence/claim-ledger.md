@@ -1,6 +1,19 @@
 # Claim Ledger
 
-The canonical machine-readable claim ledger is [`evidence/claims.ndjson`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/claims.ndjson). It currently contains 69 version-bound records: 16 observed facts, 52 derived interpretations, and one explicit hypothesis. [`evidence/anchors.json`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/anchors.json) is the supporting index of 51 short semantic anchors in entry-module hash `45cb1eaa2b7e274ce87b1df0a1729f017ac06fffe782fac8acb42ab186243573`.
+Browse claims by subsystem and reconstructed file in the
+[evidence-to-code cross-reference](../maps/evidence-code-cross-reference.md).
+
+The canonical machine-readable claim ledger is [`evidence/claims.ndjson`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/claims.ndjson). It currently contains 85 version-bound records: 32 observed facts, 52 derived interpretations, and one explicit hypothesis. Sixteen observed claims come from isolated dynamic probes; the original static index remains 69 claims and 51 short semantic anchors. [`evidence/anchors.json`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/anchors.json) maps those anchors within entry-module hash `45cb1eaa2b7e274ce87b1df0a1729f017ac06fffe782fac8acb42ab186243573`.
+
+## Dynamic observation families
+
+| Family | Observed boundary | Sanitized evidence |
+|---|---|---|
+| Core protocol | provider preflight, Messages request fields, stream ordering, no-session file effects | [`protocol-smoke.json`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/dynamic/core/protocol-smoke.json) |
+| Runtime loop | direct-provider path, text adaptation, `Read` → `Bash` feedback, cache marker movement, JSONL transcript | [`runtime-dynamics.json`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/dynamic/runtime/runtime-dynamics.json) |
+| Settings and hooks | scalar precedence and concurrent sibling `PreToolUse` dispatch | [`settings-precedence.json`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/dynamic/extensions/settings-precedence.json), [`hooks-ordering.json`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/dynamic/extensions/hooks-ordering.json) |
+| MCP and discovery | stdio handshake/tool call plus explicit agent, skill, and plugin catalogs | [`mcp-protocol.json`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/dynamic/extensions/mcp-protocol.json), [`discovery.json`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/dynamic/extensions/discovery.json) |
+| Permissions and sandbox | `dontAsk` denial/allow contrast and bounded write containment | [`permission-sandbox.json`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/dynamic/extensions/permission-sandbox.json) |
 
 <span class="evidence-label observed">Observed</span> Claim `container.bun-runtime-version` records the literal embedded version string `1.3.14+2a41ca974`, including its nine-character revision prefix, in [`provenance.json`](https://github.com/swyxio/claude-code-internals/blob/main/evidence/provenance.json).
 

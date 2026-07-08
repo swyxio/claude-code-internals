@@ -1,5 +1,7 @@
 # Network and Telemetry
 
+Visual companion: [providers and network map](../maps/provider-network.md).
+
 Network activity is not limited to inference. Depending on configuration, the client can contact provider APIs, release infrastructure, telemetry/error services, remote MCP servers, plugin or marketplace origins, remote-control infrastructure, web tools, and linked applications.
 
 ## Traffic classes

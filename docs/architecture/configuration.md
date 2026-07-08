@@ -1,5 +1,7 @@
 # Configuration Resolution
 
+Visual companion: [settings and permissions map](../maps/settings-permissions.md).
+
 Configuration is the control plane for tools, permissions, providers, extensions, persistence, integrations, and security posture. The critical distinction is not merely “which setting exists,” but **who supplied it and whether a less-trusted source may override it**.
 
 ## Visible sources

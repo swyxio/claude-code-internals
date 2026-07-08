@@ -72,9 +72,22 @@ nav:
       - Atlas Home: index.md
       - Scope and Method: scope-and-method.md
       - Snapshot 2.1.177: snapshot-2.1.177.md
+  - Reading Paths:
+      - Choose Your Route: audiences/index.md
+  - Maps:
+      - Map Index: maps/index.md
+      - System Map: maps/system-map.md
+      - Execution Flow: maps/execution-flow.md
+      - Extension Surfaces: maps/extension-surfaces.md
+      - Settings and Permissions: maps/settings-permissions.md
+      - Persistence and Data Flow: maps/persistence-dataflow.md
+      - Providers and Network: maps/provider-network.md
+      - Threat Model: maps/threat-model.md
+      - Evidence to Code: maps/evidence-code-cross-reference.md
   - Architecture:
       - System Map: architecture/index.md
       - Mach-O and Bun Container: architecture/binary-container.md
+      - Bun and JSC Deep Dive: architecture/bun-jsc-deep-dive.md
       - Startup and Entrypoint Routing: architecture/startup.md
       - Configuration Resolution: architecture/configuration.md
       - Agent Loop, Context, and Compaction: architecture/agent-loop-context.md
@@ -86,6 +99,11 @@ nav:
   - Dynamic Analysis:
       - Method and Probe Map: dynamics/index.md
       - Provider Protocol Smoke Test: dynamics/protocol-smoke.md
+      - Runtime Probe Method: dynamics/runtime-probe-method.md
+      - Runtime Startup and Provider Turn: dynamics/runtime-startup-provider.md
+      - Runtime Tool Loop and Sessions: dynamics/runtime-tool-session.md
+      - Extension Runtime: dynamics/extensions-runtime.md
+      - Permissions and Sandbox: dynamics/security-permissions-sandbox.md
   - Extensibility:
       - Extension Surface Map: extensibility/index.md
       - Instructions and Memory: extensibility/instructions-memory.md

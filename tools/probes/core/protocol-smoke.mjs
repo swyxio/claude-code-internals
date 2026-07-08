@@ -7,6 +7,7 @@ import { dirname, resolve } from "node:path";
 import { startFakeAnthropicServer, textResponse } from "../lib/fake-anthropic-server.mjs";
 import {
   createProbeContext,
+  LOOPBACK_ONLY_SANDBOX_PROFILE,
   probeEnvironment,
   resolveClaudeBinary,
   runClaude,
@@ -86,6 +87,7 @@ try {
       ANTHROPIC_BASE_URL: server.baseUrl,
       NO_PROXY: "127.0.0.1,localhost",
     }),
+    sandboxProfile: LOOPBACK_ONLY_SANDBOX_PROFILE,
   });
   const after = snapshotFiles(context);
   if (result.code !== 0) {
@@ -108,6 +110,7 @@ try {
       temporaryHome: true,
       temporaryProject: true,
       loopbackProvider: true,
+      outboundNetworkDeniedExceptLoopback: true,
       dummyCredential: true,
       nonessentialTrafficDisabled: true,
       telemetryDisabled: true,

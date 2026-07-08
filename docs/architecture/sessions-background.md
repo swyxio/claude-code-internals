@@ -1,5 +1,7 @@
 # Sessions and Background Work
 
+Visual companion: [persistence and data-flow map](../maps/persistence-dataflow.md).
+
 Sessions provide identity and persistence around the agent loop. Background agents, workflows, worktrees, and remote control add work that can outlive a foreground response, so lifecycle and storage must be considered together.
 
 ## Session identity operations

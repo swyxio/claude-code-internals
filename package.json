@@ -5,14 +5,21 @@
   "type": "module",
   "scripts": {
     "inspect": "node tools/inspect-binary.mjs inventory",
+    "topology": "node tools/build-binary-topology.mjs",
     "extract": "node tools/inspect-binary.mjs extract",
     "anchors": "node tools/inspect-binary.mjs anchors",
     "capture-help": "node tools/capture-cli-help.mjs",
     "probe:core": "node tools/probes/core/protocol-smoke.mjs",
+    "probe:extensions": "node tools/probes/extensions/run-all.mjs",
+    "probe:runtime": "node tools/probes/runtime/capture-runtime.mjs",
+    "test:extensions": "node tools/probes/extensions/probe-reports.test.mjs",
     "test:probes": "node tools/probes/lib/sanitize-request.test.mjs",
+    "test:runtime": "node --test tools/probes/runtime/runtime.test.mjs",
+    "validate:links": "node tools/validate-links.mjs",
     "verify-install": "bash tools/verify-install.sh",
     "validate:dynamic": "node tools/validate-dynamic-evidence.mjs",
-    "validate": "node tools/inspect-binary.synthetic.test.mjs && node tools/validate-evidence.mjs && npm run test:probes && npm run validate:dynamic",
+    "validate:topology": "node tools/validate-binary-topology.mjs",
+    "validate": "node tools/inspect-binary.synthetic.test.mjs && node tools/validate-evidence.mjs && npm run validate:topology && npm run test:probes && npm run test:runtime && npm run test:extensions && npm run validate:dynamic && npm run validate:links",
     "check": "node tools/inspect-binary.test.mjs && npm run validate"
   },
   "engines": {

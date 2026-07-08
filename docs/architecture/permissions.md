@@ -1,5 +1,7 @@
 # Permission Engine
 
+Visual companion: [settings and permissions map](../maps/settings-permissions.md).
+
 The permission engine decides whether a requested local capability may proceed, must be confirmed, should be denied, or should be constrained by a sandbox. Its effective decision combines mode, rules, managed policy, workspace trust, tool identity, arguments, and environment posture.
 
 ## Advertised modes

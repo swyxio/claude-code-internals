@@ -32,6 +32,10 @@ probes of the official macOS arm64 executable installed by
 - [`docs/`](docs/) — the detailed GitHub Pages wiki, with architecture,
   extensibility, and security analysis.
 
+Start browsing with the [audience routes](docs/audiences/index.md), [visual map
+index](docs/maps/index.md), or [evidence-to-code
+cross-reference](docs/maps/evidence-code-cross-reference.md).
+
 The terminal UI is intentionally not reconstructed except where a presentation
 boundary affects the underlying protocol or state machine.
 
@@ -74,6 +78,25 @@ npm run check
 ignored `.work/` tree unless told otherwise. Do not commit the output. The
 public evidence records content hashes and byte offsets so a lawful local copy
 can be checked without republishing it.
+
+## Reproduce the dynamic probes
+
+The probes execute the exact pinned binary with temporary homes/projects,
+synthetic fixtures, dummy credentials, and loopback providers. Raw prompts,
+credentials, request bodies, transcripts, and command output are discarded;
+only structural summaries and hashes are committed.
+
+```bash
+npm run probe:core
+npm run probe:runtime
+npm run probe:extensions
+npm run validate
+```
+
+The runtime suite requires macOS `sandbox-exec` and denies non-loopback
+outbound sockets for the CLI and its child processes. The nested product
+sandbox case is intentionally not wrapped in a second Seatbelt profile because
+that would change the sandbox-availability behavior being tested.
 
 ## Evidence model
 

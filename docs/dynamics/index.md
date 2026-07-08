@@ -54,6 +54,19 @@ flowchart LR
 - [Provider protocol smoke test](protocol-smoke.md) — startup reachability,
   Messages API request shape, stream event ordering, and bare-mode filesystem
   side effects.
+- [Runtime probe method](runtime-probe-method.md) — allowlisted environments,
+  loopback fixtures, an OS-enforced network boundary, and publication rules.
+- [Runtime startup and provider turn](runtime-startup-provider.md) — an
+  invocation path that reaches `POST /v1/messages` without the smoke probe's
+  `HEAD /` preflight.
+- [Runtime tool loop and sessions](runtime-tool-session.md) — a three-request
+  `Read` → `Bash` feedback loop and sanitized transcript event structure.
+- [Extension runtime dynamics](extensions-runtime.md) — scalar settings
+  precedence, concurrent sibling hooks, MCP stdio dispatch, and explicit
+  agent/skill/plugin discovery.
+- [Permission and sandbox dynamics](security-permissions-sandbox.md) —
+  `dontAsk` denial versus an explicit allow rule and a bounded fail-closed
+  sandbox write test.
 
 Additional runtime, tool-loop, session, hook, MCP, plugin, skill, agent, and
 security probes are added here only after their sanitizers and offline

@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "probe": "agent-skill-plugin-discovery",
+  "safety": {
+    "temporaryHomes": true,
+    "temporaryGitProjects": true,
+    "loopbackProvider": true,
+    "dummyCredential": true,
+    "telemetryDisabled": true,
+    "bareModeUsed": true,
+    "normalModeUsed": true,
+    "externalPluginsFetched": false,
+    "rawPromptsRetained": false,
+    "rawExtensionBodiesRetained": false
+  },
+  "artifact": {
+    "version": "2.1.177",
+    "sha256": "eb0730351be2f02b482b1855870f5877489085aac86b0c4c1db4e458d9e40ed9",
+    "size": 225124512,
+    "platform": "darwin-arm64"
+  },
+  "markers": {
+    "agentDescription": {
+      "bytes": 39,
+      "sha256": "def216961b3e4553959835fc31b4edc2e59828fef7c41797180f2d756cc1c295"
+    },
+    "agentPrompt": {
+      "bytes": 34,
+      "sha256": "f473714e3747989f58701da92d9e54953287065b99e0a32f2b92a335d7a23e3a"
+    },
+    "userSkill": {
+      "bytes": 32,
+      "sha256": "8aae0bda814f50fb04ced7195283d1847b9e603aeddd44ecef2ae84d27d4c8f4"
+    },
+    "pluginSkill": {
+      "bytes": 34,
+      "sha256": "b62ec41a5b57e7b8d79dc53aa97aa282b3d1fd4f1e920fdafd03cd1058743229"
+    }
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "mode": "bare",
+      "run": {
+        "exitCode": 0,
+        "signal": null,
+        "stdoutPresent": true,
+        "stderrPresent": false,
+        "outputTruncated": false
+      },
+      "markerPaths": {
+        "agentDescription": [],
+        "agentPrompt": [],
+        "userSkill": [],
+        "pluginSkill": []
+      },
+      "toolCount": 3,
+      "toolNames": [
+        "Bash",
+        "Edit",
+        "Read"
+      ],
+      "toolCatalogSha256": "68bd2a97c14521660264691eddc4e80099e1ace4201419d52c5c0ecdc513d491",
+      "initKeys": [
+        "agents",
+        "analytics_disabled",
+        "apiKeySource",
+        "claude_code_version",
+        "cwd",
+        "fast_mode_state",
+        "mcp_servers",
+        "model",
+        "output_style",
+        "permissionMode",
+        "plugins",
+        "product_feedback_disabled",
+        "session_id",
+        "skills",
+        "slash_commands",
+        "subtype",
+        "tools",
+        "type",
+        "uuid"
+      ],
+      "catalogCounts": {
+        "agents": 5,
+        "plugins": 0,
+        "skills": 12,
+        "slashCommands": 24
+      },
+      "syntheticCatalogEntries": []
+    },
+    {
+      "name": "inline-agent-selected",
+      "mode": "bare",
+      "run": {
+        "exitCode": 0,
+        "signal": null,
+        "stdoutPresent": true,
+        "stderrPresent": false,
+        "outputTruncated": false
+      },
+      "markerPaths": {
+        "agentDescription": [],
+        "agentPrompt": [
+          "$.system[2].text"
+        ],
+        "userSkill": [],
+        "pluginSkill": []
+      },
+      "toolCount": 1,
+      "toolNames": [
+        "Read"
+      ],
+      "toolCatalogSha256": "a57a813eb1000ae9dda8a26b3315046e712d276dd861155ad9eca96f1175ac47",
+      "initKeys": [
+        "agents",
+        "analytics_disabled",
+        "apiKeySource",
+        "claude_code_version",
+        "cwd",
+        "fast_mode_state",
+        "mcp_servers",
+        "model",
+        "output_style",
+        "permissionMode",
+        "plugins",
+        "product_feedback_disabled",
+        "session_id",
+        "skills",
+        "slash_commands",
+        "subtype",
+        "tools",
+        "type",
+        "uuid"
+      ],
+      "catalogCounts": {
+        "agents": 6,
+        "plugins": 0,
+        "skills": 12,
+        "slashCommands": 24
+      },
+      "syntheticCatalogEntries": [
+        "probe-agent"
+      ]
+    },
+    {
+      "name": "user-skill-discovered",
+      "mode": "normal",
+      "run": {
+        "exitCode": 0,
+        "signal": null,
+        "stdoutPresent": true,
+        "stderrPresent": false,
+        "outputTruncated": false
+      },
+      "markerPaths": {
+        "agentDescription": [],
+        "agentPrompt": [],
+        "userSkill": [
+          "$.messages[1].content"
+        ],
+        "pluginSkill": []
+      },
+      "toolCount": 25,
+      "toolNames": [
+        "Agent",
+        "AskUserQuestion",
+        "Bash",
+        "CronCreate",
+        "CronDelete",
+        "CronList",
+        "Edit",
+        "EnterPlanMode",
+        "EnterWorktree",
+        "ExitPlanMode",
+        "ExitWorktree",
+        "NotebookEdit",
+        "Read",
+        "ScheduleWakeup",
+        "Skill",
+        "TaskCreate",
+        "TaskGet",
+        "TaskList",
+        "TaskOutput",
+        "TaskStop",
+        "TaskUpdate",
+        "WebFetch",
+        "WebSearch",
+        "Workflow",
+        "Write"
+      ],
+      "toolCatalogSha256": "0f25a50bc78704c101d0c2b38b73d86ae7e879c7729e75cd3dfe4a0fd8e489ce",
+      "initKeys": [
+        "agents",
+        "analytics_disabled",
+        "apiKeySource",
+        "claude_code_version",
+        "cwd",
+        "fast_mode_state",
+        "mcp_servers",
+        "memory_paths",
+        "model",
+        "output_style",
+        "permissionMode",
+        "plugins",
+        "product_feedback_disabled",
+        "session_id",
+        "skills",
+        "slash_commands",
+        "subtype",
+        "tools",
+        "type",
+        "uuid"
+      ],
+      "catalogCounts": {
+        "agents": 5,
+        "plugins": 0,
+        "skills": 13,
+        "slashCommands": 25
+      },
+      "syntheticCatalogEntries": [
+        "probe-user-skill"
+      ]
+    },
+    {
+      "name": "explicit-plugin-skill-discovered",
+      "mode": "bare",
+      "run": {
+        "exitCode": 0,
+        "signal": null,
+        "stdoutPresent": true,
+        "stderrPresent": false,
+        "outputTruncated": false
+      },
+      "markerPaths": {
+        "agentDescription": [],
+        "agentPrompt": [],
+        "userSkill": [],
+        "pluginSkill": []
+      },
+      "toolCount": 3,
+      "toolNames": [
+        "Bash",
+        "Edit",
+        "Read"
+      ],
+      "toolCatalogSha256": "68bd2a97c14521660264691eddc4e80099e1ace4201419d52c5c0ecdc513d491",
+      "initKeys": [
+        "agents",
+        "analytics_disabled",
+        "apiKeySource",
+        "claude_code_version",
+        "cwd",
+        "fast_mode_state",
+        "mcp_servers",
+        "model",
+        "output_style",
+        "permissionMode",
+        "plugins",
+        "product_feedback_disabled",
+        "session_id",
+        "skills",
+        "slash_commands",
+        "subtype",
+        "tools",
+        "type",
+        "uuid"
+      ],
+      "catalogCounts": {
+        "agents": 5,
+        "plugins": 1,
+        "skills": 13,
+        "slashCommands": 25
+      },
+      "syntheticCatalogEntries": [
+        "probe-extension-plugin",
+        "probe-extension-plugin:probe-plugin-skill",
+        "probe-extension-plugin@inline"
+      ]
+    }
+  ],
+  "limits": [
+    "Marker paths prove that synthetic extension metadata or instructions reached the request boundary; they do not prove how the model uses that text.",
+    "Tool and system signatures are hashes of sanitized structural summaries, not raw prompts, descriptions, schemas, or extension bodies.",
+    "Only inline agents, user-home skills, and an explicitly supplied local plugin are in scope."
+  ]
+}

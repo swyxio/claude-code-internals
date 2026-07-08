@@ -7,6 +7,9 @@ import { sha256 } from "./sanitize-request.mjs";
 
 const outputLimit = 2_000_000;
 
+export const LOOPBACK_ONLY_SANDBOX_PROFILE =
+  '(version 1) (allow default) (deny network-outbound) (allow network-outbound (remote ip "localhost:*"))';
+
 export function resolveClaudeBinary() {
   return realpathSync(process.env.CLAUDE_BINARY ?? `${process.env.HOME}/.local/bin/claude`);
 }
@@ -50,9 +53,22 @@ function appendBounded(chunks, chunk, state) {
   state.bytes += buffer.length;
 }
 
-export function runClaude({ binary = resolveClaudeBinary(), args, cwd, env, timeoutMs = 30_000 }) {
+export function runClaude({
+  binary = resolveClaudeBinary(),
+  args,
+  cwd,
+  env,
+  timeoutMs = 30_000,
+  sandboxProfile,
+}) {
   return new Promise((resolveRun, rejectRun) => {
-    const child = spawn(binary, args, { cwd, env, stdio: ["ignore", "pipe", "pipe"] });
+    if (sandboxProfile && process.platform !== "darwin") {
+      rejectRun(new Error("sandboxProfile requires macOS sandbox-exec"));
+      return;
+    }
+    const executable = sandboxProfile ? "/usr/bin/sandbox-exec" : binary;
+    const childArgs = sandboxProfile ? ["-p", sandboxProfile, binary, ...args] : args;
+    const child = spawn(executable, childArgs, { cwd, env, stdio: ["ignore", "pipe", "pipe"] });
     const stdout = [];
     const stderr = [];
     const stdoutState = { bytes: 0 };

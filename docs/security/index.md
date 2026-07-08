@@ -1,5 +1,7 @@
 # Trust Boundaries
 
+Visual companion: [threat model and control register](../maps/threat-model.md).
+
 Claude Code runs with the user’s operating-system identity and coordinates content from a model, repository, local configuration, extensions, remote services, and other applications. Security depends on keeping those principals distinct even when they all contribute to one agent turn.
 
 ## Principals and assets

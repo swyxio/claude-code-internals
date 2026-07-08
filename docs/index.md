@@ -47,7 +47,13 @@ flowchart LR
     Hooks --> Loop
 ```
 
-Start with the [system map](architecture/index.md), then use the [extension map](extensibility/index.md) and [trust-boundary analysis](security/index.md). The [claim ledger](evidence/claim-ledger.md) is the shortest path from prose back to source-of-truth evidence.
+Start with the [visual map index](maps/index.md) or choose an
+[audience-specific reading path](audiences/index.md). The long-form
+[architecture](architecture/index.md), [extension](extensibility/index.md), and
+[trust-boundary](security/index.md) chapters provide the surrounding analysis.
+The [evidence-to-code cross-reference](maps/evidence-code-cross-reference.md)
+and [claim ledger](evidence/claim-ledger.md) are the shortest paths from prose
+back to source-of-truth evidence and browsable reconstruction files.
 
 ## Deliberate omissions
 

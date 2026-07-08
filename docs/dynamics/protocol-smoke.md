@@ -35,6 +35,12 @@ agent. It then sent one authenticated `POST /v1/messages` using
 the report retains only that `x-api-key` was present and `authorization` was
 absent.
 
+This ordering is scoped to this invocation. A separate
+[bare-and-safe runtime probe](runtime-startup-provider.md) supplied a custom
+system prompt and went directly to `POST /v1/messages`, establishing that the
+reachability preflight is not universal without isolating which startup input
+controls it.
+
 The Messages request exposed these top-level fields:
 
 `context_management`, `max_tokens`, `messages`, `metadata`, `model`, `stream`,

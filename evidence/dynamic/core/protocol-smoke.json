@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "probe": "core/protocol-smoke",
-  "capturedAt": "2026-07-08T21:53:07.870Z",
+  "capturedAt": "2026-07-08T22:06:17.451Z",
   "subject": {
     "version": "2.1.177",
     "artifactSha256": "eb0730351be2f02b482b1855870f5877489085aac86b0c4c1db4e458d9e40ed9",
@@ -11,6 +11,7 @@
     "temporaryHome": true,
     "temporaryProject": true,
     "loopbackProvider": true,
+    "outboundNetworkDeniedExceptLoopback": true,
     "dummyCredential": true,
     "nonessentialTrafficDisabled": true,
     "telemetryDisabled": true,
@@ -42,8 +43,8 @@
     "exitCode": 0,
     "signal": null,
     "stdout": {
-      "bytes": 4183,
-      "sha256": "742b295401e67a8322b3b74be2e277e29eaf4b22ded2a2780784de18a072c5f9"
+      "bytes": 4184,
+      "sha256": "94f3da2680b07267c2924425e8ddecf199339992e1b3c46e1d91b3d9816d507c"
     },
     "stderr": {
       "bytes": 0,
@@ -335,7 +336,7 @@
               "type": "text",
               "text": {
                 "bytes": 85,
-                "sha256": "b6334a3e36534d3a9d7ab1bab531c6871ba3ccd29783fb8b7887e23f15e36da1"
+                "sha256": "6fec95c72e41e7b207d15bb8368b4306f6a22c3cf5e8b7c17adaae389abd6e8c"
               }
             },
             {
@@ -350,7 +351,7 @@
               "type": "text",
               "text": {
                 "bytes": 125,
-                "sha256": "efb0c68c982cc4db0f164269523f958d7ec983e5bf5d02417467719a3e9d38f7"
+                "sha256": "6318b1738f73cd0df2b2766194c08358a78299717e6ceacc19107481b203f311"
               },
               "cacheControlType": "ephemeral"
             }
@@ -389,12 +390,12 @@
       {
         "path": "home/.claude/.claude.json",
         "bytes": 258,
-        "sha256": "ba9e7ea3c94ade7bc57054f783dec00f05a7f2594dced6a333051ce2160d6252"
+        "sha256": "20edab0066c56400ebd834121efa23b57118988415265eb43582d98aa6610c88"
       },
       {
         "path": "home/.claude/backups/.claude.json.backup.$EPOCH_MS",
         "bytes": 50,
-        "sha256": "01c84214e65ae598bc4fa90bde3a6fcb4fa4c9e47387d0279a49be8a3ad79eb5"
+        "sha256": "0c561a4dcc84c77f77cd37715b664129afd6084e30208ad7b192a7958e5e6470"
       }
     ],
     "shape": {
@@ -421,7 +422,7 @@
             "sha256": {
               "type": "string",
               "bytes": 64,
-              "sha256": "8a37e0bb8dcd4be6ec49e74af2961bce05bdc25a843bd4175f22f26efe1c926b"
+              "sha256": "1c8744cb782070d2de47170ba5fc0e4670a10c43b76484f85147a174415c7378"
             }
           }
         },
@@ -445,7 +446,7 @@
             "sha256": {
               "type": "string",
               "bytes": 64,
-              "sha256": "c5043d33a48b1dbb19b0aa1342852d94c3352145adc4fd5c6e1fb35f5106eefa"
+              "sha256": "9a7d6331d593bf9042d57a970dfbdefabace74bd7ba70807531ca50b872d1705"
             }
           }
         }
