@@ -1,6 +1,6 @@
-# Inside a Compiled Agent — video source
+# Inside Claude Code: A Decompilation — video source
 
-This is a five-minute, three-act HyperFrames composition: **Engine**, **Surface**, and **Boundary**.
+This is a five-minute Claude Code decompilation in three acts: **Engine**, **Surface**, and **Boundary**.
 
 ## Rebuild
 

@@ -1,7 +1,7 @@
 ---
 format: 1920x1080
 mode: collaborative
-message: "A compiled agent becomes legible as a turn engine, extension surface, and layered control boundary—when every claim remains version-pinned and testable."
+message: "This Claude Code decompilation makes its turn engine, extension surface, and layered control boundary legible—when every claim remains version-pinned and testable."
 arc: "three-act forensic concept explainer: engine → surface → boundary"
 audience: "AI-agent developers, extension authors, security reviewers, and technically curious operators"
 destination: "YouTube and website embed"
@@ -28,7 +28,7 @@ acts: "01 Engine · 02 Surface · 03 Boundary"
 
 narrativeRole: Opens the cognitive gap with the exact specimen and the absence of a convenient source map.
 
-keyMessage: The artifact is opaque, but it is not unknowable.
+keyMessage: Claude Code is opaque, but it is not unknowable.
 
 ## Frame 2 — Three questions
 
@@ -54,7 +54,7 @@ keyMessage: Turn, capability, and control are the three questions that turn a bl
 ## Frame 3 — Engine: structure, not source
 
 - scene: Integrated title move `01 / ENGINE` resolves inside the monolith; the envelope opens only to a native shell, Bun payload, loaders, and native add-ons, then begins flowing into the turn rail.
-- voiceover: "One—engine. The binary gives us a map—not recovered source: a native shell, a Bun payload, loaders, and add-ons."
+- voiceover: "One—engine. The Claude Code binary gives us a map—not recovered source: a native shell, a Bun payload, loaders, and add-ons."
 - duration: 20s
 - poster: 15s
 - transition_in: zoom-through
@@ -70,7 +70,7 @@ keyMessage: Turn, capability, and control are the three questions that turn a bl
 
 narrativeRole: Sets the evidence boundary for the runtime model while introducing the first act's spatial grammar.
 
-keyMessage: The artifact's structure is enough to locate the runtime, without pretending it is source code.
+keyMessage: Claude Code's structure is enough to locate the runtime, without pretending it is source code.
 
 ## Frame 4 — The living turn
 
@@ -263,7 +263,7 @@ keyMessage: A security conclusion must name the specific capability and boundary
 ## Frame 13 — The model clicks
 
 - scene: The opening barcode becomes a pulse rail, then sockets, then a closed three-layer core; opening labels TURN / CAPABILITY / CONTROL resolve around it as the small `TESTED PATH` badge lights.
-- voiceover: "A compiled agent stops being a monolith when you can trace its turn, locate where capability enters, and see which controls meet it on the way out."
+- voiceover: "Claude Code stops being a monolith when you can trace its turn, locate where capability enters, and see which controls meet it on the way out."
 - duration: 25s
 - poster: 19s
 - transition_in: zoom-through
@@ -279,12 +279,12 @@ keyMessage: A security conclusion must name the specific capability and boundary
 
 narrativeRole: Pays off the three shapes and three questions introduced in the opening.
 
-keyMessage: Behavior, authority, and control turn an opaque artifact into an inspectable model.
+keyMessage: Behavior, authority, and control turn opaque Claude Code behavior into an inspectable model.
 
 ## Frame 14 — Trace, pin, test
 
 - scene: The closed core holds while three final captions arrive one per beat: ENGINE / BEHAVIOR VISIBLE; SURFACE / AUTHORITY VISIBLE; BOUNDARY / RISK VISIBLE. A two-second music-only end card presents `TRACE THE TURN / MAP CAPABILITY / TEST THE BOUNDARY` with the repository route.
-- voiceover: "Engine makes behavior visible. Surface makes authority visible. Boundary makes risk visible. That is enough to reason about a compiled agent—without pretending we recovered its source."
+- voiceover: "Engine makes Claude Code's behavior visible. Surface makes authority visible. Boundary makes risk visible. That is enough to reason about Claude Code—without pretending we recovered its source."
 - duration: 15s
 - poster: 11s
 - transition_in: cut

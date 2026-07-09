@@ -3,9 +3,9 @@
     "id": 1,
     "start": 0,
     "end": 12,
-    "text": "One signed executable. Two hundred twenty-five million bytes. Eleven embedded modules. No source map.",
+    "text": "Claude Code, decompiled as a signed executable. Two hundred twenty-five million bytes. Eleven embedded modules. No source map.",
     "path": "cache/narration/line-01.wav",
-    "duration": 7.424
+    "duration": 9.344
   },
   {
     "id": 2,
@@ -19,9 +19,9 @@
     "id": 3,
     "start": 25,
     "end": 45,
-    "text": "One—engine. The binary gives us a map—not recovered source: a native shell, a Bun payload, loaders, and add-ons.",
+    "text": "One—engine. The Claude Code binary gives us a map—not recovered source: a native shell, a Bun payload, loaders, and add-ons.",
     "path": "cache/narration/line-03.wav",
-    "duration": 7.872
+    "duration": 8.661333
   },
   {
     "id": 4,
@@ -99,16 +99,16 @@
     "id": 13,
     "start": 260,
     "end": 285,
-    "text": "A compiled agent stops being a monolith when you can trace its turn, locate where capability enters, and see which controls meet it on the way out.",
+    "text": "Claude Code stops being a monolith when you can trace its turn, locate where capability enters, and see which controls meet it on the way out.",
     "path": "cache/narration/line-13.wav",
-    "duration": 9.770667
+    "duration": 9.152
   },
   {
     "id": 14,
     "start": 285,
     "end": 300,
-    "text": "Engine makes behavior visible. Surface makes authority visible. Boundary makes risk visible. That is enough to reason about a compiled agent—without pretending we recovered its source.",
+    "text": "Engine makes Claude Code's behavior visible. Surface makes authority visible. Boundary makes risk visible. That is enough to reason about Claude Code—without pretending we recovered its source.",
     "path": "cache/narration/line-14.wav",
-    "duration": 12.437333
+    "duration": 12.864
   }
 ]

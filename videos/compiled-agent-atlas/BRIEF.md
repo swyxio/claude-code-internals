@@ -1,7 +1,7 @@
-# Locked brief — Inside a Compiled Agent
+# Locked brief — Inside Claude Code: A Decompilation
 
 - **Mode:** collaborative
-- **Working title:** *Inside a Compiled Agent: Engine, Surface, Boundary*
+- **Working title:** *Inside Claude Code: A Decompilation of Engine, Surface, and Boundary*
 - **Format:** one five-minute master plus three optional act cuts
 - **Destination:** YouTube / website embed
 - **Canvas:** 1920×1080, 16:9
@@ -10,7 +10,7 @@
 - **Audience:** AI-agent developers, extension authors, security reviewers, and technically curious operators
 - **Angle:** three-act forensic concept explainer
 - **Narration:** authoritative, energetic, technically restrained
-- **Message:** A compiled agent becomes legible as a turn engine, extension surface, and layered control boundary—when every claim remains version-pinned and testable.
+- **Message:** This Claude Code decompilation makes its turn engine, extension surface, and layered control boundary legible—when every claim remains version-pinned and testable.
 
 ## Three questions
 

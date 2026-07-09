@@ -1,4 +1,4 @@
-# SCRIPT — Inside a Compiled Agent
+# SCRIPT — Inside Claude Code: A Decompilation
 
 **Voice:** Dynamic Derek (`0516c2d857eb425c94e90b068241914e`) · HeyGen Starfish
 **Voice settings:** 1.04× for Acts 1–2 · 1.0× for Act 3 and ending · word timestamps enabled
@@ -11,7 +11,7 @@
 **Time:** 0.0 – 12.0s
 **Delivery:** Four clipped statements, each landing on a separate musical hit.
 
-    One signed executable. Two hundred twenty-five million bytes. Eleven embedded modules. No source map.
+    Claude Code, decompiled as a signed executable. Two hundred twenty-five million bytes. Eleven embedded modules. No source map.
 
 ## Line 2 — Three questions (Frame 2)
 
@@ -25,7 +25,7 @@
 **Time:** 25.0 – 45.0s
 **Delivery:** Announce the act, then separate observed structure from recovered source.
 
-    One—engine. The binary gives us a map—not recovered source: a native shell, a Bun payload, loaders, and add-ons.
+    One—engine. The Claude Code binary gives us a map—not recovered source: a native shell, a Bun payload, loaders, and add-ons.
 
 ## Line 4 — The living turn (Frame 4)
 
@@ -95,11 +95,11 @@
 **Time:** 260.0 – 285.0s
 **Delivery:** Deliberately resolve each of the opening questions, then lift into the aha.
 
-    A compiled agent stops being a monolith when you can trace its turn, locate where capability enters, and see which controls meet it on the way out.
+    Claude Code stops being a monolith when you can trace its turn, locate where capability enters, and see which controls meet it on the way out.
 
 ## Line 14 — Trace, pin, test (Frame 14)
 
 **Time:** 285.0 – 300.0s
 **Delivery:** One command per beat, then a calm final line.
 
-    Engine makes behavior visible. Surface makes authority visible. Boundary makes risk visible. That is enough to reason about a compiled agent—without pretending we recovered its source.
+    Engine makes Claude Code's behavior visible. Surface makes authority visible. Boundary makes risk visible. That is enough to reason about Claude Code—without pretending we recovered its source.
