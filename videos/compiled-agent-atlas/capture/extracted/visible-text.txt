@@ -1,0 +1,31 @@
+USER REQUEST — VERBATIM
+
+use [$hyperframes](/Users/swyx/Work/.agents/skills/hyperframes/SKILL.md) skill to make a detailed and engaging explainer video per section (decide on conssitent themeing and prompting and narration and visual style then fan out subagents to do many videos that can be stitched together) then stitch together with good interstitial chapters and pacing and framing - create your own cyberpunk high energy midi music to go with it with good voice over
+
+SOURCE SCOPE
+
+Repository: https://github.com/swyxio/claude-code-internals
+Wiki: https://swyxio.github.io/claude-code-internals/
+Top-level sections: Start, Runtime, Extensions, Security, Observations, Evidence, Reference.
+
+TEACHING TRUTH
+
+The atlas documents one exact signed executable: Claude Code 2.1.177 for macOS arm64, 225,124,512 bytes, SHA-256 eb0730351be2f02b482b1855870f5877489085aac86b0c4c1db4e458d9e40ed9. The installer reported 2.1.204 as latest at capture, so this is a version-pinned specimen, not a claim about all Claude Code releases.
+
+The executable contains one Bun section with an 11-module graph: one large JavaScript entry, five JavaScript native-binding loaders, and five matching native modules. No source map was found. The repository publishes independently authored explanatory contracts rather than recovered proprietary source.
+
+The evidence posture has three classes: 32 observed facts, 52 bounded derived interpretations, and one explicit hypothesis. Static anchors establish that strings, schemas, or branches exist. Controlled loopback probes establish only that version 2.1.177 crossed a named boundary in a named scenario.
+
+The runtime model is a local orchestration system around a remote model service. It routes entrypoints, resolves configuration and extensions, assembles context, streams provider output, validates and authorizes tools, executes allowed capabilities, returns tool results, persists state, and drains background work before idle.
+
+Extensions form a capability lattice, not one API: instructions, memory, skills, agents, hooks, plugins, MCP, LSP, IDE/browser bridges, and headless protocols carry different authority. Context influence is not direct execution. Hook commands, MCP processes, and plugin monitors can cross an ambient-host execution boundary.
+
+Security is layered: workspace trust, extension approval, input/schema and hook checks, permissions, sandbox constraints, operating-system controls, transport, persistence, and egress. Permission is not sandboxing. Signing is not confinement. Safe mode is not offline, and bare mode is not hermetic.
+
+Dynamic observations used in this video include invocation-sensitive HEAD-to-POST versus direct POST startup, a three-request Read-to-Bash tool loop, mode-0600 transcript JSONL, concurrent sibling hooks, an MCP initialize/initialized/tools-list/tools-call sequence, dontAsk denial without an allow rule, and a fail-closed sandbox test where a working-directory write succeeded while a parent-directory write was denied.
+
+The reference surface is searchable by exact identifiers including --allowedTools, CLAUDE_CODE_ENTRYPOINT, PreToolUse, and tools/call. Names prove surface existence, not activation or complete semantics.
+
+PUBLICATION BOUNDARY
+
+Publish evidence summaries, sanitized traces, maps, claims, and independent contracts. Do not publish the executable, extracted JavaScript, native add-ons, credentials, local configuration, transcripts, private debug data, or recovered proprietary source.

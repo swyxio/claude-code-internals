@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "start": 0,
+    "end": 12,
+    "text": "Claude Code, decompiled as a signed executable. Two hundred twenty-five million bytes. Eleven embedded modules. No source map.",
+    "path": "cache/narration/line-01.wav",
+    "duration": 9.344
+  },
+  {
+    "id": 2,
+    "start": 12,
+    "end": 25,
+    "text": "We do not need to recover its source to understand it. We need three questions: what is the turn? Where can capability enter? What keeps that capability within bounds?",
+    "path": "cache/narration/line-02.wav",
+    "duration": 11.157333
+  },
+  {
+    "id": 3,
+    "start": 25,
+    "end": 45,
+    "text": "One—engine. The Claude Code binary gives us a map—not recovered source: a native shell, a Bun payload, loaders, and add-ons.",
+    "path": "cache/narration/line-03.wav",
+    "duration": 8.661333
+  },
+  {
+    "id": 4,
+    "start": 45,
+    "end": 75,
+    "text": "In a tool-using turn, the client assembles context, streams a provider response, evaluates tool calls, executes local work or invokes a connected capability, then feeds results back. That is a feedback loop, not a one-shot answer. In one Read-to-Bash case, the loop made three Messages requests.",
+    "path": "cache/narration/line-04.wav",
+    "duration": 20.309333
+  },
+  {
+    "id": 5,
+    "start": 75,
+    "end": 100,
+    "text": "A tool call is prepared, checked, run, and settled. A pre-tool hook may stop or rewrite it; central permission decides the effective request. Allowed work executes, post-hooks observe the outcome, and the turn finishes only when work drains to idle.",
+    "path": "cache/narration/line-05.wav",
+    "duration": 17.365333
+  },
+  {
+    "id": 6,
+    "start": 100,
+    "end": 122,
+    "text": "Two—surface. There is no single extension API. Instructions and memory shape context. Skills and agents shape procedure and delegation. Hooks and MCP introduce executable or connected capability. Plugins package some of those components; bridges expose outside applications.",
+    "path": "cache/narration/line-06.wav",
+    "duration": 21.525333
+  },
+  {
+    "id": 7,
+    "start": 122,
+    "end": 150,
+    "text": "These surfaces do not have equal authority. Loading CLAUDE.md supplies instructions; it does not execute code. A command hook runs when its event fires. An MCP server may start a local child or reach a remote service. In the probe, sibling pre-tool hooks launched concurrently.",
+    "path": "cache/narration/line-07.wav",
+    "duration": 20.629333
+  },
+  {
+    "id": 8,
+    "start": 150,
+    "end": 175,
+    "text": "That makes an extension a trust composition, not a feature checkbox. Pin its component type, declared name, source scope, resolved location, and digest—then inspect the effective catalog.",
+    "path": "cache/narration/line-08.wav",
+    "duration": 12.821333
+  },
+  {
+    "id": 9,
+    "start": 175,
+    "end": 195,
+    "text": "Three—boundary. When a local tool is allowed, it uses local operating-system authority—possibly under a sandbox—while repositories, models, extensions, providers, and updates can influence what it asks to do. Security is several controls, not one permission prompt.",
+    "path": "cache/narration/line-09.wav",
+    "duration": 19.477333
+  },
+  {
+    "id": 10,
+    "start": 195,
+    "end": 225,
+    "text": "Workspace trust gates normal project-controlled configuration. Extension approval controls which components enter. Permission decides whether an effective request may run. Then sandboxing constrains the spawned local process. OS identity, transport, egress, and persistence remain separate.",
+    "path": "cache/narration/line-10.wav",
+    "duration": 20.608
+  },
+  {
+    "id": 11,
+    "start": 225,
+    "end": 245,
+    "text": "In the probe, dontAsk without an allow rule returned a denied Bash result and no marker was written. With an explicit allow rule, Bash ran. With a fail-closed sandbox, it wrote in the workdir but failed to write to its parent.",
+    "path": "cache/narration/line-11.wav",
+    "duration": 15.616
+  },
+  {
+    "id": 12,
+    "start": 245,
+    "end": 260,
+    "text": "That proves a two-location write boundary, not a universal sandbox. Test the capability you care about; leave the rest unclaimed.",
+    "path": "cache/narration/line-12.wav",
+    "duration": 9.258667
+  },
+  {
+    "id": 13,
+    "start": 260,
+    "end": 285,
+    "text": "Claude Code stops being a monolith when you can trace its turn, locate where capability enters, and see which controls meet it on the way out.",
+    "path": "cache/narration/line-13.wav",
+    "duration": 9.152
+  },
+  {
+    "id": 14,
+    "start": 285,
+    "end": 300,
+    "text": "Engine makes Claude Code's behavior visible. Surface makes authority visible. Boundary makes risk visible. That is enough to reason about Claude Code—without pretending we recovered its source.",
+    "path": "cache/narration/line-14.wav",
+    "duration": 12.864
+  }
+]
