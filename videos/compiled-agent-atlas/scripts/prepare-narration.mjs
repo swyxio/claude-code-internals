@@ -1,12 +1,16 @@
 import { execFileSync } from "node:child_process";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { join, resolve } from "node:path";
+import { tmpdir } from "node:os";
 
 const project = resolve(".");
 const script = readFileSync(resolve(project, "SCRIPT.md"), "utf8");
 const kokoroPython = "/tmp/hf-kokoro-venv/bin/python";
 const voice = "am_michael";
-const narrationDir = resolve(project, "audio/narration");
+const cacheDir = process.env.CLAUDE_ATLAS_CACHE_DIR
+  ? resolve(process.env.CLAUDE_ATLAS_CACHE_DIR)
+  : join(tmpdir(), "claude-code-internals-atlas");
+const narrationDir = join(cacheDir, "narration");
 mkdirSync(narrationDir, { recursive: true });
 
 const lines = [...script.matchAll(/## Line (\d+) — .*?\n\n\*\*Time:\*\* ([\d.]+) – ([\d.]+)s.*?\n\n    (.+?)(?=\n\n## Line|\n*$)/gs)].map((match) => ({
@@ -27,15 +31,18 @@ for (const line of lines) {
   });
   const duration = probeDuration(output);
   if (duration > line.end - line.start - 0.35) throw new Error(`Line ${pad} is ${duration.toFixed(2)}s but has only ${(line.end - line.start).toFixed(2)}s`);
-  line.path = output;
+  line.path = `cache/narration/line-${pad}.wav`;
+  line.cachePath = output;
   line.duration = duration;
 }
 
 const args = ["-y", "-f", "lavfi", "-t", "300", "-i", "anullsrc=r=44100:cl=stereo"];
-for (const line of lines) args.push("-i", line.path);
+for (const line of lines) args.push("-i", line.cachePath);
 const filters = lines.map((line, index) => `[${index + 1}:a]adelay=${Math.round(line.start * 1000)}|${Math.round(line.start * 1000)}[voice${index}]`);
 filters.push(`[0:a]${lines.map((_, index) => `[voice${index}]`).join("")}amix=inputs=${lines.length + 1}:duration=longest:normalize=0,atrim=duration=300,asetpts=N/SR/TB[narration]`);
-args.push("-filter_complex", filters.join(";"), "-map", "[narration]", "-c:a", "pcm_s16le", resolve(project, "assets/audio/narration.wav"));
+const narration = join(cacheDir, "narration.wav");
+args.push("-filter_complex", filters.join(";"), "-map", "[narration]", "-c:a", "pcm_s16le", narration);
 execFileSync("ffmpeg", args, { stdio: "inherit" });
+for (const line of lines) delete line.cachePath;
 writeFileSync(resolve(project, "audio/narration-manifest.json"), JSON.stringify(lines, null, 2));
-console.log(`✓ narration: ${resolve(project, "assets/audio/narration.wav")}`);
+console.log(`✓ narration: ${narration}`);

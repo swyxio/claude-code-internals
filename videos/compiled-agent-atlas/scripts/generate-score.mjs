@@ -1,8 +1,12 @@
 import { mkdirSync, writeFileSync } from "node:fs";
-import { dirname, resolve } from "node:path";
+import { join, resolve } from "node:path";
+import { tmpdir } from "node:os";
 
 const OUT_DIR = resolve("assets/audio");
-const WAV = resolve(OUT_DIR, "engine-surface-boundary-score.wav");
+const CACHE_DIR = process.env.CLAUDE_ATLAS_CACHE_DIR
+  ? resolve(process.env.CLAUDE_ATLAS_CACHE_DIR)
+  : join(tmpdir(), "claude-code-internals-atlas");
+const WAV = join(CACHE_DIR, "engine-surface-boundary-score.wav");
 const MIDI = resolve(OUT_DIR, "engine-surface-boundary-score.mid");
 const sampleRate = 44_100;
 const duration = 300;
@@ -10,6 +14,7 @@ const bpm = 145;
 const beatSeconds = 60 / bpm;
 
 mkdirSync(OUT_DIR, { recursive: true });
+mkdirSync(CACHE_DIR, { recursive: true });
 
 const midiFrequency = (note) => 440 * 2 ** ((note - 69) / 12);
 const saw = (phase) => 2 * ((phase / (2 * Math.PI)) % 1) - 1;
