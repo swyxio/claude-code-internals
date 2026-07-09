@@ -1,0 +1,5 @@
+# Reproducible render intermediates; regenerate with the scripts in ./scripts.
+assets/audio/*.wav
+audio/narration/
+renders/
+snapshots/

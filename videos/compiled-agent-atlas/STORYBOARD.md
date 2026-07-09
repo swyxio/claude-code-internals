@@ -32,8 +32,8 @@ keyMessage: The artifact is opaque, but it is not unknowable.
 
 ## Frame 2 — Three questions
 
-- scene: The specimen spine becomes three dormant shapes—pulse rail, socket, gate—under the questions RUNS, CHANGES, CONSTRAINS.
-- voiceover: "We do not need to recover its source to understand it. We need three questions: how does it run? What changes its power? What constrains it—and how do we prove it?"
+- scene: The specimen spine becomes three dormant shapes—pulse rail, socket, gate—under the questions TURN, CAPABILITY, CONTROL; a small `TESTED PATH` badge stays dim below them.
+- voiceover: "We do not need to recover its source to understand it. We need three questions: what is the turn? Where can capability enter? What keeps that capability within bounds?"
 - duration: 13s
 - poster: 10s
 - transition_in: push-slide LEFT
@@ -49,12 +49,12 @@ keyMessage: The artifact is opaque, but it is not unknowable.
 
 narrativeRole: Makes the three-act contract explicit before any mechanism is explained.
 
-keyMessage: Engine, surface, and boundary are the three questions that turn a black box into a model.
+keyMessage: Turn, capability, and control are the three questions that turn a black box into a model.
 
 ## Frame 3 — Engine: structure, not source
 
-- scene: Integrated title move `01 / ENGINE` resolves inside the monolith; the envelope opens only to a native shell, Bun payload, entry module, loaders, and native add-ons.
-- voiceover: "One—engine. The version-pinned specimen is a signed Mach-O with a Bun payload: one entry module, loaders, and native add-ons. That is structure—not source."
+- scene: Integrated title move `01 / ENGINE` resolves inside the monolith; the envelope opens only to a native shell, Bun payload, loaders, and native add-ons, then begins flowing into the turn rail.
+- voiceover: "One—engine. The binary gives us a map—not recovered source: a native shell, a Bun payload, loaders, and add-ons."
 - duration: 20s
 - poster: 15s
 - transition_in: zoom-through
@@ -70,12 +70,12 @@ keyMessage: Engine, surface, and boundary are the three questions that turn a bl
 
 narrativeRole: Sets the evidence boundary for the runtime model while introducing the first act's spatial grammar.
 
-keyMessage: Binary structure can support a model of the runtime without becoming recovered source.
+keyMessage: The artifact's structure is enough to locate the runtime, without pretending it is source code.
 
 ## Frame 4 — The living turn
 
-- scene: The Bun payload morphs into one large pulse rail: context → provider stream → tool call → local result → provider; an observed three-request Read-to-Bash trace fills the rail once.
-- voiceover: "Inside, the client assembles context, streams a provider response, adapts events, evaluates tool calls, executes approved work locally, then feeds results back. That is a feedback loop, not a one-shot answer. In one observed Read-to-Bash case, the loop made three Messages requests."
+- scene: The Bun payload morphs into one large pulse rail: context → provider stream → tool call → local tool or connected capability → result → provider; an observed three-request Read-to-Bash trace travels only through the local-tool branch.
+- voiceover: "In a tool-using turn, the client assembles context, streams a provider response, evaluates tool calls, executes local work or invokes a connected capability, then feeds results back. That is a feedback loop, not a one-shot answer. In one Read-to-Bash case, the loop made three Messages requests."
 - duration: 30s
 - poster: 23s
 - transition_in: push-slide LEFT
@@ -91,12 +91,12 @@ keyMessage: Binary structure can support a model of the runtime without becoming
 
 narrativeRole: Makes the turn loop memorable by showing one complete observed tool-feedback case rather than a list of subsystems.
 
-keyMessage: A tool-using agent turn is a repeated provider-and-local-execution loop.
+keyMessage: A tool-using turn is a repeated provider-and-capability loop; the three-request trace is one observed local-tool case.
 
 ## Frame 5 — The real finish line
 
-- scene: The tool branch passes through one continuous gauntlet—coerce, parse, validate, hook, permit, execute, normalize—then drains held work before the `IDLE` lamp lights.
-- voiceover: "Each tool call crosses a sequence: coerce, parse, validate, pre-hook, authorize, execute, post-hook, normalize. Permission asks may it run; sandbox constrains what an allowed process reaches. And the turn is not done at the last token—it drains to idle."
+- scene: The tool branch crosses detailed visual gates—coerce, parse, validate, pre-hook, permit, execute, post-hook, normalize. Pre-hook visibly branches to `STOP`, `DEFER`, or a rewritten `EFFECTIVE INPUT`; held work drains before the `IDLE` lamp lights.
+- voiceover: "A tool call is prepared, checked, run, and settled. A pre-tool hook may stop or rewrite it; central permission decides the effective request. Allowed work executes, post-hooks observe the outcome, and the turn finishes only when work drains to idle."
 - duration: 25s
 - poster: 19s
 - transition_in: push-slide LEFT
@@ -111,13 +111,13 @@ keyMessage: A tool-using agent turn is a repeated provider-and-local-execution l
 
 narrativeRole: Turns the first act's loop into a practical integration rule.
 
-keyMessage: A trustworthy integration waits for an idle boundary, not merely the final model token.
+keyMessage: A trustworthy integration waits for the runtime's idle boundary, not merely the final model token.
 
 ## Frame 6 — Surface: capability arrives
 
-- scene: The pulse rail becomes a modular core; integrated title `02 / SURFACE` appears as ports for context, skills, agents, hooks, MCP, plugins, and bridges assemble.
-- voiceover: "Two—surface. There is no single extension API. Instructions and memory shape context; skills and agents shape procedure and delegation; hooks, MCP, plugins, and bridges add capability."
-- duration: 20s
+- scene: The pulse rail becomes a stepped authority ladder inside a modular core; integrated title `02 / SURFACE` appears over context → procedure → lifecycle execution → process or remote capability. A plugin wraps eligible components rather than appearing as a peer port.
+- voiceover: "Two—surface. There is no single extension API. Instructions and memory shape context. Skills and agents shape procedure and delegation. Hooks and MCP introduce executable or connected capability. Plugins package some of those components; bridges expose outside applications."
+- duration: 22s
 - poster: 15s
 - transition_in: zoom-through
 - status: outline
@@ -132,13 +132,13 @@ keyMessage: A trustworthy integration waits for an idle boundary, not merely the
 
 narrativeRole: Replaces the single-API mental model with one capability surface that has visibly different ports.
 
-keyMessage: Extensions change an effective session through several distinct kinds of contribution.
+keyMessage: Extensions contribute different kinds of influence and authority; plugins are containers for some of them.
 
 ## Frame 7 — Uneven authority
 
-- scene: Context-only ports remain unpowered while hook, MCP, and executable plugin components carry orange current; two PreToolUse lanes race while a separate MCP airlock stages discovery, approval, and connection.
-- voiceover: "Those surfaces do not have equal authority. Loading CLAUDE.md does not execute code. A command hook can run because an event fires. In the probe, sibling PreToolUse hooks launched concurrently; MCP discovery remained separate from approval and connection."
-- duration: 30s
+- scene: Context stays an unpowered paper layer while hook, MCP, and plugin-contained executable components carry current. A tiny proof strip shows sibling PreToolUse lanes launching concurrently; the MCP airlock keeps discovery, approval, and connection separate.
+- voiceover: "These surfaces do not have equal authority. Loading CLAUDE.md supplies instructions; it does not execute code. A command hook runs when its event fires. An MCP server may start a local child or reach a remote service. In the probe, sibling pre-tool hooks launched concurrently."
+- duration: 28s
 - poster: 23s
 - transition_in: push-slide LEFT
 - status: outline
@@ -178,8 +178,8 @@ keyMessage: Stable provenance—not a marketplace label—is the unit of extensi
 
 ## Frame 9 — Boundary: non-equivalent controls
 
-- scene: The modular core acquires concentric gates; integrated title `03 / BOUNDARY` reveals repository, model, extension, provider, update, and host inputs at the perimeter.
-- voiceover: "Three—boundary. This runtime acts with your operating-system identity while input arrives from repositories, models, extensions, providers, and updates. Security is a sequence of non-equivalent controls."
+- scene: The modular core acquires concentric gates; integrated title `03 / BOUNDARY` reveals repository, model, extension, provider, update, and host influences at the perimeter while only the local-tool path enters the OS-authority zone.
+- voiceover: "Three—boundary. When a local tool is allowed, it uses local operating-system authority—possibly under a sandbox—while repositories, models, extensions, providers, and updates can influence what it asks to do. Security is several controls, not one permission prompt."
 - duration: 20s
 - poster: 15s
 - transition_in: zoom-through
@@ -195,12 +195,12 @@ keyMessage: Stable provenance—not a marketplace label—is the unit of extensi
 
 narrativeRole: Reframes security as an authority perimeter around the same core introduced in the first two acts.
 
-keyMessage: The agent's local authority must be controlled across several independent boundaries.
+keyMessage: Local-tool authority must be controlled even though many outside inputs can influence a request.
 
 ## Frame 10 — Gates are not substitutes
 
-- scene: One request crosses nested gates in order: workspace trust, extension approval, validation and hooks, permission, sandbox, OS, transport, egress, persistence; each gate stays visibly distinct.
-- voiceover: "Workspace trust decides whether repository configuration participates. Extension approval controls entry. Permission decides whether a request may run. Sandboxing constrains allowed processes. Operating system, transport, egress, and persistence remain separate."
+- scene: One request moves left to right through trust → component entry → pre-hook → permission → sandbox profile → child process. Filesystem, network, process, and environment limits sit around only the child process; OS, transport, egress, and persistence remain outside rings.
+- voiceover: "Workspace trust gates normal project-controlled configuration. Extension approval controls which components enter. Permission decides whether an effective request may run. Then sandboxing constrains the spawned local process. OS identity, transport, egress, and persistence remain separate."
 - duration: 30s
 - poster: 23s
 - transition_in: push-slide LEFT
@@ -216,12 +216,12 @@ keyMessage: The agent's local authority must be controlled across several indepe
 
 narrativeRole: Makes it impossible to confuse permission, containment, and operating-system controls as one gate.
 
-keyMessage: Removing or verifying one control does not make another redundant.
+keyMessage: Admission, permission, and process containment are sequenced controls, not substitutes.
 
 ## Frame 11 — Test the actual path
 
-- scene: Identical Bash requests split: dontAsk with no allow rule stops before execution; explicit allow reaches a sandbox where the workdir write passes and the parent write is denied.
-- voiceover: "The probe makes the distinction concrete: dontAsk without an allow rule denied Bash and wrote nothing. With an explicit allow, it ran. Under fail-closed sandboxing, workdir writes passed; parent writes failed."
+- scene: Identical Bash requests split: dontAsk with no allow rule returns `DENIED / NO MARKER`; explicit allow reaches a fail-closed sandbox where the workdir write passes and the parent write fails.
+- voiceover: "In the probe, dontAsk without an allow rule returned a denied Bash result and no marker was written. With an explicit allow rule, Bash ran. With a fail-closed sandbox, it wrote in the workdir but failed to write to its parent."
 - duration: 20s
 - poster: 15s
 - transition_in: push-slide LEFT
@@ -241,8 +241,8 @@ keyMessage: The result proves only the named tested path, not complete sandbox c
 
 ## Frame 12 — Evidence is the final gate
 
-- scene: A probe reticle stamps the tested path `OBSERVED`; untested rings remain dim while a claim chain resolves address → trace → bounded inference → known limit.
-- voiceover: "That is one tested path, not total containment. Evidence stays version-bound: an address shows bytes, a trace shows behavior, and a bounded inference explains the gap. String is not system."
+- scene: A probe reticle stamps only `WORKDIR WRITE / TESTED`; five dark rings remain unlit: READS, EGRESS, SOCKETS, CHILDREN, ESCAPE. A small `OBSERVED PATH` badge keeps the limit visible.
+- voiceover: "That proves a two-location write boundary, not a universal sandbox. Test the capability you care about; leave the rest unclaimed."
 - duration: 15s
 - poster: 11s
 - transition_in: push-slide LEFT
@@ -256,14 +256,14 @@ keyMessage: The result proves only the named tested path, not complete sandbox c
 - evidence: OBSERVED + DERIVED + UNEXERCISED
 - source: https://github.com/swyxio/claude-code-internals/blob/main/docs/evidence/index.md
 
-narrativeRole: Explains why evidence and limitations are part of the boundary model, not a separate appendix.
+narrativeRole: Makes the limits of the sandbox observation intuitive without turning the act into a methodology lecture.
 
-keyMessage: A claim is useful only when its evidence class, subject version, and limit remain visible.
+keyMessage: A security conclusion must name the specific capability and boundary that was tested.
 
 ## Frame 13 — The model clicks
 
-- scene: Pulse rail, modular socket, and nested gate fold onto one atlas; labels settle as ENGINE / SURFACE / BOUNDARY over ADDRESS / TRACE / INFERENCE.
-- voiceover: "Now the three questions resolve. The engine tells us what runs. The surface tells us where capability enters. The boundary tells us what may happen—and the evidence tells us how far we can honestly claim."
+- scene: The opening barcode becomes a pulse rail, then sockets, then a closed three-layer core; opening labels TURN / CAPABILITY / CONTROL resolve around it as the small `TESTED PATH` badge lights.
+- voiceover: "A compiled agent stops being a monolith when you can trace its turn, locate where capability enters, and see which controls meet it on the way out."
 - duration: 25s
 - poster: 19s
 - transition_in: zoom-through
@@ -279,12 +279,12 @@ keyMessage: A claim is useful only when its evidence class, subject version, and
 
 narrativeRole: Pays off the three shapes and three questions introduced in the opening.
 
-keyMessage: The artifact becomes an inspectable model when behavior, authority, and proof are kept connected.
+keyMessage: Behavior, authority, and control turn an opaque artifact into an inspectable model.
 
 ## Frame 14 — Trace, pin, test
 
-- scene: The atlas collapses to three verbs—TRACE THE TURN, PIN THE EXTENSION, TEST THE BOUNDARY—then resolves to the repository route and the specimen spine.
-- voiceover: "Trace the turn. Pin the extension. Test the boundary. That is how a compiled agent becomes legible—without pretending we recovered its source."
+- scene: The closed core holds while three final captions arrive one per beat: ENGINE / BEHAVIOR VISIBLE; SURFACE / AUTHORITY VISIBLE; BOUNDARY / RISK VISIBLE. A two-second music-only end card presents `TRACE THE TURN / MAP CAPABILITY / TEST THE BOUNDARY` with the repository route.
+- voiceover: "Engine makes behavior visible. Surface makes authority visible. Boundary makes risk visible. That is enough to reason about a compiled agent—without pretending we recovered its source."
 - duration: 15s
 - poster: 11s
 - transition_in: cut
@@ -300,4 +300,4 @@ keyMessage: The artifact becomes an inspectable model when behavior, authority, 
 
 narrativeRole: Leaves a short operational mnemonic and a direct route into the atlas.
 
-keyMessage: TRACE · PIN · TEST.
+keyMessage: TRACE THE TURN · MAP CAPABILITY · TEST THE BOUNDARY.

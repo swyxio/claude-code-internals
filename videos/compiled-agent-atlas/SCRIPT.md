@@ -18,42 +18,42 @@
 **Time:** 12.0 – 25.0s
 **Delivery:** Reject the false premise, then open three questions with measured curiosity.
 
-    We do not need to recover its source to understand it. We need three questions: how does it run? What changes its power? What constrains it—and how do we prove it?
+    We do not need to recover its source to understand it. We need three questions: what is the turn? Where can capability enter? What keeps that capability within bounds?
 
 ## Line 3 — Engine: structure, not source (Frame 3)
 
 **Time:** 25.0 – 45.0s
 **Delivery:** Announce the act, then separate observed structure from recovered source.
 
-    One—engine. The version-pinned specimen is a signed Mach-O with a Bun payload: one entry module, loaders, and native add-ons. That is structure—not source.
+    One—engine. The binary gives us a map—not recovered source: a native shell, a Bun payload, loaders, and add-ons.
 
 ## Line 4 — The living turn (Frame 4)
 
 **Time:** 45.0 – 75.0s
 **Delivery:** Let the loop build. Emphasize feedback loop and three Messages requests.
 
-    Inside, the client assembles context, streams a provider response, adapts events, evaluates tool calls, executes approved work locally, then feeds results back. That is a feedback loop, not a one-shot answer. In one observed Read-to-Bash case, the loop made three Messages requests.
+    In a tool-using turn, the client assembles context, streams a provider response, evaluates tool calls, executes local work or invokes a connected capability, then feeds results back. That is a feedback loop, not a one-shot answer. In one Read-to-Bash case, the loop made three Messages requests.
 
 ## Line 5 — The real finish line (Frame 5)
 
 **Time:** 75.0 – 100.0s
 **Delivery:** Crisp gates; slow down for the final correction about idle.
 
-    Each tool call crosses a sequence: coerce, parse, validate, pre-hook, authorize, execute, post-hook, normalize. Permission asks may it run; sandbox constrains what an allowed process reaches. And the turn is not done at the last token—it drains to idle.
+    A tool call is prepared, checked, run, and settled. A pre-tool hook may stop or rewrite it; central permission decides the effective request. Allowed work executes, post-hooks observe the outcome, and the turn finishes only when work drains to idle.
 
 ## Line 6 — Surface: capability arrives (Frame 6)
 
-**Time:** 100.0 – 120.0s
+**Time:** 100.0 – 122.0s
 **Delivery:** Announce the act and classify surfaces in a cumulative rhythm.
 
-    Two—surface. There is no single extension API. Instructions and memory shape context; skills and agents shape procedure and delegation; hooks, MCP, plugins, and bridges add capability.
+    Two—surface. There is no single extension API. Instructions and memory shape context. Skills and agents shape procedure and delegation. Hooks and MCP introduce executable or connected capability. Plugins package some of those components; bridges expose outside applications.
 
 ## Line 7 — Uneven authority (Frame 7)
 
-**Time:** 120.0 – 150.0s
+**Time:** 122.0 – 150.0s
 **Delivery:** Contrast quiet context with active local execution; report probe behavior plainly.
 
-    Those surfaces do not have equal authority. Loading CLAUDE.md does not execute code. A command hook can run because an event fires. In the probe, sibling PreToolUse hooks launched concurrently; MCP discovery remained separate from approval and connection.
+    These surfaces do not have equal authority. Loading CLAUDE.md supplies instructions; it does not execute code. A command hook runs when its event fires. An MCP server may start a local child or reach a remote service. In the probe, sibling pre-tool hooks launched concurrently.
 
 ## Line 8 — Trust composition (Frame 8)
 
@@ -67,39 +67,39 @@
 **Time:** 175.0 – 195.0s
 **Delivery:** Announce the act with controlled concern.
 
-    Three—boundary. This runtime acts with your operating-system identity while input arrives from repositories, models, extensions, providers, and updates. Security is a sequence of non-equivalent controls.
+    Three—boundary. When a local tool is allowed, it uses local operating-system authority—possibly under a sandbox—while repositories, models, extensions, providers, and updates can influence what it asks to do. Security is several controls, not one permission prompt.
 
 ## Line 10 — Gates are not substitutes (Frame 10)
 
 **Time:** 195.0 – 225.0s
 **Delivery:** One control per beat; make each distinction feel load-bearing.
 
-    Workspace trust decides whether repository configuration participates. Extension approval controls entry. Permission decides whether a request may run. Sandboxing constrains allowed processes. Operating system, transport, egress, and persistence remain separate.
+    Workspace trust gates normal project-controlled configuration. Extension approval controls which components enter. Permission decides whether an effective request may run. Then sandboxing constrains the spawned local process. OS identity, transport, egress, and persistence remain separate.
 
 ## Line 11 — Test the actual path (Frame 11)
 
 **Time:** 225.0 – 245.0s
 **Delivery:** Clinical experiment report; cleanly contrast denied, allowed, and contained.
 
-    The probe makes the distinction concrete: dontAsk without an allow rule denied Bash and wrote nothing. With an explicit allow, it ran. Under fail-closed sandboxing, workdir writes passed; parent writes failed.
+    In the probe, dontAsk without an allow rule returned a denied Bash result and no marker was written. With an explicit allow rule, Bash ran. With a fail-closed sandbox, it wrote in the workdir but failed to write to its parent.
 
 ## Line 12 — Evidence is the final gate (Frame 12)
 
 **Time:** 245.0 – 260.0s
 **Delivery:** Narrow the claim before landing the mnemonic as a warning.
 
-    That is one tested path, not total containment. Evidence stays version-bound: an address shows bytes, a trace shows behavior, and a bounded inference explains the gap. String is not system.
+    That proves a two-location write boundary, not a universal sandbox. Test the capability you care about; leave the rest unclaimed.
 
 ## Line 13 — The model clicks (Frame 13)
 
 **Time:** 260.0 – 285.0s
 **Delivery:** Deliberately resolve each of the opening questions, then lift into the aha.
 
-    Now the three questions resolve. The engine tells us what runs. The surface tells us where capability enters. The boundary tells us what may happen—and the evidence tells us how far we can honestly claim.
+    A compiled agent stops being a monolith when you can trace its turn, locate where capability enters, and see which controls meet it on the way out.
 
 ## Line 14 — Trace, pin, test (Frame 14)
 
 **Time:** 285.0 – 300.0s
 **Delivery:** One command per beat, then a calm final line.
 
-    Trace the turn. Pin the extension. Test the boundary. That is how a compiled agent becomes legible—without pretending we recovered its source.
+    Engine makes behavior visible. Surface makes authority visible. Boundary makes risk visible. That is enough to reason about a compiled agent—without pretending we recovered its source.
