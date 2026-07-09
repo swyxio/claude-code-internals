@@ -1,28 +1,30 @@
-# Locked brief — Compiled Agent Atlas
+# Locked brief — Inside a Compiled Agent
 
 - **Mode:** collaborative
-- **Working title:** *Inside the Compiled Agent*
-- **Format:** one stitched master plus seven independently renderable chapter videos
+- **Working title:** *Inside a Compiled Agent: Engine, Surface, Boundary*
+- **Format:** one five-minute master plus three optional act cuts
 - **Destination:** YouTube / website embed
 - **Canvas:** 1920×1080, 16:9
-- **Target length:** approximately 9:50 master; 1:10–1:25 per chapter
+- **Target length:** exactly 5:00
 - **Language:** English narration and captions
 - **Audience:** AI-agent developers, extension authors, security reviewers, and technically curious operators
-- **Angle:** forensic concept explainer with a seven-lens process
+- **Angle:** three-act forensic concept explainer
 - **Narration:** authoritative, energetic, technically restrained
-- **Message:** A compiled agent can be understood without pretending to recover its source, if every architectural claim is pinned to an artifact, an observation, or a bounded inference.
+- **Message:** A compiled agent becomes legible as a turn engine, extension surface, and layered control boundary—when every claim remains version-pinned and testable.
+
+## Three questions
+
+1. **Engine:** How does a prompt become a local action?
+2. **Surface:** What can change the agent's capability or authority?
+3. **Boundary:** What constrains that power, and what proves the claim?
 
 ## Deliverables
 
-1. `start.mp4`
-2. `runtime.mp4`
-3. `extensions.mp4`
-4. `security.mp4`
-5. `observations.mp4`
-6. `evidence.mp4`
-7. `reference.mp4`
-8. `inside-the-compiled-agent-master.mp4`
-9. Original MIDI source, rendered score stems, voiceover, word timings, captions, contact sheet, and validation reports
+1. `inside-a-compiled-agent-master.mp4`
+2. `part-1-engine.mp4`
+3. `part-2-surface.mp4`
+4. `part-3-boundary.mp4`
+5. Original MIDI source, rendered score stems, voiceover, word timings, captions, contact sheet, and validation reports
 
 ## Editorial rules
 
@@ -31,4 +33,4 @@
 - Never imply that a two-location sandbox probe certifies containment.
 - Never generalize behavior from `2.1.177` to newer builds.
 - Never present reconstructed contracts as Anthropic source.
-- Keep GitHub source links in frame metadata and chapter end cards.
+- Keep GitHub source links in frame metadata and the final source route.

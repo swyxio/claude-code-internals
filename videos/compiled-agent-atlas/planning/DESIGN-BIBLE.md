@@ -1,39 +1,39 @@
-# Design bible — forensic broadside
+# Design bible — one agent core, three legible shapes
 
 ## North star
 
-An industrial field manual intercepted from a future incident-response lab: loud enough to feel cyberpunk, disciplined enough to remain evidence-first.
+An industrial field manual that becomes simpler as it teaches: one persistent agent core changes shape from **engine** to **surface** to **boundary**, then snaps into a final evidence-backed atlas.
 
 ## Visual system
 
-- **Preset:** Broadside.
-- **Registers:** ink-black documentation frames and fire-orange declaration frames; never mix a second accent color.
-- **Display:** massive lowercase Barlow 900 used as a graphic primitive.
-- **Chrome:** uppercase IBM Plex Mono with catalogue numbers, addresses, hashes, evidence badges, timestamps, and source paths.
-- **Geometry:** flat planes, zero radius, zero shadow, zero gradient, one-pixel rules.
-- **Density:** one dominant idea per frame; chapter cards and thesis frames keep 45–55% negative space.
-- **Evidence badges:** `OBSERVED`, `DERIVED`, `HYPOTHESIS`, and `UNEXERCISED` are structural labels, not decorative stickers.
+- **Preset:** Broadside: ink-black, fire-orange, cream, Barlow display, IBM Plex Mono chrome.
+- **One persistent spine:** `2.1.177 · DARWIN-ARM64 · eb073035…e40ed9`. It begins as a specimen barcode, becomes the data rail in the turn engine, then becomes the route crossing every security gate.
+- **Three act grammars:** pulse rail = engine; plug/socket = surface; concentric ring/gate = boundary.
+- **Orange means exactly one thing:** an active boundary crossing. It is never generic decoration.
+- **Evidence labels:** show `OBSERVED`, `DERIVED`, or `UNEXERCISED` only when the claim class changes. No dashboard clutter.
+- **Geometry:** flat planes, sharp corners, one-pixel rules, zero shadows, zero gradients.
 
-## Repeating visual grammar
+## Less-is-more composition
 
-1. A persistent specimen strip identifies `2.1.177 · DARWIN-ARM64 · eb073035…e40ed9`.
-2. Orange pulses mark a boundary crossing, never generic emphasis.
-3. Hairlines become paths, gates, address ranges, and trust boundaries.
-4. Chapter interstitials use orange ground, a catalogue numeral, one oversized lowercase noun, and a four-beat musical stinger.
-5. Each chapter ends on a source route: a short GitHub path and one exact search term.
+- Fourteen sequences total, with one hero transformation per sequence.
+- Each act occupies one large reusable spatial stage rather than a string of cards.
+- Act titles animate for three seconds inside the first act shot; no dead interstitials.
+- Hold diagrams after they resolve. Do not replace a legible system with the next visual merely because the narration ends.
+- Use a maximum of three evidence tags and three code labels per frame.
+
+## Act stages
+
+1. **Engine:** A living pulse rail loops `context → provider → tool → result → provider`; an observed three-request Read-to-Bash trace fills it once.
+2. **Surface:** The core grows modular ports. Context-only surfaces remain unpowered; hooks, MCP, and executable plugin components visibly carry current.
+3. **Boundary:** The same ports pass through nested gates. A probe reticle stamps only the tested path `OBSERVED`, leaving all untested paths dim.
 
 ## Motion language
 
-- **Primary seams:** hard `cut`, `push-slide LEFT`, and `zoom-through`.
-- **Internal motion:** deterministic draw-ons, address scans, counter ticks, track wipes, and camera pans across one oversized forensic canvas.
-- **Signature move:** an orange scan bar traverses the frame; whatever it crosses changes from unlabeled shape to evidence-classified mechanism.
-- **Pacing:** aggressive 4-second chapter cards, 12–18 second teaching shots, two-second holds for dense diagrams.
-- **No ambient drift:** motion must reveal a relationship, establish sequence, or make a boundary legible.
-
-## Caption identity
-
-Two lines maximum, lower third, cream on ink-black. The active phrase receives an orange underline synchronized to HeyGen word timings. Code identifiers stay mono and preserve case.
+- **Seams:** structural morphs, not unrelated cuts: barcode → pulse rail → sockets → gates → atlas.
+- **Signature move:** an orange scan bar crosses the persistent spine. Crossed components become named and evidence-classified.
+- **Pacing:** intro: 25 seconds; each act: one long setup, one mechanism, one practical landing; closing: 40 seconds.
+- **Captions:** two lines maximum, cream on ink-black, with an orange underline driven by word timing. Identifiers stay mono and preserve case.
 
 ## Prompt prefix for every frame worker
 
-> Build a 1920×1080 deterministic HyperFrames shot in the Forensic Broadside system. Ink-black or fire-orange only; Barlow lowercase display, IBM Plex Mono chrome, sharp geometry, one-pixel rules, no gradients, no shadows, no rounded cards. One dominant visual mechanism. Pace every reveal to the supplied narration. Show OBSERVED or DERIVED labels exactly where claims change epistemic class. Preserve the specimen strip and source route. Treat orange as a boundary-crossing signal, not decoration.
+> Build a deterministic 1920×1080 HyperFrames shot in the Forensic Broadside system. Reuse the persistent specimen spine and the current act's single geometry: pulse rail, modular socket, or nested gate. Ink-black or fire-orange only; Barlow lowercase display, IBM Plex Mono chrome, sharp geometry, no gradients, shadows, or rounded cards. One hero transformation, generous negative space, and reveals paced to narration. Orange must mean an active boundary crossing. Show evidence badges only where the epistemic class changes.
